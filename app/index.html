@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bootstrap 101 Template</title>
+    <!-- Bootstrap -->
+    <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+
+    <!-- Just an image -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="./images/logo.png" width="60" height="50" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">GoBlockchain
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <br>
+        <div class="jumbotron">
+            <h1 class="display-4">..</h1>
+            <p class="lead">.....</p>
+            <hr class="my-4">
+            <!-- <div class="row">
+                <div class="col-md-8">
+                    <p>Você pode visualizar o código fonte do Smart Contract nesse link e para realizar o jogo é necessários
+                        instalar o Metamask, clique na imagem e realize a instalação.</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="lead">
+                        <img src="./images/metamask.png" alt="">
+                    </p>
+                </div>
+            </div> -->
+
+
+        </div>
+        <h4>Debloqueie sua conta:</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <select id="accounts" class="form-control"></select>
+            </div>   
+            <div class="col-md-4">
+                <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>              
+            <div class="col-md-2">
+                <button type="button" class="btn btn-primary" id="btnUnlock">Unlock</button>       
+            </div>
+        </div> 
+        <div class="row">
+            <div class="col-md-6">
+                <span>Saldo:</span> <label id="balance"></label>
+            </div>            
+        </div>    
+        <br>
+          
+        <h1 class="my-4 text-center text-lg-left">...</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-primary btn-lg btn-block" >teste</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" class="btn btn-info btn-lg btn-block" id="btnSaque" style="display:none;" onclick="sacarPremio()">Sacar Prêmio</button>
+            </div>
+        </div>        
+    </div>
+    <br> 
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; GoBlockchain 2018</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./bower_components/web3/dist/web3.min.js"></script>
+    <script src="./scripts/main.js"></script>
+</body>
+
+</html>

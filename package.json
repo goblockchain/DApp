@@ -1,0 +1,27 @@
+{
+  "name": "dapp",
+  "version": "1.0.0",
+  "description": "GoBlockchain DApp",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://github.com/goblockchain/DApp.git"
+  },
+  "keywords": [
+    "blockchain",
+    "ethereum"
+  ],
+  "author": "Henrique",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goblockchain/DApp/issues"
+  },
+  "homepage": "https://github.com/goblockchain/DApp#readme",
+  "devDependencies": {
+    "browser-sync": "2.23.6",
+    "gulp": "^3.9.1"
+  }
+}
