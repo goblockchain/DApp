@@ -2,9 +2,9 @@
 
 //load
 window.addEventListener('load', function() {
-    var urlNode = 'http://127.0.0.1:7545';
-    window.web3 = new Web3(new Web3.providers.HttpProvider(urlNode));
-    // window.web3 = new Web3(web3.currentProvider);
+    // var urlNode = 'http://127.0.0.1:7545';
+    // window.web3 = new Web3(new Web3.providers.HttpProvider(urlNode));
+    window.web3 = new Web3(web3.currentProvider);
     checkWeb3();
 });
 
@@ -14,10 +14,9 @@ function checkWeb3(){
     // Set the connect status on the app
     if (web3 && web3.isConnected()) {
         console.info('Connected');
-        carregarDadosJogo();
-        listAccounts();
+        $('#statusConnection').text("Conectado");
     } else {
-        console.info('Not Connected');
+        $('#statusConnection').text("Desconectado");
     }
 }
 
