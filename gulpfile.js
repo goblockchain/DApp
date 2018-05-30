@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var util = require('gulp-util');
 var browserSync = require('browser-sync').create();
 
 // Copy third party libraries from /node_modules into /vendor
@@ -10,19 +11,19 @@ gulp.task('vendor', function() {
       '!./bower_components/bootstrap/dist/css/bootstrap-grid*',
       '!./bower_components/bootstrap/dist/css/bootstrap-reboot*'
     ])
-    .pipe(gulp.dest('./vendor/bootstrap'))
+    .pipe(gulp.dest('app/vendor/bootstrap'))
 
   // jQuery
   gulp.src([
-      'app/bower_components/jquery/dist/*',
-      '!app/bower_components/jquery/dist/core.js'
+      './bower_components/jquery/dist/*',
+      '!./bower_components/jquery/dist/core.js'
     ])
     .pipe(gulp.dest('app/vendor/jquery'))
 
-      // jQuery
+  // jQuery
   gulp.src([
-    'app/bower_components/web3/dist/*',
-    '!app/bower_components/web3/dist/web3.min.js'
+    './bower_components/web3/dist/*',
+    '!./bower_components/web3/dist/web3.min.js'
   ])
   .pipe(gulp.dest('app/vendor/web3'))
 

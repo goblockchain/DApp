@@ -22,6 +22,19 @@
   "homepage": "https://github.com/goblockchain/DApp#readme",
   "devDependencies": {
     "browser-sync": "2.23.6",
-    "gulp": "^3.9.1"
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlclean": "^2.7.22",
+    "gulp-inject": "^4.3.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "gulp-webserver": "^0.9.1"
+  },
+  "dependencies": {
+    "gulp-if": "^2.0.2",
+    "gulp-rename": "^1.2.3",
+    "main-bower-files": "^2.13.1"
   }
 }
