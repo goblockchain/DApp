@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DApp GoBlockchain</title>
+
+    <!-- Bootstrap -->
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+
+    <!-- Just an image -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="../images/logo.png" width="63" height="50" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">GoBlockchain
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Conta corrente
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Autorizadores</a>
+                      <a class="dropdown-item" href="#">Transações</a>
+                      <a class="dropdown-item" href="#">Saldo</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Eventos</a>
+                    </div>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Certificados</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Identidade
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Consultar</a>
+                        <a class="dropdown-item" href="#">Criar</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Validar</a>
+                    </div>
+                </li>   
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Pagamento
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Criar</a>
+                        <a class="dropdown-item" href="#">Consultar</a>
+                    </div>
+                </li>                                
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Colaboradores</a>
+                </li>                                                                         
+            </ul>
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                    <label id="statusConnection" class="alert alert-primary">...</label>
+                </li>                                                 
+            </ul>
+        </div>
+    </nav>  
+    <div class="container">
+        <br>
+        <h2>Autorizadores</h2>
+        <br>
+        <form>
+            <h4>Adicionar</h4>            
+            <div class="form-group">
+                <label for="exampleInputEmail1">Conta</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Perfil</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                </select>                
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <hr size="10">
+        </form> 
+        <form>
+            <hr size="10">
+            <h4>Remover Autorizadores</h4>            
+            <div class="form-group">
+                <label for="exampleInputEmail1">Conta</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <button type="submit" class="btn btn-danger">Submit</button>
+            <hr size="10">        
+        </form>    
+        <form>
+            <hr size="10">
+            <h4>Lista Autorizadores</h4>            
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    <th scope="col">Status</th>                        
+                    <th scope="col">Data</th>
+                    <th scope="col">Conta</th>
+                    <th scope="col">Tipo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row">Ativo</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">Inativo</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    </tr>
+                    <tr>
+                    <th scope="row">Ativo</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr size="10">        
+        </form>                       
+    </div>
+    <br> 
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; GoBlockchain 2018</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../vendor/web3/web3.js"></script>
+    <script src="../../scripts/main.js"></script>
+</body>
+
+</html>
