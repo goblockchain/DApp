@@ -27,6 +27,12 @@ gulp.task('vendor', function() {
   ])
   .pipe(gulp.dest('app/vendor/web3'))
 
+  // Font Awesome
+  gulp.src([
+    './bower_components/Font-Awesome/svg-with-js/js/fontawesome-all.min.js'
+  ])
+  .pipe(gulp.dest('app/vendor/font-awesome'))
+
 })
 
 // Default task
