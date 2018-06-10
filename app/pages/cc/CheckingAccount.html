@@ -94,9 +94,10 @@
           </div>
           <div class="modal-body">
             <p>Transação executada, aguarde a validação da rede...</p>
-            <mark id="lblTransaction" class="small">...</mark>
+            <p>Transação: <mark id="lblTransaction" class="small"></mark></p>
           </div>
           <div class="modal-footer">
+            <a id="transactionDetails" class="btn btn-primary" role="button" target="_blank">Ver detalhes</a>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
           </div>
         </div>
@@ -125,8 +126,8 @@
             <small id="textDepositHelp" class="form-text text-muted">Quantidade de ETH a ser depositado no contrato.</small>
           </div>
           <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-primary">
-            <i class="fas fa-arrow-circle-down"></i>
             Depositar
+            <i class="fas fa-arrow-circle-down"></i>
           </button>
         </div>
       </div>
@@ -151,8 +152,8 @@
             <small id="textDescriptionHelp" class="form-text text-muted">Descrição do saque.</small>
           </div>
           <button type="button" id="btnWithdraw" name="btnWithdraw" class="btn btn-primary">
-            <i class="fas fa-arrow-circle-up"></i>
             Sacar
+            <i class="fas fa-arrow-circle-up"></i>
           </button>
         </div>
       </div>
