@@ -35,8 +35,6 @@ $("#btnWithdraw").click(() => {
   let _amount = $("#txtWithdrawAmount").val();
   let _description = $("#txtWithdrawDescription").val();
 
-  console.log(_amount, _description);
-
   instance.withdraw(_amount, _description, (err, result) => {
     if (!err) {
       console.info(result);
@@ -51,6 +49,7 @@ function setModal(transaction) {
   $('#lblTransaction').text(transaction);
   $('#transactionDetails').attr('href', 'https://rinkeby.etherscan.io/tx/'.concat(transaction));
   $('#transactionModal').modal('show');
+  $('#frmCheckingAccount')[0].reset();
 }
 
 $('#transactionDetails').click(() => {
