@@ -29,8 +29,20 @@ $("#btnDeposit").click(() => {
  * Withdraw ether from the contract 
  */
 
-$("btnWithdraw").click(() => {
+$("#btnWithdraw").click(() => {
+  let instance = getInstanceContract();
 
+  let _amount = $("#txtWithdrawAmount").val();
+  let _description = $("#txtWithdrawDescription").val();
+
+  instance.withdraw(_amount, _description, (err, result) => {
+    if (!err) {
+      console.info(result);
+      setModal(result);
+    } else {
+      console.error(err);
+    }
+  });
 }) 
 
 function setModal(transaction) {
