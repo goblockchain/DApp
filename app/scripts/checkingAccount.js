@@ -32,8 +32,8 @@ $("#btnDeposit").click(() => {
 $("#btnWithdraw").click(() => {
   let instance = getInstanceContract();
 
-  let _amount = $("#txtWithdrawAmount").val();
-  let _description = $("#txtWithdrawDescription").val();
+  let _amount = web3.toWei($("#txtWithdrawAmount").val(), 'ether');
+  let _description = web3.toHex($("#txtWithdrawDescription").val());
 
   instance.withdraw(_amount, _description, (err, result) => {
     if (!err) {
