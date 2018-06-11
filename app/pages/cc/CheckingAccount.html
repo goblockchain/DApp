@@ -82,19 +82,18 @@
         <p class="lead">Funcionalidade responsável por gerenciar o saldo do contrato</p>
       </div>
     </div>
+    
     <!-- Transaction Modal -->
     <div class="modal fade" id="transactionModal" tabindex="-1" role="dialog" aria-labelledby="transactionModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="transactionModalLabel">Transação</h5>
+            <h5 class="modal-title" id="transactionModalLabel"></h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <p>Transação executada, aguarde a validação da rede...</p>
-            <p>Transação: <mark id="lblTransaction" class="small"></mark></p>
           </div>
           <div class="modal-footer">
             <a id="transactionDetails" class="btn btn-primary" role="button" target="_blank">Ver detalhes</a>
@@ -112,16 +111,14 @@
     </div>
     <hr />
 
-    <form id="frmCheckingAccount">
-
-      <!-- DEPOSITO -->
-
+    <!-- DEPOSITO -->
+    <form id="formDeposit">
       <div class="card">
         <h4 class="card-header">Depósito</h4>
         <div class="card-body">
           <div class="form-group">
             <label for="txtDepositAmount">Quantidade</label>
-            <input type="number" step="0.0000001" min="0" class="form-control" id="txtDepositAmount" aria-describedby="textDepositHelp"
+            <input type="number" class="form-control" id="txtDepositAmount" name="txtDepositAmount" aria-describedby="textDepositHelp"
               placeholder="ETH" required>
             <small id="textDepositHelp" class="form-text text-muted">Quantidade de ETH a ser depositado no contrato.</small>
           </div>
@@ -131,23 +128,24 @@
           </button>
         </div>
       </div>
+    </form>
 
-      <hr size="10">
-
-      <!-- SAQUE -->
-
+    <hr size="10">
+    
+    <!-- SAQUE -->
+    <form id="formWithdraw">  
       <div class="card">
         <h4 class="card-header">Saque</h4>
         <div class="card-body">
           <div class="form-group">
             <label for="txtWithdrawAmount">Quantidade</label>
-            <input type="number" step="0.0000001" min="0" class="form-control" id="txtWithdrawAmount" aria-describedby="textWithdrawHelp"
+            <input type="number" class="form-control" id="txtWithdrawAmount" name="txtWithdrawAmount" aria-describedby="textWithdrawHelp"
               placeholder="ETH" required>
             <small id="textWithdrawHelp" class="form-text text-muted">Quantidade de ETH a ser sacado do contrato.</small>
           </div>
           <div class="form-group">
             <label for="txtWithdrawDescription">Descrição</label>
-            <input type="text" class="form-control" id="txtWithdrawDescription" aria-describedby="textDescriptionHelp"
+            <input type="text" class="form-control" id="txtWithdrawDescription" name="txtWithdrawDescription" aria-describedby="textDescriptionHelp"
               placeholder="Descrição" required>
             <small id="textDescriptionHelp" class="form-text text-muted">Descrição do saque.</small>
           </div>
@@ -157,9 +155,10 @@
           </button>
         </div>
       </div>
-
-      <hr size="10">
     </form>
+
+    <hr size="10">
+    
   </div>
   <br>
   <!-- Footer -->
@@ -173,6 +172,7 @@
   <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
   <script src="../../vendor/web3/web3.js"></script>
   <script src="../../vendor/font-awesome/fontawesome-all.min.js"></script>
+  <script src="../../vendor/jquery-validation/jquery.validate.min.js"></script>
   <script src="../../scripts/main.js"></script>
   <script src="../../scripts/checkingAccount.js"></script>
 </body>
