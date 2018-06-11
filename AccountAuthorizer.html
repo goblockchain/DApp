@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DApp GoBlockchain</title>
+
+    <!-- Bootstrap -->
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+
+    <!-- Just an image -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="../../images/logo.png" width="63" height="50" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">GoBlockchain
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Conta corrente
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Autorizadores</a>
+                      <a class="dropdown-item" href="#">Transações</a>
+                      <a class="dropdown-item" href="#">Saldo</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Eventos</a>
+                    </div>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Certificados</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Identidade
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Consultar</a>
+                        <a class="dropdown-item" href="#">Criar</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Validar</a>
+                    </div>
+                </li>   
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Pagamento
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Criar</a>
+                        <a class="dropdown-item" href="#">Consultar</a>
+                    </div>
+                </li>                                
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Colaboradores</a>
+                </li>                                                                         
+            </ul>
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                    <label id="statusConnection" class="alert alert-primary">...</label>
+                </li>                                                 
+            </ul>
+        </div>
+    </nav>  
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Autorizadores</h1>
+                <p class="lead">Funcionalidade responsável em adicionar e remover colaboradores responsáveis em autorizar as transações do fundo de reserva.</p>
+                <p class="lead">O responsável em adicionar os colabadores é a conta: <span id="lblOwner" class="text-danger"> </span> , <mark>isso pode ser alterado mediante a votação no Aragon.</mark></p>                
+            </div>
+        </div>
+        <br>
+      <!-- Modal -->
+        <div class="modal fade modal-lg" id="transactionModal" tabindex="-1" role="dialog" aria-labelledby="transactionModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="transactionModalLabel">Transação</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Transação execultada, aguarde a validação da rede...</p>
+                        <mark id="lblTransaction" class="small">...</mark>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>  
+  
+        <!-- Modal -->
+        <div class="modal fade" id="authorizerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Consultar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Conta: <strong id="labelConta"></strong></p>
+                    <p>Data: <strong id="labelData"></strong></p>
+                    <p>Status: <strong id="labelStatus"></strong></p>
+                    <p>Tipo: <strong id="labelTipo"></strong></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>                               
+        <form id="frmColabs">
+            <h4>Colaboradores</h4>            
+            <div class="form-group">
+                <label for="txtConta">Conta</label>
+                <input type="text" class="form-control" id="txtConta" aria-describedby="textContaHelp" placeholder="0x90c99175" required>
+                <small id="textContaHelp" class="form-text text-muted">Utiliza a chave pública do colaborador.</small>
+            </div>
+            <div class="form-group">
+                <label for="cmbProfile">Perfil</label>
+                <select class="form-control" id="cmbProfile">
+                    <option value="0">COLAB</option>
+                    <option value="1">ADVISER</option>
+                </select>                
+            </div>
+            <button type="button" id="btnAddAuthorizer" name="btnAddAuthorizer" class="btn btn-primary">Adicionar</button>
+            <button type="button" id="btnAuthorizers" name="btnAuthorizers" class="btn btn-info">Consultar</button>       
+            <button type="button" id="btnRemoveAuthorizer" name="btnRemoveAuthorizer" class="btn btn-danger">Remover</button>                 
+            <hr size="10">
+        </form>   
+    
+        <form>
+            <hr size="10">
+            <h4>Transferir <mark>proprietário</mark> do contrato</h4>
+            <div class="form-group">
+                <label for="txtContaNova">Novo proprietário</label>
+                <input type="text" class="form-control" id="txtContaNova" aria-describedby="txtContaNovaHelp" placeholder="0x90c99175" required>
+                <small id="txtContaNovaHelp" class="form-text text-muted">Utilize a chave do novo responsável do contrato.</small>
+            </div>    
+            <button type="button" id="btnTransferOwnership" name="btnTransferOwnership" class="btn btn-danger">Transferir</button>  
+        </form>                       
+    </div>
+    <br> 
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; GoBlockchain 2018</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../vendor/web3/web3.js"></script>
+    <script src="../../scripts/main.js"></script>
+    <script src="../../scripts/accounAuthorizer.js"></script>
+</body>
+
+</html>
