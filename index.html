@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DApp GoBlockchain</title>
+
+    <!-- Bootstrap -->
+    <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+
+    <!-- Just an image -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="./images/logo.png" width="63" height="50" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">GoBlockchain
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Conta corrente
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="pages/cc/AccountAuthorizer.html">Autorizadores</a>
+                      <a class="dropdown-item" href="#">Transações</a>
+                      <a class="dropdown-item" href="#">Saldo</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Eventos</a>
+                    </div>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Certificados</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Identidade
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Consultar</a>
+                        <a class="dropdown-item" href="#">Criar</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Validar</a>
+                    </div>
+                </li>   
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Pagamento
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Criar</a>
+                        <a class="dropdown-item" href="#">Consultar</a>
+                    </div>
+                </li>                                
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Colaboradores</a>
+                </li>                                                                         
+            </ul>
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                    <label id="statusConnection" class="alert alert-primary">...</label>
+                </li>                                                 
+            </ul>
+        </div>
+    </nav>  
+    <div class="container">
+        <br>
+        <div class="jumbotron">
+            <h1 class="display-4">Ensinando e construindo juntos!</h1>
+            <p class="lead">Nós da GoBlockchain acreditamos que a educação é a base de uma sociedade transparente e justa, por isso estamos focando na criação de DApps para a educação.</p>
+            <hr class="my-4">
+            <p>Além de ensinar Blockchain, utilizamos e aprendemos ser Blockchainers.</p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="#" role="button">Saiba mais</a>
+            </p>
+        </div>
+          
+        <h2>Conheçam nossas DApps</h2>  
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Conta corrente
+                    </button>
+                </h5>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        Os recursos da <b>GoBlockchain</b> podem ser adquiridos e/ou utilizados em Projetos, Investimentos e Doações. Nossas aulas recebem um contribuição entre <b>10%</b> e <b>20%</b> do valor pago pelos alunos, por curso. Os valores são depositados em <b>Ether</b> e o controle das transações é realizado por colaboradores.  
+		    </div>
+		    <div class="card-body">
+			A seguir uma breve descrição do que fazem nossas Funcionalidades de <b>Conta Corrente</b>. 
+		    </div>
+                    <div class="card-body">
+			<u>Autorizadores</u>
+		    </div>
+                    <div class="card-body">
+			<b>Autorizadores</b> é a Funcionalidade responsável por adicionar e remover colaboradores responsáveis pelas autorizações sobre as <b>Transações</b> do Fundo de Reserva.
+		    </div>
+
+		    <ul>
+
+		    <li>O responsável por adicionar os Autorizadores é a conta <b>0x71c20da180d9d50bdfeac773942636d1695b9ec0</b> <i>O responsável poderá ser alterado mediante votação no <b>Aragon</b></i>.</li>
+
+                    <li>Inicialmente teremos um máximo de 10 (dez) Autorizadores.</li>
+                    <li>O <i>status</i> de um Autorizador pode ser <b>Inativo</b> ou <b>Ativo</b>.</li> 
+                    <li>Os tipos de Autorizadores podem ser <i><b>Adviser</b></i> ou <b>Colaborador</b>.</li> 
+                    <li>É possível identificar informações sobre os Autorizadores como Endereço, Data de Entrada, <i>Status</i> e Tipo.</li> 
+                    <li>Para adicionar um Autorizador, o responsável informará o <b>Endereço do Autorizador</b> e o <b>Perfil</b> desejado. Em seguida, utilizará o botão <b>"Adicionar"</b>.</li>
+		    <li>Para consultar informações sobre um Autorizador, o requisitante informará o <b>Endereço do Autorizador</b>, juntamente com seu <b>Perfil</b>. Em seguida, utilizará o botão <b>"Consultar"</b></li>
+                    <li>Para remover um Autorizador, o responsável informará o <b>Endereço do Autorizador</b>, juntamente com seu <b>Perfil</b>. Em seguida, utilizará o botão <b>"Remover"</b>. Diante desta ação, o Autorizador passará ao <i>status</i> de <b>Inativo</b>.</li>
+		    <li>Para transferir a Propriedade de um Contrato, o responsável por este informará o <b>Endereço do Novo Proprietário</b> desejado e utilizará o botão <b>"Transferir"</b> para efetivar a troca da responsabilidade.</li>
+   
+                    </ul>
+
+		    <div class="card-body">
+			<u>Transações</u>
+		    </div>
+
+                    <div class="card-body">
+			<b>Transações</b> é a Funcionalidade que estabelece as regras e demonstra como as Transações ocorrem.
+		    </div>
+
+                    <ul>
+
+		    <li>O mínimo de assinaturas para autorizar uma transação são <b>duas</b> assinaturas de <b><i>Adviser</i></b> e <b>quatro</b> de <b>Colaborador</b>.</li>
+                    <li>A Conta Corrente apresentará a lista de <b>Transações pendentes</b>, bem como o <b><i>status</i></b>.</li>
+                    <li>É possível identificar as informações das transações sobre a transferência de <i>tokens</i> de um endereço para outro.</li> 
+                    <li>É possível <b>tomar</b> e <b>assinar</b> uma transação para enviar <i>tokens</i>. A transação deve existir e o criador não pode assinar sua própria transação.</li> 
+                    <li>O contrato verifica os <i>status</i> das transações e não permite assinatura de uma mesma transação mais de uma vez.</li> 
+                    <li>O proprietário do contrato pode cancelar  as transações solicitadas por qualquer usuário.</li>
+		       
+                    </ul>
+
+                    <div class="card-body">
+			<u>Saldo</u>
+		    </div>
+
+                    <div class="card-body">
+			<b>Saldo</b> é a Funcionalidade que permite verificar o <b>Saldo</b> da Conta Corrente, considerando as transações de <b>depósitos</b> e <b>saques</b>.
+		    </div>
+                    
+                    <ul>
+
+		    <li>Para fazer um <b>depósito</b>, um <b>usuário</b> informará a quantidade de ETH e, em seguida utilizará o botão <b>“Depositar”</b> para enviar o valor desejado de Ether para o contrato.</li>
+                    <li>Para fazer um saque, um <b>Autorizador</b> informará a quantidade de ETH que deseja sacar e uma descrição (opcional) e, em seguida utilizará o botão <b>“Sacar”</b>. Será criada uma transação com o status <b>“Aguardando”</b>. A transferência será efetuada assim que for aprovada por no mínimo <b>2 <i>Advisers</i></b> e <b>4 Colaboradores</b>.</li>
+                    		       
+                    </ul>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Certificado
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        Desenvolvemos um serviço de certificados no Blockchain que pode ser utilizado por qualquer instituição para controlar as fraudes de certificados.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Identificação
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        Os dos nosso desafios é criar uma maneira segura e fácil de autenticação de pessoas em uma rede descentralizada.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingFour">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Pagamentos
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                    <div class="card-body">
+                        Para gerar segurança vamos desenvolver uma DApp que libera o pagamento mediante critérios pré-estabelecidos via smart contracts.
+                    </div>
+                </div>
+            </div>    
+        </div>           
+    </div>
+    <br> 
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; GoBlockchain 2018</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./vendor/web3/web3.js"></script>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/accounAuthorizer.js"></script>
+</body>
+
+</html>
