@@ -31,9 +31,9 @@
                       Conta corrente
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Autorizadores</a>
-                      <a class="dropdown-item" href="#">Transações</a>
-                      <a class="dropdown-item" href="#">Saldo</a>
+                        <a class="dropdown-item" href="./AccountAuthorizer.html">Autorizadores</a>
+                        <a class="dropdown-item" href="#">Transações</a>
+                        <a class="dropdown-item" href="./CheckingAccount.html">Saldo</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Eventos</a>
                     </div>
@@ -82,7 +82,7 @@
         </div>
         <br>
       <!-- Modal -->
-        <div class="modal fade modal-lg" id="transactionModal" tabindex="-1" role="dialog" aria-labelledby="transactionModalLabel" aria-hidden="true">
+        <div class="modal fade" id="transactionModal" tabindex="-1" role="dialog" aria-labelledby="transactionModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -92,10 +92,11 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Transação execultada, aguarde a validação da rede...</p>
-                        <mark id="lblTransaction" class="small">...</mark>
+                        <p>Transação executada, aguarde a validação da rede...</p>
+                        <p>Transação: <mark id="lblTransaction" class="small"></mark></p>
                     </div>
                     <div class="modal-footer">
+                        <a id="transactionDetails" class="btn btn-primary" role="button" target="_blank">Ver detalhes</a>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     </div>
                 </div>
