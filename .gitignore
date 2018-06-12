@@ -1,8 +1,11 @@
 # Created by https://www.gitignore.io/api/node,bower
 
+### Bower ###
 bower_components
 .bower-cache
+.bower-registry
 .bower-tmp
+
 ### Node ###
 # Logs
 logs
@@ -35,6 +38,7 @@ coverage
 .lock-wscript
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
 
 # Dependency directories
 node_modules/
