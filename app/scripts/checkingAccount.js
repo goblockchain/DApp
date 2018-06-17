@@ -1,6 +1,9 @@
 // CheckingAccount.sol
 
 $(document).ready(() => {
+
+  isAuthorizer(web3.eth.defaultAccount);
+  getWalletBalance();
   eventDepositFunds();
 
   $("#formDeposit").validate({
@@ -38,8 +41,6 @@ $(document).ready(() => {
       }
     }
   });
-
-  getWalletBalance();
 });
 
 $.validator.addMethod("validWei", function (value, element) {
@@ -54,7 +55,6 @@ $.validator.addMethod("validWei", function (value, element) {
 
 $("#btnDeposit").click(() => {
   if ($("#formDeposit").valid()) {
-    let instance = getInstanceContract();
     let _amount = $("#txtDepositAmount").val();
     let data = {
       to: instance.address,
@@ -80,8 +80,6 @@ $("#btnDeposit").click(() => {
 
 $("#btnWithdraw").click(() => {
   if ($("#formWithdraw").valid()) {
-    let instance = getInstanceContract();
-
     let _amount = web3.toWei($("#txtWithdrawAmount").val(), 'ether');
     let _description = web3.toHex($("#txtWithdrawDescription").val());
 
@@ -100,7 +98,6 @@ $("#btnWithdraw").click(() => {
 
 // watch DepositFunds events
 function eventDepositFunds() {
-  var instance = getInstanceContract();
   var event = instance.DepositFunds();
   event.watch(function (error, result) {
     if (!error) {
@@ -143,8 +140,25 @@ $('#transactionDetails').click(() => {
   $('#modal').modal('toggle');
 })
 
+function isAuthorizer(address) {
+  instance._authorizers.call(address, function (err, result) {
+    if (!err) {
+      if (result[0].toString() !== '0x0000000000000000000000000000000000000000') {
+        return;
+      } else {
+        $('#withdraw .card-body').html(
+          '<div class="alert alert-danger" role="alert">' +
+            'Você precisa ser um Autorizador para solicitar saques!' +
+          '</div>'
+        )
+      }
+    } else {
+      console.error(err);
+    }
+  });
+}
+
 function getWalletBalance() {
-  let instance = getInstanceContract();
   instance.walletBalance((err, result) => {
     if (!err) {
       $('#balance').text(web3.fromWei(result, 'ether') + " ETH");
