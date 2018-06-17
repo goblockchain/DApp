@@ -1,6 +1,8 @@
 // CheckingAccount.sol
 
 $(document).ready(() => {
+  eventDepositFunds();
+
   $("#formDeposit").validate({
     rules: {
       "txtDepositAmount": {
@@ -40,9 +42,9 @@ $(document).ready(() => {
   getWalletBalance();
 });
 
-$.validator.addMethod( "validWei", function( value, element ) {
-	return this.optional( element ) || value >= 0.000000000000000001;
-}, "Informe um valor maior ou igual a 1 wei (0.000000000000000001 ETH)." );
+$.validator.addMethod("validWei", function (value, element) {
+  return this.optional(element) || value >= 0.000000000000000001;
+}, "Informe um valor maior ou igual a 1 wei (0.000000000000000001 ETH).");
 
 // function() public payable {}
 
@@ -96,6 +98,19 @@ $("#btnWithdraw").click(() => {
   }
 })
 
+// watch DepositFunds events
+function eventDepositFunds() {
+  var instance = getInstanceContract();
+  var event = instance.DepositFunds();
+  event.watch(function (error, result) {
+    if (!error) {
+      getWalletBalance();
+    } else {
+      console.log(error);
+    }
+  });
+}
+
 function setModal(txn, action) {
   switch (action) {
     case 'DEPOSIT':
@@ -103,7 +118,7 @@ function setModal(txn, action) {
       $('.modal-body').html(
         '<p>Transação executada, aguarde a validação da rede...</p>' +
         '<p>Transação: <mark id="lblTransaction" class="small"></mark></p>'
-      );      
+      );
       break;
     case 'WITHDRAW':
       $('#transactionModalLabel').text('Saque Realizado');
@@ -113,7 +128,7 @@ function setModal(txn, action) {
         '<p>Transação: <mark id="lblTransaction" class="small"></mark></p>'
       );
       break;
-  
+
     default:
       break;
   }
