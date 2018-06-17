@@ -1,9 +1,20 @@
 // CheckingAccount.sol
 
 $(document).ready(() => {
+  isAuthorizer(account, authorizer => {
+    if (!authorizer) {
+      $('#withdraw .card-body').html(
+        '<div class="alert alert-danger" role="alert">' +
+          'Você precisa ser um Autorizador para solicitar saques!' +
+        '</div>'
+      )
+    }
+  });
 
-  isAuthorizer(web3.eth.defaultAccount);
-  getWalletBalance();
+  getWalletBalance(balance => {
+    $('#balance').text(web3.fromWei(balance, 'ether') + " ETH");
+  });
+
   eventDepositFunds();
 
   $("#formDeposit").validate({
@@ -43,7 +54,7 @@ $(document).ready(() => {
   });
 });
 
-$.validator.addMethod("validWei", function (value, element) {
+$.validator.addMethod("validWei", (value, element) => {
   return this.optional(element) || value >= 0.000000000000000001;
 }, "Informe um valor maior ou igual a 1 wei (0.000000000000000001 ETH).");
 
@@ -85,7 +96,6 @@ $("#btnWithdraw").click(() => {
 
     instance.withdraw(_amount, _description, (err, result) => {
       if (!err) {
-        console.info(result);
         setModal(result, 'WITHDRAW');
       } else {
         console.error(err);
@@ -99,11 +109,13 @@ $("#btnWithdraw").click(() => {
 // watch DepositFunds events
 function eventDepositFunds() {
   var event = instance.DepositFunds();
-  event.watch(function (error, result) {
-    if (!error) {
-      getWalletBalance();
+  event.watch((err) => {
+    if (!err) {
+      getWalletBalance(balance => {
+        $('#balance').text(web3.fromWei(balance, 'ether') + " ETH");
+      });
     } else {
-      console.log(error);
+      console.log(err);
     }
   });
 }
@@ -139,32 +151,4 @@ function setModal(txn, action) {
 $('#transactionDetails').click(() => {
   $('#modal').modal('toggle');
 })
-
-function isAuthorizer(address) {
-  instance._authorizers.call(address, function (err, result) {
-    if (!err) {
-      if (result[0].toString() !== '0x0000000000000000000000000000000000000000') {
-        return;
-      } else {
-        $('#withdraw .card-body').html(
-          '<div class="alert alert-danger" role="alert">' +
-            'Você precisa ser um Autorizador para solicitar saques!' +
-          '</div>'
-        )
-      }
-    } else {
-      console.error(err);
-    }
-  });
-}
-
-function getWalletBalance() {
-  instance.walletBalance((err, result) => {
-    if (!err) {
-      $('#balance').text(web3.fromWei(result, 'ether') + " ETH");
-    } else {
-      console.error(err);
-    }
-  });
-}
 
