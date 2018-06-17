@@ -1,6 +1,22 @@
 // CheckingAccount.sol
 
 $(document).ready(() => {
+  isAuthorizer(account, authorizer => {
+    if (!authorizer) {
+      $('#withdraw .card-body').html(
+        '<div class="alert alert-danger" role="alert">' +
+          'Você precisa ser um Autorizador para solicitar saques!' +
+        '</div>'
+      )
+    }
+  });
+
+  getWalletBalance(balance => {
+    $('#balance').text(web3.fromWei(balance, 'ether') + " ETH");
+  });
+
+  eventDepositFunds();
+
   $("#formDeposit").validate({
     rules: {
       "txtDepositAmount": {
@@ -36,13 +52,11 @@ $(document).ready(() => {
       }
     }
   });
-
-  getWalletBalance();
 });
 
-$.validator.addMethod( "validWei", function( value, element ) {
-	return this.optional( element ) || value >= 0.000000000000000001;
-}, "Informe um valor maior ou igual a 1 wei (0.000000000000000001 ETH)." );
+$.validator.addMethod("validWei", (value, element) => {
+  return this.optional(element) || value >= 0.000000000000000001;
+}, "Informe um valor maior ou igual a 1 wei (0.000000000000000001 ETH).");
 
 // function() public payable {}
 
@@ -52,7 +66,6 @@ $.validator.addMethod( "validWei", function( value, element ) {
 
 $("#btnDeposit").click(() => {
   if ($("#formDeposit").valid()) {
-    let instance = getInstanceContract();
     let _amount = $("#txtDepositAmount").val();
     let data = {
       to: instance.address,
@@ -78,14 +91,11 @@ $("#btnDeposit").click(() => {
 
 $("#btnWithdraw").click(() => {
   if ($("#formWithdraw").valid()) {
-    let instance = getInstanceContract();
-
     let _amount = web3.toWei($("#txtWithdrawAmount").val(), 'ether');
     let _description = web3.toHex($("#txtWithdrawDescription").val());
 
     instance.withdraw(_amount, _description, (err, result) => {
       if (!err) {
-        console.info(result);
         setModal(result, 'WITHDRAW');
       } else {
         console.error(err);
@@ -96,6 +106,20 @@ $("#btnWithdraw").click(() => {
   }
 })
 
+// watch DepositFunds events
+function eventDepositFunds() {
+  var event = instance.DepositFunds();
+  event.watch((err) => {
+    if (!err) {
+      getWalletBalance(balance => {
+        $('#balance').text(web3.fromWei(balance, 'ether') + " ETH");
+      });
+    } else {
+      console.log(err);
+    }
+  });
+}
+
 function setModal(txn, action) {
   switch (action) {
     case 'DEPOSIT':
@@ -103,7 +127,7 @@ function setModal(txn, action) {
       $('.modal-body').html(
         '<p>Transação executada, aguarde a validação da rede...</p>' +
         '<p>Transação: <mark id="lblTransaction" class="small"></mark></p>'
-      );      
+      );
       break;
     case 'WITHDRAW':
       $('#transactionModalLabel').text('Saque Realizado');
@@ -113,7 +137,7 @@ function setModal(txn, action) {
         '<p>Transação: <mark id="lblTransaction" class="small"></mark></p>'
       );
       break;
-  
+
     default:
       break;
   }
@@ -127,15 +151,4 @@ function setModal(txn, action) {
 $('#transactionDetails').click(() => {
   $('#modal').modal('toggle');
 })
-
-function getWalletBalance() {
-  let instance = getInstanceContract();
-  instance.walletBalance((err, result) => {
-    if (!err) {
-      $('#balance').text(web3.fromWei(result, 'ether') + " ETH");
-    } else {
-      console.error(err);
-    }
-  });
-}
 
