@@ -31,9 +31,9 @@
                       Conta corrente
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Autorizadores</a>
-                      <a class="dropdown-item" href="#">Transações</a>
-                      <a class="dropdown-item" href="#">Saldo</a>
+                        <a class="dropdown-item" href="./AccountAuthorizer.html">Autorizadores</a>
+                        <a class="dropdown-item" href="#">Transações</a>
+                        <a class="dropdown-item" href="./CheckingAccount.html">Saldo</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Eventos</a>
                     </div>
@@ -77,12 +77,12 @@
             <div class="container">
                 <h1 class="display-4">Autorizadores</h1>
                 <p class="lead">Funcionalidade responsável em adicionar e remover colaboradores responsáveis em autorizar as transações do fundo de reserva.</p>
-                <p class="lead">O responsável em adicionar os colabadores é a conta: <span id="lblOwner" class="text-danger"> </span> , <mark>isso pode ser alterado mediante a votação no Aragon.</mark></p>                
+                <p class="lead">O responsável em adicionar os colaboradores é a conta: <span id="lblOwner" class="text-danger"> </span> , <mark>isso pode ser alterado mediante a votação no Aragon.</mark></p>                
             </div>
         </div>
         <br>
       <!-- Modal -->
-        <div class="modal fade modal-lg" id="transactionModal" tabindex="-1" role="dialog" aria-labelledby="transactionModalLabel" aria-hidden="true">
+        <div class="modal fade" id="transactionModal" tabindex="-1" role="dialog" aria-labelledby="transactionModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -92,10 +92,11 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Transação execultada, aguarde a validação da rede...</p>
-                        <mark id="lblTransaction" class="small">...</mark>
+                        <p>Transação executada, aguarde a validação da rede...</p>
+                        <p>Transação: <mark id="lblTransaction" class="small"></mark></p>
                     </div>
                     <div class="modal-footer">
+                        <a id="transactionDetails" class="btn btn-primary" role="button" target="_blank">Ver detalhes</a>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                     </div>
                 </div>

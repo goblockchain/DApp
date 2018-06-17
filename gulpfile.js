@@ -20,12 +20,24 @@ gulp.task('vendor', function() {
     ])
     .pipe(gulp.dest('app/vendor/jquery'))
 
-  // jQuery
+  // Web3
   gulp.src([
     './bower_components/web3/dist/*',
     '!./bower_components/web3/dist/web3.min.js'
   ])
   .pipe(gulp.dest('app/vendor/web3'))
+
+  // jQuey Validation
+  gulp.src([
+    './bower_components/jquery-validation/dist/jquery.validate.min.js'
+  ])
+  .pipe(gulp.dest('app/vendor/jquery-validation'))
+
+  // Font Awesome
+  gulp.src([
+    './bower_components/Font-Awesome/svg-with-js/js/fontawesome-all.min.js'
+  ])
+  .pipe(gulp.dest('app/vendor/font-awesome'))
 
 })
 
