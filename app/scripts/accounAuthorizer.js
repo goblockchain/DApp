@@ -4,45 +4,51 @@
  */
 //function addAuthorizer(address _authorized, TypeAuthorizer _typeAuthorizer) public onlyOwner {
 $("#btnAddAuthorizer").click(function () {
-    let instance = getInstanceContract();
-    let _authorized = $("#txtConta").val();
-    let _typeAuthorizer = $("#cmbProfile").val();
-    instance.addAuthorizer(_authorized, _typeAuthorizer, function (error, result) {
-        if (error) {
-            console.info(error);
-        } else {
-            console.info(result);
-            setModal(result);
-        }
-    });
+    if ($("#frmColabs").valid()) {
+        let instance = getInstanceContract();
+        let _authorized = $("#txtConta").val();
+        let _typeAuthorizer = $("#cmbProfile").val();
+        instance.addAuthorizer(_authorized, _typeAuthorizer, function (error, result) {
+            if (error) {
+                console.info(error);
+            } else {
+                console.info(result);
+                setModal(result);
+            }
+        });
+    }
 });
 
 
 //function removeAuthorizer(address _authorized) public onlyOwner {
 $("#btnRemoveAuthorizer").click(function () {
-    let instance = getInstanceContract();
-    let _authorized = $("#txtConta").val();
-    instance.removeAuthorizer(_authorized, function (error, result) {
-        if (error) {
-            console.info(error);
-        } else {
-            setModal(result);
-        }
-    });
+    if ($("#frmColabs").valid()) {
+        let instance = getInstanceContract();
+        let _authorized = $("#txtConta").val();
+        instance.removeAuthorizer(_authorized, function (error, result) {
+            if (error) {
+                console.info(error);
+            } else {
+                setModal(result);
+            }
+        });
+    }
 });
 
 //function transferOwnership(address newOwner) public onlyOwner {
 $("#btnTransferOwnership").click(function () {
-    let instance = getInstanceContract();
-    let _authorized = $("#txtContaNova").val();
-    instance.transferOwnership(_authorized, function (error, result) {
-        if (error) {
-            console.info(error);
-        } else {
-            setModal(result);
-            eventTransferOwnership();
-        }
-    });
+    if ($("#frmTransfer").valid()) {
+        let instance = getInstanceContract();
+        let _authorized = $("#txtContaNova").val();
+        instance.transferOwnership(_authorized, function (error, result) {
+            if (error) {
+                console.info(error);
+            } else {
+                setModal(result);
+                eventTransferOwnership();
+            }
+        });
+    }
 });
 
 //event.stopWatching();
@@ -64,27 +70,29 @@ function eventTransferOwnership() {
 
 //mapping(address => Authorizer) public _authorizers;
 $("#btnAuthorizers").click(function () {
-    let instance = getInstanceContract();
-    let _authorized = $("#txtConta").val();
+    if ($("#frmColabs").valid()) {
+        let instance = getInstanceContract();
+        let _authorized = $("#txtConta").val();
 
-    instance._authorizers.call(_authorized, function (error, result) {
-        if (error) {
-            console.info(error);
-        } else {
-            let _address = result[0];
-            var entryDate = new Date(result[1] * 1000);
-            entryDate = entryDate.toUTCString();
-            let statusAuthorizer = result[2];
-            let typeAuthorizer = result[3];
+        instance._authorizers.call(_authorized, function (error, result) {
+            if (error) {
+                console.info(error);
+            } else {
+                let _address = result[0];
+                var entryDate = new Date(result[1] * 1000);
+                entryDate = entryDate.toUTCString();
+                let statusAuthorizer = result[2];
+                let typeAuthorizer = result[3];
 
-            $('#authorizerModal').modal('show')
-            $("#labelConta").text(_address);
-            $("#labelData").text(entryDate);
-            $("#labelStatus").text(statusAuthorizer);
-            $("#labelTipo").text(typeAuthorizer);
+                $('#authorizerModal').modal('show')
+                $("#labelConta").text(_address);
+                $("#labelData").text(entryDate);
+                $("#labelStatus").text(statusAuthorizer);
+                $("#labelTipo").text(typeAuthorizer);
 
-        }
-    });
+            }
+        });
+    }
 });
 
 function setModal(transaction) {
@@ -93,8 +101,34 @@ function setModal(transaction) {
     $('#transactionModal').modal('show')
 }
 
-$(document).ready(function () {
+$(document).ready(() => {
+    $("#frmColabs").validate({
+      rules: {
+        "txtConta": {
+          required: true
+        }
+      },
+      messages: {
+        "txtConta": {
+          required: "Informe a chave pública do colaborador"
+        }
+      }
+    });
+
+    $("#frmTransfer").validate({
+        rules: {
+          "txtContaNova": {
+            required: true
+          }
+        },
+        messages: {
+          "txtContaNova": {
+            required: "Informe a chave pública do novo colaborador responsável pelo contrato"
+          }
+        }
+      });
+
     getOwner(function (result) {
         $("#lblOwner").text(result);
     });
-});
+  });
