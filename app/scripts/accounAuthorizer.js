@@ -89,7 +89,33 @@ function setModal(transaction) {
 }
 
 $(document).ready(() => {
-  getOwner(result => {
-    $("#lblOwner").text(result);
+  $("#frmColabs").validate({
+    rules: {
+      "txtConta": {
+        required: true
+      }
+    },
+    messages: {
+      "txtConta": {
+        required: "Informe a chave pública do colaborador"
+      }
+    }
+  });
+
+  $("#frmTransfer").validate({
+      rules: {
+        "txtContaNova": {
+          required: true
+        }
+      },
+      messages: {
+        "txtContaNova": {
+          required: "Informe a chave pública do novo colaborador responsável pelo contrato"
+        }
+      }
+    });
+
+  getOwner(function (result) {
+      $("#lblOwner").text(result);
   });
 });

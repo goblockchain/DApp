@@ -6,6 +6,7 @@
 
     <!-- Bootstrap -->
     <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../../styles/style.css" rel="stylesheet" media="screen">
 </head>
 
 <body>
@@ -129,7 +130,7 @@
             <h4>Colaboradores</h4>            
             <div class="form-group">
                 <label for="txtConta">Conta</label>
-                <input type="text" class="form-control" id="txtConta" aria-describedby="textContaHelp" placeholder="0x90c99175" required>
+                <input type="text" class="form-control" id="txtConta"  name="txtConta" aria-describedby="textContaHelp" placeholder="0x90c99175" required>
                 <small id="textContaHelp" class="form-text text-muted">Utiliza a chave pública do colaborador.</small>
             </div>
             <div class="form-group">
@@ -145,12 +146,12 @@
             <hr size="10">
         </form>   
     
-        <form>
+        <form id="frmTransfer">
             <hr size="10">
             <h4>Transferir <mark>dono</mark> do contrato</h4>
             <div class="form-group">
                 <label for="txtContaNova">Novo dono</label>
-                <input type="text" class="form-control" id="txtContaNova" aria-describedby="txtContaNovaHelp" placeholder="0x90c99175" required>
+                <input type="text" class="form-control" id="txtContaNova" name="txtContaNova" aria-describedby="txtContaNovaHelp" placeholder="0x90c99175" required>
                 <small id="txtContaNovaHelp" class="form-text text-muted">Utilize a chave do novo responsável do contrato.</small>
             </div>    
             <button type="button" id="btnTransferOwnership" name="btnTransferOwnership" class="btn btn-danger">Transferir</button>  
@@ -169,6 +170,8 @@
     <script src="../../vendor/web3/web3.js"></script>
     <script src="../../scripts/main.js"></script>
     <script src="../../scripts/accounAuthorizer.js"></script>
+    <script src="../../vendor/font-awesome/fontawesome-all.min.js"></script>
+    <script src="../../vendor/jquery-validation/jquery.validate.min.js"></script>    
 </body>
 
 </html>
