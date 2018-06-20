@@ -49,7 +49,8 @@ gulp.task('browserSync', function() {
   browserSync.init({
     server: {
       baseDir: 'app',
-      directory: true
+      main: 'index.html',
+      directory: false
     }
   });
 });
