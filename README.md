@@ -11,8 +11,10 @@ Projeto composto por DApps que estão sendo criadas de forma colaborativa pela c
 - Certificado
 - Pagamento
 
+### Acesse nossa DApp [aqui](https://goblockchain.github.io/DApp/app/index.html) 
 
-### Instalação
+
+### Instalação local
 
 Para navegar no projeto em seu computador, execute dentro da pasta `DApp` os seguintes comandos.
 
