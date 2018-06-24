@@ -91,50 +91,105 @@
     <div class="container">
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <h1 class="display-4">Enviar tokens</h1>
-                <p class="lead">Essa funcionalidade é responsável pelo envio de tokens para os colaboradores.</p>
-                <p class="lead">Após uma atividade analisada e aceita o colaborador responsável recebe os tokens referente a atividade.
-                    <span
-                        id="lblOwner" class="text-danger"> </span>
-                        <mark>Conheça a atividades que você pode colaborar no trello da GO,
-                            <a target="_blank" href="https://trello.com/b/mnVqJvV8/goblockchain-colaboradores">aqui</a>.</mark>
-                </p>
+                <h1 class="display-4">Aprovar solicitações de tokens</h1>
+                <p class="lead">Essa funcionalidade é responsável em aprovar as solicitações de tokens de colaboradores.</p>
+                <p class="lead">Somente os perfis especialista tem permissão para votar em aprovar ou recusar uma solicitação,
+                    <mark>após 40% de aceite o token é liberado ao solicitante</mark>.</p>
             </div>
         </div>
-        <div class="alert alert-dark" role="alert">
-            Somente especialistas podem realizar transferências! Conheça as reputações da GO
-            <a href="reputacoes.html">aqui</a>
+        <div class="alert alert-success" role="alert">
+            Olá! Seu perfil é de especialistas e você pode votar para aprovar ou recusar as solicitações abaixo.
         </div>
         <br>
-        <form id="frmColabs">
-            <!-- DEPOSITO -->
-            <form id="formDeposit">
-                <div class="card">
-                    <h4 class="card-header">Transferência</h4>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label for="txtDepositAmount">Chave pública</label>
-                            <input type="number" class="form-control" id="txtDepositAmount" name="txtDepositAmount" aria-describedby="textDepositHelp"
-                                placeholder="0xAc5.." required>
-                            <small id="textDepositHelp" class="form-text text-muted">Informa a chave pública do colaborador.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="txtDepositAmount">Quantidade</label>
-                            <input type="number" class="form-control" id="txtDepositAmount" name="txtDepositAmount" aria-describedby="textDepositHelp"
-                                placeholder="GBC" required>
-                            <small id="textDepositHelp" class="form-text text-muted">Quantidade de Token GBC a ser depositado no contrato.</small>
-                        </div>
-                        <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-primary">
-                            Transferir
-                            <i class="fas fa-arrow-circle-down"></i>
+        <form id="frmApproveRequest">
+            <div class="card">
+                <h4 class="card-header">Aprovação</h4>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="txtDepositAmount">ID da solicitação</label>
+                        <input type="number" class="form-control" id="txtDepositAmount" name="txtDepositAmount" aria-describedby="textDepositHelp"
+                            placeholder="0xAc5.." required>
+                        <small id="textDepositHelp" class="form-text text-muted">Informe o ID da solicitação ao Token.</small>
+                    </div>
+                    <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Consultar
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-success">
+                        Aprovar
+                        <i class="fas fa-arrow-alt-circle-up"></i>
+                    </button>
+                    <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-danger">
+                        Reprovar
+                        <i class="fas fa-arrow-alt-circle-down"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Consulta solicitação</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+                    <div class="modal-body">
+                        <div class="alert alert-success" role="alert">
+                            5 Votos para aprovar
+                        </div>
+                        <div class="alert alert-danger" role="alert">
+                            3 Votos para reprovar
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
-            </form>
-
-            <hr size="10">
-
-        </form>
+            </div>
+        </div>
+        <br>
+        <h5>Solicitações de token</h5>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Quantidade</th>
+                    <th scope="col">Endereço</th>
+                    <th scope="col">Atividade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>12/12/2018</td>
+                    <td>12 GBC</td>
+                    <td>0xAc518aeF97507ce8c50630c210d73657520c8ef8</td>
+                    <td>https://trello.com/c/ZfAstEQA</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>12/12/2018</td>
+                    <td>12 GBC</td>
+                    <td>0xAc518aeF97507ce8c50630c210d73657520c8ef8</td>
+                    <td>https://trello.com/c/ZfAstEQA</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>12/12/2018</td>
+                    <td>12 GBC</td>
+                    <td>0xAc518aeF97507ce8c50630c210d73657520c8ef8</td>
+                    <td>https://trello.com/c/ZfAstEQA</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <br>
     <!-- Footer -->
@@ -148,6 +203,7 @@
     <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../vendor/web3/web3.js"></script>
     <script src="../../scripts/main.js"></script>
+    <script src="../../vendor/font-awesome/fontawesome-all.min.js"></script>
     <script src="../../scripts/collaborators.js"></script>
 </body>
 
