@@ -11,7 +11,7 @@ Projeto composto por DApps que estão sendo criadas de forma colaborativa pela c
 - Certificado
 - Pagamento
 
-### Acesse nossa DApp [aqui](https://goblockchain.github.io/DApp/app/index.html) 
+### Acesse nossa DApp [aqui](https://goblockchain.github.io/DApp/app/index.html) :shipit:
 
 
 ### Instalação local
