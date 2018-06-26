@@ -82,7 +82,7 @@
         <p class="lead">Funcionalidade responsável por gerenciar o saldo do contrato</p>
       </div>
     </div>
-    
+
     <!-- Transaction Modal -->
     <div class="modal fade" id="transactionModal" tabindex="-1" role="dialog" aria-labelledby="transactionModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
@@ -131,36 +131,39 @@
     </form>
 
     <hr size="10">
-    
-    <!-- SAQUE -->
-    <form id="formWithdraw">  
-      <div class="card">
-        <h4 class="card-header">Saque</h4>
-        <div class="card-body">
-          <div class="form-group">
-            <label for="txtWithdrawAmount">Quantidade</label>
-            <input type="number" class="form-control" id="txtWithdrawAmount" name="txtWithdrawAmount" aria-describedby="textWithdrawHelp"
-              placeholder="ETH" required>
-            <small id="textWithdrawHelp" class="form-text text-muted">Quantidade de ETH a ser sacado do contrato.</small>
-          </div>
-          <div class="form-group">
-            <label for="txtWithdrawDescription">Descrição</label>
-            <input type="text" class="form-control" id="txtWithdrawDescription" name="txtWithdrawDescription" aria-describedby="textDescriptionHelp"
-              placeholder="Descrição" required>
-            <small id="textDescriptionHelp" class="form-text text-muted">Descrição do saque.</small>
-          </div>
-          <button type="button" id="btnWithdraw" name="btnWithdraw" class="btn btn-primary">
-            Sacar
-            <i class="fas fa-arrow-circle-up"></i>
-          </button>
-        </div>
-      </div>
-    </form>
 
-    <hr size="10">
-    
+    <!-- SAQUE -->
+    <section id="withdraw">
+      <form id="formWithdraw">
+        <div class="card">
+          <h4 class="card-header">Saque</h4>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="txtWithdrawAmount">Quantidade</label>
+              <input type="number" class="form-control" id="txtWithdrawAmount" name="txtWithdrawAmount" aria-describedby="textWithdrawHelp"
+                placeholder="ETH" required>
+              <small id="textWithdrawHelp" class="form-text text-muted">Quantidade de ETH a ser sacado do contrato.</small>
+            </div>
+            <div class="form-group">
+              <label for="txtWithdrawDescription">Descrição</label>
+              <input type="text" class="form-control" id="txtWithdrawDescription" name="txtWithdrawDescription" aria-describedby="textDescriptionHelp"
+                placeholder="Descrição" required>
+              <small id="textDescriptionHelp" class="form-text text-muted">Descrição do saque.</small>
+            </div>
+            <button type="button" id="btnWithdraw" name="btnWithdraw" class="btn btn-primary">
+              Sacar
+              <i class="fas fa-arrow-circle-up"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <hr size="10">
+    </section>
   </div>
+
   <br>
+  
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
