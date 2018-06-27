@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -32,7 +32,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="pages/cc/AccountAuthorizer.html">Autorizadores</a>
-                      <a class="dropdown-item" href="#">Transações</a>
+                      <a class="dropdown-item" href="pages/cc/AccountTransaction.html">Transações</a>
                       <a class="dropdown-item" href="#">Saldo</a>
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Eventos</a>
@@ -96,8 +96,67 @@
                 </div>
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
-                        As aulas da Go recebem uma contribuição de 10% a 20%, além disso temos projetos, investimentos e doações. Esses valores são depositados em Ether e o controle é realizado por colaboradores. 
-                    </div>
+                        Os recursos da <b>GoBlockchain</b> podem ser adquiridos e/ou utilizados em Projetos, Investimentos e Doações. Nossas aulas recebem um contribuição entre <b>10%</b> e <b>20%</b> do valor pago pelos alunos, por curso. Os valores são depositados em <b>Ether</b> e o controle das transações é realizado por colaboradores.  
+		    </div>
+		    <div class="card-body">
+			A seguir uma breve descrição do que fazem nossas Funcionalidades de <b>Conta Corrente</b>. 
+		    </div>
+                    <div class="card-body">
+			<u>Autorizadores</u>
+		    </div>
+                    <div class="card-body">
+			<b>Autorizadores</b> é a Funcionalidade responsável por adicionar e remover colaboradores responsáveis pelas autorizações sobre as <b>Transações</b> do Fundo de Reserva.
+		    </div>
+
+		    <ul>
+
+		    <li>O responsável por adicionar os Autorizadores é a conta <span id="lblOwner" class="text-danger"> </span> , <mark>O responsável poderá ser alterado mediante votação no Aragon</mark>.</li>
+
+                    <li>Inicialmente teremos um máximo de 10 (dez) Autorizadores.</li>
+                    <li>O <i>status</i> de um Autorizador pode ser <b>Inativo</b> ou <b>Ativo</b>.</li> 
+                    <li>Os tipos de Autorizadores podem ser <i><b>Adviser</b></i> ou <b>Colaborador</b>.</li> 
+                    <li>É possível identificar informações sobre os Autorizadores como Endereço, Data de Entrada, <i>Status</i> e Tipo.</li> 
+                    <li>Para adicionar um Autorizador, o responsável informará o <b>Endereço do Autorizador</b> e o <b>Perfil</b> desejado. Em seguida, utilizará o botão <b>"Adicionar"</b>.</li>
+		    <li>Para consultar informações sobre um Autorizador, o requisitante informará o <b>Endereço do Autorizador</b>, juntamente com seu <b>Perfil</b>. Em seguida, utilizará o botão <b>"Consultar"</b></li>
+                    <li>Para remover um Autorizador, o responsável informará o <b>Endereço do Autorizador</b>, juntamente com seu <b>Perfil</b>. Em seguida, utilizará o botão <b>"Remover"</b>. Diante desta ação, o Autorizador passará ao <i>status</i> de <b>Inativo</b>.</li>
+		    <li>Para transferir a Propriedade de um Contrato, o responsável por este informará o <b>Endereço do Novo Proprietário</b> desejado e utilizará o botão <b>"Transferir"</b> para efetivar a troca da responsabilidade.</li>
+   
+                    </ul>
+
+		    <div class="card-body">
+			<u>Transações</u>
+		    </div>
+
+                    <div class="card-body">
+			<b>Transações</b> é a Funcionalidade que estabelece as regras e demonstra como as Transações ocorrem.
+		    </div>
+
+                    <ul>
+
+		    <li>O mínimo de assinaturas para autorizar uma transação são <b>duas</b> assinaturas de <b><i>Adviser</i></b> e <b>quatro</b> de <b>Colaborador</b>.</li>
+                    <li>A Conta Corrente apresentará a lista de <b>Transações pendentes</b>, bem como o <b><i>status</i></b>.</li>
+                    <li>É possível identificar as informações das transações sobre a transferência de <i>tokens</i> de um endereço para outro.</li> 
+                    <li>É possível <b>tomar</b> e <b>assinar</b> uma transação para enviar <i>tokens</i>. A transação deve existir e o criador não pode assinar sua própria transação.</li> 
+                    <li>O contrato verifica os <i>status</i> das transações e não permite assinatura de uma mesma transação mais de uma vez.</li> 
+                    <li>O proprietário do contrato pode cancelar  as transações solicitadas por qualquer usuário.</li>
+		       
+                    </ul>
+
+                    <div class="card-body">
+			<u>Saldo</u>
+		    </div>
+
+                    <div class="card-body">
+			<b>Saldo</b> é a Funcionalidade que permite verificar o <b>Saldo</b> da Conta Corrente, considerando as transações de <b>depósitos</b> e <b>saques</b>.
+		    </div>
+                    
+                    <ul>
+
+		    <li>Para fazer um <b>depósito</b>, um <b>usuário</b> informará a quantidade de ETH e, em seguida utilizará o botão <b>“Depositar”</b> para enviar o valor desejado de Ether para o contrato.</li>
+                    <li>Para fazer um saque, um <b>Autorizador</b> informará a quantidade de ETH que deseja sacar e uma descrição (opcional) e, em seguida utilizará o botão <b>“Sacar”</b>. Será criada uma transação com o status <b>“Aguardando”</b>. A transferência será efetuada assim que for aprovada por no mínimo <b>2 <i>Advisers</i></b> e <b>4 Colaboradores</b>.</li>
+                    		       
+                    </ul>
+
                 </div>
             </div>
             <div class="card">

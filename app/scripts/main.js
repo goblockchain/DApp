@@ -119,9 +119,16 @@ $( "#btnSendValidation" ).click(function() {
         gas: 470000
     }
 
+    
     personInstance.sendValidationIdentity.sendTransaction(_addressPerson, _valid, txn,function(error, result)  {
         console.info(result);
         console.info(error);
     });  
+
+    $( document ).ready(function() {
+        getOwner(function(result){
+            $("#lblOwner").text(result);
+        });
+    });
 
 });
