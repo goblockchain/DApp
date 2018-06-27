@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -130,7 +130,9 @@
                 <div class="modal-body">
                     <p>Conta: <strong id="labelConta"></strong></p>
                     <p>Data: <strong id="labelData"></strong></p>
-                    <p>Status: <strong id="labelStatus"></strong></p>
+                    <p>Status: <strong id="labelStatus"
+                        
+                        ></strong></p>
                     <p>Tipo: <strong id="labelTipo"></strong></p>
                 </div>
                 <div class="modal-footer">
@@ -161,10 +163,12 @@
     
         <form id="frmTransfer">
             <hr size="10">
-            <h4>Transferir <mark>dono</mark> do contrato</h4>
+            <h4>Transferir <mark>proprietário</mark> do contrato</h4>
             <div class="form-group">
-                <label for="txtContaNova">Novo dono</label>
-                <input type="text" class="form-control" id="txtContaNova" name="txtContaNova" aria-describedby="txtContaNovaHelp" placeholder="0x90c99175" required>
+
+                <label for="txtContaNova">Novo proprietário</label>
+                <input type="text" class="form-control" id="txtContaNova" aria-describedby="txtContaNovaHelp" placeholder="0x90c99175" required>
+
                 <small id="txtContaNovaHelp" class="form-text text-muted">Utilize a chave do novo responsável do contrato.</small>
             </div>    
             <button type="button" id="btnTransferOwnership" name="btnTransferOwnership" class="btn btn-danger">Transferir</button>  
