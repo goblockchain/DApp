@@ -22,27 +22,29 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">GoBlockchain
+                    <a class="nav-link" href="../../index.html">GoBlockchain
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Conta corrente
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Conta corrente
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Autorizadores</a>
-                      <a class="dropdown-item" href="#">Transações</a>
-                      <a class="dropdown-item" href="#">Saldo</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Eventos</a>
+                        <a class="dropdown-item" href="../cc/AccountAuthorizer.html">Autorizadores</a>
+                        <a class="dropdown-item" href="../cc/AccountTransaction.html">Transações</a>
+                        <a class="dropdown-item" href="#">Saldo</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Eventos</a>
                     </div>
-                </li> 
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Certificados</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
                         Identidade
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -51,70 +53,91 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Validar</a>
                     </div>
-                </li>   
+                </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
                         Pagamento
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Criar</a>
                         <a class="dropdown-item" href="#">Consultar</a>
                     </div>
-                </li>                                
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Colaboradores</a>
-                </li>                                                                         
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Colaboradores
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="reputation.html">Reputação</a>
+                        <a class="dropdown-item" href="sendToken.html">Transferir</a>
+                        <a class="dropdown-item" href="approve.html">Aprovar utilização</a>
+                        <a class="dropdown-item" href="transfer.html">Transferir meus tokens</a>
+                        <a class="dropdown-item" href="requestToken.html">Solicitar tokens</a>
+                        <a class="dropdown-item" href="approveRequest.html">Aprovar solicitações</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="collaborators.html">Colaboradores</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="buyGBC.html">Comprar GBC</a>
+                    </div>
+                </li>
             </ul>
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item">
                     <label id="statusConnection" class="alert alert-primary">...</label>
-                </li>                                                 
+                </li>
             </ul>
         </div>
-    </nav>  
+    </nav>
     <div class="container">
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">Enviar tokens</h1>
                 <p class="lead">Essa funcionalidade é responsável pelo envio de tokens para os colaboradores.</p>
-                <p class="lead">Após uma atividade analisada e aceita o colaborador responsável recebe os tokens referente a atividade.<span id="lblOwner" class="text-danger"> </span><mark>Conheça a atividades que você pode colaborar no trello da GO, <a target="_blank" href="https://trello.com/b/mnVqJvV8/goblockchain-colaboradores">aqui</a>.</mark></p>                
+                <p class="lead">Após uma atividade analisada e aceita o colaborador responsável recebe os tokens referente a atividade.
+                    <span id="lblOwner" class="text-danger"> </span>
+                    <mark>Conheça a atividades que você pode colaborar no trello da GO,
+                        <a target="_blank" href="https://trello.com/b/mnVqJvV8/goblockchain-colaboradores">aqui</a>.</mark>
+                </p>
             </div>
         </div>
         <div class="alert alert-dark" role="alert">
-            Somente especialistas podem realizar transferências! Conheça as reputações da GO <a href="reputacoes.html">aqui</a>
-        </div>        
-        <br>                             
+            Somente especialistas podem realizar transferências! Conheça as reputações da GO
+            <a href="reputacoes.html">aqui</a>
+        </div>
+        <br>
         <form id="frmColabs">
             <!-- DEPOSITO -->
             <form id="formDeposit">
                 <div class="card">
-                <h4 class="card-header">Transferência</h4>
-                <div class="card-body">
-                    <div class="form-group">
-                        <label for="txtDepositAmount">Chave pública</label>
-                        <input type="number" class="form-control" id="txtDepositAmount" name="txtDepositAmount" aria-describedby="textDepositHelp"
-                            placeholder="0xAc5.." required>
-                        <small id="textDepositHelp" class="form-text text-muted">Informa a chave pública do colaborador.</small>
+                    <h4 class="card-header">Transferência</h4>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="txtDepositAmount">Chave pública</label>
+                            <input type="number" class="form-control" id="txtDepositAmount" name="txtDepositAmount" aria-describedby="textDepositHelp"
+                                placeholder="0xAc5.." required>
+                            <small id="textDepositHelp" class="form-text text-muted">Informa a chave pública do colaborador.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtDepositAmount">Quantidade</label>
+                            <input type="number" class="form-control" id="txtDepositAmount" name="txtDepositAmount" aria-describedby="textDepositHelp"
+                                placeholder="GBC" required>
+                            <small id="textDepositHelp" class="form-text text-muted">Quantidade de Token GBC a ser depositado no contrato.</small>
+                        </div>
+                        <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-primary">
+                            Transferir
+                            <i class="fas fa-arrow-circle-down"></i>
+                        </button>
                     </div>
-                    <div class="form-group">
-                        <label for="txtDepositAmount">Quantidade</label>
-                        <input type="number" class="form-control" id="txtDepositAmount" name="txtDepositAmount" aria-describedby="textDepositHelp"
-                            placeholder="GBC" required>
-                        <small id="textDepositHelp" class="form-text text-muted">Quantidade de Token GBC a ser depositado no contrato.</small>
-                    </div>                    
-                    <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-primary">
-                    Transferir
-                    <i class="fas fa-arrow-circle-down"></i>
-                    </button>
-                </div>
                 </div>
             </form>
-        
-            <hr size="10">            
-         
-        </form>                       
+
+            <hr size="10">
+
+        </form>
     </div>
-    <br> 
+    <br>
     <!-- Footer -->
     <footer class="py-5 bg-dark">
         <div class="container">

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DApp GoBlockchain</title>
+
+    <!-- Bootstrap -->
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+
+    <!-- Just an image -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="../../images/logo.png" width="63" height="50" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../../index.html">GoBlockchain
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Conta corrente
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="../cc/AccountAuthorizer.html">Autorizadores</a>
+                        <a class="dropdown-item" href="../cc/AccountTransaction.html">Transações</a>
+                        <a class="dropdown-item" href="#">Saldo</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Eventos</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Certificados</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Identidade
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="registryPerson.html">Quero participar</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="validatePerson.html">Validar</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Pagamento
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Criar</a>
+                        <a class="dropdown-item" href="#">Consultar</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Colaboradores
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="reputation.html">Reputação</a>
+                        <a class="dropdown-item" href="sendToken.html">Transferir</a>
+                        <a class="dropdown-item" href="approve.html">Aprovar utilização</a>
+                        <a class="dropdown-item" href="transfer.html">Transferir meus tokens</a>
+                        <a class="dropdown-item" href="requestToken.html">Solicitação de tokens</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="collaborators.html">Colaboradores</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                    <label id="statusConnection" class="alert alert-primary">...</label>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Solicitações de participação</h1>
+                <p class="lead">Essa funcionalidade é responsável em aprovar ou recusar as solicitações de novos colaboradores.</p>
+                <p class="lead">Somente os perfis especialista tem permissão para votar em aprovar ou recusar uma solicitação,
+                    <mark>após 40% de aceite o colaborador é liberado</mark>.</p>
+            </div>
+        </div>
+        <div class="alert alert-success" role="alert">
+            Olá! Seu perfil é de especialistas e você pode votar para aprovar ou recusar as solicitações abaixo.
+        </div>
+        <br>
+        <form id="frmApproveRequest">
+            <div class="card">
+                <h4 class="card-header">Aprovação</h4>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="txtDepositAmount">ID da solicitação</label>
+                        <input type="number" class="form-control" id="txtDepositAmount" name="txtDepositAmount" aria-describedby="textDepositHelp"
+                            placeholder="0xAc5.." required>
+                        <small id="textDepositHelp" class="form-text text-muted">Informe o ID da solicitação ao Token.</small>
+                    </div>
+                    <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Consultar
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-success">
+                        Aprovar
+                        <i class="fas fa-arrow-alt-circle-up"></i>
+                    </button>
+                    <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-danger">
+                        Reprovar
+                        <i class="fas fa-arrow-alt-circle-down"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Consulta solicitação</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-success" role="alert">
+                            5 Votos para aprovar
+                        </div>
+                        <div class="alert alert-danger" role="alert">
+                            3 Votos para reprovar
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h5>Solicitações de participação</h5>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Linkedin</th>
+                    <th scope="col">Github</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>12/12/2018</td>
+                    <td>xxxxx</td>
+                    <td>xxxxx</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>12/12/2018</td>
+                    <td>xxxxx</td>
+                    <td>xxxxx</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>12/12/2018</td>
+                    <td>xxxxx</td>
+                    <td>xxxxx</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; GoBlockchain 2018</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../vendor/web3/web3.js"></script>
+    <script src="../../scripts/main.js"></script>
+    <script src="../../vendor/font-awesome/fontawesome-all.min.js"></script>
+    <script src="../../scripts/collaborators.js"></script>
+</body>
+
+</html>

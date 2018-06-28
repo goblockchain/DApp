@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DApp GoBlockchain</title>
+
+    <!-- Bootstrap -->
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+
+    <!-- Just an image -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="../../images/logo.png" width="63" height="50" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../../index.html">GoBlockchain
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Conta corrente
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="../cc/AccountAuthorizer.html">Autorizadores</a>
+                        <a class="dropdown-item" href="../cc/AccountTransaction.html">Transações</a>
+                        <a class="dropdown-item" href="#">Saldo</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Eventos</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Certificados</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Identidade
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="registryPerson.html">Quero participar</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="validatePerson.html">Validar</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Pagamento
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Criar</a>
+                        <a class="dropdown-item" href="#">Consultar</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Colaboradores
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="reputation.html">Reputação</a>
+                        <a class="dropdown-item" href="sendToken.html">Transferir</a>
+                        <a class="dropdown-item" href="approve.html">Aprovar utilização</a>
+                        <a class="dropdown-item" href="transfer.html">Transferir meus tokens</a>
+                        <a class="dropdown-item" href="requestToken.html">Solicitação de tokens</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="collaborators.html">Colaboradores</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                    <label id="statusConnection" class="alert alert-primary">...</label>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Registro de Colaborador</h1>
+                <p class="lead">Essa funcionalidade permite que pessoas possam se registrar na GO, após o envio das informações os colaboradores
+                    da GO devem aprovar o registro.</p>
+            </div>
+        </div>
+        <br>
+        <!-- Registro -->
+        <form id="formDeposit">
+            <div class="card">
+                <h4 class="card-header">Registro</h4>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="txtApproveAccount">Email</label>
+                        <input type="number" class="form-control" id="txtApproveAccount" name="txtApproveAccount" aria-describedby="txtApproveAccountHelp"
+                            placeholder="eu@terra.com.br" required>
+                        <small id="txtApproveAccountHelp" class="form-text text-muted">Informa um email válido.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtQuantityApprove">Github</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="">https://github.com/</span>
+                            </div>
+                            <input type="text" class="form-control">
+                        </div>
+                        <small id="txtQuantityApproveHelp" class="form-text text-muted">Informe o endereço do seu github</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtQuantityApprove">Linkedin</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="">https://www.linkedin.com/</span>
+                            </div>
+                            <input type="text" class="form-control">
+                        </div>
+                        <small id="txtQuantityApproveHelp" class="form-text text-muted">Informe seu linkedin.</small>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <hr size="10">
+        <!-- Aprovar -->
+        <form id="formDeposit">
+            <br>
+            <h4>Leia com atenção a Governaças da DAO</h4>
+            <div class="card">
+                <h4 class="card-header">Documento</h4>
+                <div class="card-body">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-primary" type="button">Consultar Hash</button>
+                        </div>
+                        <input type="text" class="form-control" placeholder="XXX" aria-label="" aria-describedby="basic-addon1">
+                    </div>
+                    <small id="txtQuantityApproveHelp" class="form-text text-muted">Consulte o hash do documento para provar que ele não foi alterado.</small>
+                </div>
+            </div>
+            <object data="https://docs.google.com/document/d/e/2PACX-1vTnDYrfhgpyNmugZnmSy0F60hvi33sgdonI4Rbn0iUSSOX3qXXC8qkOeSKnAeRwTm678MFpM2HGzctC/pub"
+                type="application/doc">
+                <iframe style="border:1px solid rgb(0, 0, 0)" src="https://docs.google.com/document/d/e/2PACX-1vTnDYrfhgpyNmugZnmSy0F60hvi33sgdonI4Rbn0iUSSOX3qXXC8qkOeSKnAeRwTm678MFpM2HGzctC/pub"
+                    frameborder="1" scrolling="auto" height="1100" width="100%"></iframe>
+            </object>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Li e concordo</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar registro</button>
+        </form>
+
+    </div>
+    <br>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; GoBlockchain 2018</p>
+        </div>
+        <!-- /.container -->
+    </footer>
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../vendor/web3/web3.js"></script>
+    <script src="../../scripts/main.js"></script>
+    <script src="../../scripts/collaborators.js"></script>
+</body>
+
+</html>
