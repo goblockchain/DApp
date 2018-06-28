@@ -93,37 +93,43 @@
     <div class="container">
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <h1 class="display-4">Tranferir</h1>
-                <p class="lead">Essa funcionalidade permite que os donos de seus tokens possa transferir seus tokens para outros usuários.</p>
+                <h1 class="display-4">Compras</h1>
+                <p class="lead">Essa funcionalidade permite a compra de tokens GBC para realização de cursos, doações e investimento.</p>
             </div>
         </div>
         <br>
         <form id="frmApprove">
             <!-- Aprovar -->
-            <form id="formTransfer">
+            <form id="formDeposit">
                 <div class="card">
-                    <h4 class="card-header">Transfer</h4>
+                    <h4 class="card-header">Compra de GBC</h4>
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="txtTransferAccount">Chave pública</label>
-                            <input type="number" class="form-control" id="txtTransferAccount" name="txtTransferAccount" aria-describedby="txtTransferAccountHelp"
-                                placeholder="0xAc5.." required>
-                            <small id="txtTransferAccountHelp" class="form-text text-muted">Informa a chave pública da pessoa para tranferência dos seus tokens.</small>
+                            <label for="txtQuantityApprove">Meio de pagamento</label>
+                            <div class="custom-control custom-radio">
+                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
+                                <label class="custom-control-label" for="credit">Mercado Pago</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                                <label class="custom-control-label" for="debit">Ether</label>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="txtQuantityTransfer">Quantidade</label>
-                            <input type="number" class="form-control" id="txtQuantityTransfer" name="txtQuantityTransfer" aria-describedby="txtQuantityTransferHelp"
+                            <label for="txtQuantityApprove">Quantidade</label>
+                            <input type="number" class="form-control" id="txtQuantityApprove" name="txtQuantityApprove" aria-describedby="txtQuantityApproveHelp"
                                 placeholder="GBC" required>
-                            <small id="txtQuantityTransferHelp" class="form-text text-muted">Quantidade de Token GBC a ser transferidos.</small>
+                            <small id="txtQuantityApproveHelp" class="form-text text-muted">Quantidade de Token GBC a ser aprovado para uso.</small>
                         </div>
-                        <button type="button" id="btnApprove" name="btnApprove" class="btn btn-primary">
-                            Transferir
-                            <i class="fas fa-arrow-circle-down"></i>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout
+                            <i class="fas fa-arrow-circle-up"></i>
                         </button>
                     </div>
                 </div>
             </form>
+
             <hr size="10">
+
         </form>
     </div>
     <br>
@@ -138,6 +144,7 @@
     <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../vendor/web3/web3.js"></script>
     <script src="../../scripts/main.js"></script>
+    <script src="../../vendor/font-awesome/fontawesome-all.min.js"></script>
     <script src="../../scripts/collaborators.js"></script>
 </body>
 
