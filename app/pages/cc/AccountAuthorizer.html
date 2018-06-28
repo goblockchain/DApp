@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -6,6 +6,7 @@
 
     <!-- Bootstrap -->
     <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../../styles/style.css" rel="stylesheet" media="screen">
 </head>
 
 <body>
@@ -61,9 +62,22 @@
                         <a class="dropdown-item" href="#">Consultar</a>
                     </div>
                 </li>                                
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Colaboradores</a>
-                </li>                                                                         
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Colaboradores
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="../token/reputation.html">Reputação</a>
+                        <a class="dropdown-item" href="../token/sendToken.html">Transferir</a>
+                        <a class="dropdown-item" href="../token/approve.html">Aprovar utilização</a>
+                        <a class="dropdown-item" href="../token/transfer.html">Transferir meus tokens</a>
+                        <a class="dropdown-item" href="../token/requestToken.html">Solicitar tokens</a>
+                        <a class="dropdown-item" href="../token/approveRequest.html">Aprovar solicitações</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../token/collaborators.html">Colaboradores</a>
+                    </div>
+                </li>                                                                      
             </ul>
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item">
@@ -116,7 +130,9 @@
                 <div class="modal-body">
                     <p>Conta: <strong id="labelConta"></strong></p>
                     <p>Data: <strong id="labelData"></strong></p>
-                    <p>Status: <strong id="labelStatus"></strong></p>
+                    <p>Status: <strong id="labelStatus"
+                        
+                        ></strong></p>
                     <p>Tipo: <strong id="labelTipo"></strong></p>
                 </div>
                 <div class="modal-footer">
@@ -129,7 +145,7 @@
             <h4>Colaboradores</h4>            
             <div class="form-group">
                 <label for="txtConta">Conta</label>
-                <input type="text" class="form-control" id="txtConta" aria-describedby="textContaHelp" placeholder="0x90c99175" required>
+                <input type="text" class="form-control" id="txtConta"  name="txtConta" aria-describedby="textContaHelp" placeholder="0x90c99175" required>
                 <small id="textContaHelp" class="form-text text-muted">Utiliza a chave pública do colaborador.</small>
             </div>
             <div class="form-group">
@@ -145,12 +161,14 @@
             <hr size="10">
         </form>   
     
-        <form>
+        <form id="frmTransfer">
             <hr size="10">
-            <h4>Transferir <mark>dono</mark> do contrato</h4>
+            <h4>Transferir <mark>proprietário</mark> do contrato</h4>
             <div class="form-group">
-                <label for="txtContaNova">Novo dono</label>
+
+                <label for="txtContaNova">Novo proprietário</label>
                 <input type="text" class="form-control" id="txtContaNova" aria-describedby="txtContaNovaHelp" placeholder="0x90c99175" required>
+
                 <small id="txtContaNovaHelp" class="form-text text-muted">Utilize a chave do novo responsável do contrato.</small>
             </div>    
             <button type="button" id="btnTransferOwnership" name="btnTransferOwnership" class="btn btn-danger">Transferir</button>  
@@ -169,6 +187,8 @@
     <script src="../../vendor/web3/web3.js"></script>
     <script src="../../scripts/main.js"></script>
     <script src="../../scripts/accounAuthorizer.js"></script>
+    <script src="../../vendor/font-awesome/fontawesome-all.min.js"></script>
+    <script src="../../vendor/jquery-validation/jquery.validate.min.js"></script>    
 </body>
 
 </html>
