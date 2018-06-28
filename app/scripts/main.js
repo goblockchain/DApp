@@ -5,6 +5,7 @@ let instance = getInstanceContract();
 let account = web3.eth.accounts[0];
 
 $(document).ready(() => {
+  // Reload the page when user select another account in MetaMask
   setInterval(() => {
     if (web3.eth.accounts[0] !== account) {
       account = web3.eth.accounts[0];
