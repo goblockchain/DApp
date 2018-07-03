@@ -30,7 +30,8 @@
     "gulp-inject": "^4.3.2",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
-    "gulp-webserver": "^0.9.1"
+    "gulp-webserver": "^0.9.1",
+    "standard": "^11.0.1"
   },
   "dependencies": {
     "bower": "^1.8.4",

@@ -6,6 +6,7 @@
 
     <!-- Bootstrap -->
     <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../../styles/style.css" rel="stylesheet" media="screen">
 </head>
 
 <body>
@@ -28,16 +29,16 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Conta corrente
+                        Conta corrente
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Autorizadores</a>
-                      <a class="dropdown-item" href="#">Transações</a>
-                      <a class="dropdown-item" href="#">Saldo</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Eventos</a>
+                        <a class="dropdown-item" href="./AccountAuthorizer.html">Autorizadores</a>
+                        <a class="dropdown-item" href="./AccountTransaction.html">Transações</a>
+                        <a class="dropdown-item" href="./CheckingAccount.html">Saldo</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Eventos</a>
                     </div>
-                </li> 
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Certificados</a>
                 </li>
@@ -51,7 +52,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Validar</a>
                     </div>
-                </li>   
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Pagamento
@@ -60,246 +61,159 @@
                         <a class="dropdown-item" href="#">Criar</a>
                         <a class="dropdown-item" href="#">Consultar</a>
                     </div>
-                </li>                                
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Colaboradores</a>
-                </li>                                                                         
+                </li>
             </ul>
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item">
                     <label id="statusConnection" class="alert alert-primary">...</label>
-                </li>                                                 
+                </li>
             </ul>
         </div>
-    </nav>  
+    </nav>
     <div class="container">
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">Transações</h1>
-                <p class="lead"><b>Transações</b> é a Funcionalidade que estabelece as regras e demonstra como as Transações ocorrem.</p>             
-                <p class="lead">As transações podem ser <b>Consultadas</b>, <b>Validadas</b> ou <b>Canceladas</b>.</p>
+                <p class="lead">
+                    <b>Transações</b> é a Funcionalidade que estabelece as regras e demonstra como as Transações ocorrem.</p>
+                <p class="lead">As transações podem ser
+                    <b>Consultadas</b>,
+                    <b>Validadas</b> ou
+                    <b>Canceladas</b>.</p>
             </div>
 
         </div>
-        <br>          
+        <br>
         <form id="frmColabs">
 
-                <h4>Transações Pendentes</h4>  
-            
-                <table class="table table-bordered">
-        
-                    <thead>
-        
-                        <tr>
-        
-                            <th scope="col">ID</th>
-        
-                            <th scope="col">Endereço de Origem</th>
-        
-                            <th scope="col">Endereço de Destino</th>
-        
-                            <th scope="col">Descrição</th>
-        
-                            <th scope="col">Quantidade</th>
-        
-                            <th scope="col">Data</th>
-        
-                        </tr>
-        
-                    </thead>
-        
-                    <tbody>
-        
-                        <tr>
-        
-                            <th scope="row">1</th>
-        
-                            <td>0xYyYyYyYyYyYyYyYyYyYyYyYyYyYyYyYyYyYyYyYy</td>
-        
-                            <td>0xZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZz</td>
-        
-                            <td>Doação</td>
-        
-                            <td>10 GBC</td>
-        
-                            <td>20/07/1982</td>
-        
-                        </tr>
-        
-                        <tr>
-        
-                            <th scope="row">2</th>
-        
-                            <td>0xYyYyYyYyYyYyYyYyYyYyYyYyYyYyYyYyYyYyYyYy</td>
-        
-                            <td>0xZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZz</td>
-        
-                            <td>Doação</td>
-        
-                            <td>10 GBC</td>
-        
-                            <td>20/07/1982</td>
-        
-                        </tr>
-        
-                        <tr>
-        
-                            <th scope="row">3</th>
-        
-                            <td>0xYyYyYyYyYyYyYyYyYyYyYyYyYyYyYyYyYyYyYyYy</td>
-        
-                            <td>0xZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZz</td>
-        
-                            <td>Doação</td>
-        
-                            <td>10 GBC</td>
-        
-                            <td>20/07/1982</td>
-        
-                        </tr>
-        
-                        <tr>
-        
-                            <th scope="row">4</th>
-        
-                            <td>0xYyYyYyYyYyYyYyYyYyYyYyYyYyYyYyYyYyYyYyYy</td>
-        
-                            <td>0xZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZz</td>
-        
-                            <td>Doação</td>
-        
-                            <td>10 GBC</td>
-        
-                            <td>20/07/1982</td>
-        
-                        </tr>
-        
-                    </tbody>
-        
-                </table>
-        
-        
-                 
+            <h4>Transações Pendentes</h4>
 
+            <hr>
 
-                <br>
+            <div id="pendingTransactions">
 
-                <form id="frmApproveRequest">
-        
-                    <div class="card">
-        
-                        <h4 class="card-header">Validação</h4>
-        
-                        <div class="card-body">
-        
-                            <div class="form-group">
-        
-                                <label for="txtDepositAmount">ID da Transação</label>
-        
-                                <input type="number" class="form-control" id="txtDepositAmount" name="txtDepositAmount" aria-describedby="textDepositHelp"
-        
-                                    placeholder="1, 2, 3, ..." required>
-        
-                                <small id="textDepositHelp" class="form-text text-muted">Informe o ID da Transação.</small>
-        
-                            </div>
-        
-                            <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        
-                                Consultar
-        
-                                <i class="fas fa-search"></i>
-        
-                            </button>
-        
-                            <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-success">
-        
-                                Validar
-        
-                                <i class="fas fa-arrow-alt-circle-up"></i>
-        
-                            </button>
-        
-                            <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-danger">
-        
-                                Cancelar
-        
-                                <i class="fas fa-arrow-alt-circle-down"></i>
-        
-                            </button>
-        
+            </div>
+
+            <br>
+
+            <form id="frmApproveRequest">
+
+                <div class="card">
+
+                    <h4 class="card-header">Validação</h4>
+
+                    <div class="card-body">
+
+                        <div class="form-group">
+
+                            <label for="txtDepositAmount">ID da Transação</label>
+
+                            <input type="number" class="form-control" id="txtDepositAmount" name="txtDepositAmount" aria-describedby="textDepositHelp"
+                                placeholder="1, 2, 3, ..." required>
+
+                            <small id="textDepositHelp" class="form-text text-muted">Informe o ID da Transação.</small>
+
                         </div>
-        
+
+                        <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+
+                            Consultar
+
+                            <i class="fas fa-search"></i>
+
+                        </button>
+
+                        <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-success">
+
+                            Validar
+
+                            <i class="fas fa-arrow-alt-circle-up"></i>
+
+                        </button>
+
+                        <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-danger">
+
+                            Cancelar
+
+                            <i class="fas fa-arrow-alt-circle-down"></i>
+
+                        </button>
+
                     </div>
-        
-                </form>
-        
-                <!-- Modal -->
-        
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        
-                    <div class="modal-dialog" role="document">
-        
-                        <div class="modal-content">
-        
-                            <div class="modal-header">
-        
-                                <h5 class="modal-title" id="exampleModalLabel">Consulta solicitação</h5>
-        
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        
-                                    <span aria-hidden="true">&times;</span>
-        
-                                </button>
-        
-                            </div>
-        
-                            <div class="modal-body">
-        
-                                <div class="alert alert-success" role="alert">
-        
-                                    5 Votos para aprovar
-        
-                                </div>
-        
-                                <div class="alert alert-danger" role="alert">
-        
-                                    3 Votos para reprovar
-        
-                                </div>
-        
-                                <div class="progress">
-        
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
-        
-                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
-        
-                                </div>
-        
-                            </div>
-        
-                            <div class="modal-footer">
-        
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        
-                            </div>
-        
-                        </div>
-        
-                    </div>
-        
+
                 </div>
-        
-                <br>
 
-       
-            
-            
-        </form>   
-    
-                               
+            </form>
+
+            <!-- Modal -->
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                <div class="modal-dialog" role="document">
+
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+
+                            <h5 class="modal-title" id="exampleModalLabel">Consulta solicitação</h5>
+
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                                <span aria-hidden="true">&times;</span>
+
+                            </button>
+
+                        </div>
+
+                        <div class="modal-body">
+
+                            <div class="alert alert-success" role="alert">
+
+                                5 Votos para aprovar
+
+                            </div>
+
+                            <div class="alert alert-danger" role="alert">
+
+                                3 Votos para reprovar
+
+                            </div>
+
+                            <div class="progress">
+
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <br>
+
+
+
+
+        </form>
+
+
     </div>
-    <br> 
+    <br>
     <!-- Footer -->
     <footer class="py-5 bg-dark">
         <div class="container">
@@ -310,8 +224,10 @@
     <script src="../../vendor/jquery/jquery.min.js"></script>
     <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../vendor/web3/web3.js"></script>
+    <script src="../../vendor/font-awesome/fontawesome-all.min.js"></script>
+    <script src="../../vendor/jquery-validation/jquery.validate.min.js"></script>
     <script src="../../scripts/main.js"></script>
-    <script src="../../scripts/AccountTransaction.js"></script>
+    <script src="../../scripts/accountTransaction.js"></script>
 </body>
 
 </html>
