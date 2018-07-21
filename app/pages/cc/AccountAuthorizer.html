@@ -23,45 +23,32 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">GoBlockchain
+                    <a class="nav-link" href="../../index.html">GoBlockchain
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Conta corrente
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="./AccountAuthorizer.html">Autorizadores</a>
-                        <a class="dropdown-item" href="#">Transações</a>
-                        <a class="dropdown-item" href="./CheckingAccount.html">Saldo</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Eventos</a>
-                    </div>
-                </li> 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Certificados</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
                         Identidade
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Consultar</a>
-                        <a class="dropdown-item" href="#">Criar</a>
+                        <a class="dropdown-item" href="../identity/registryPerson.html">Quero participar</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Validar</a>
+                        <a class="dropdown-item" href="../identity/validatePerson.html">Validar</a>
                     </div>
-                </li>   
+                </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Pagamento
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Conta Corrente
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Criar</a>
-                        <a class="dropdown-item" href="#">Consultar</a>
+                        <a class="dropdown-item" href="AccountAuthorizer.html">Autorizadores</a>
+                        <a class="dropdown-item" href="AccountTransaction.html">Transações</a>
+                        <a class="dropdown-item" href="CheckingAccount.html">Saldo</a>
                     </div>
-                </li>                                
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
@@ -69,33 +56,57 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="../token/reputation.html">Reputação</a>
-                        <a class="dropdown-item" href="../token/sendToken.html">Transferir</a>
-                        <a class="dropdown-item" href="../token/approve.html">Aprovar utilização</a>
-                        <a class="dropdown-item" href="../token/transfer.html">Transferir meus tokens</a>
+                        <a class="dropdown-item" href="../token/collaborators.html">Colaboradores</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Token
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="../token/GBCToken.html">GBC</a>
                         <a class="dropdown-item" href="../token/requestToken.html">Solicitar tokens</a>
                         <a class="dropdown-item" href="../token/approveRequest.html">Aprovar solicitações</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="../token/collaborators.html">Colaboradores</a>
+                        <a class="dropdown-item" href="../token/buyGBC.html">Comprar GBC</a>
                     </div>
-                </li>                                                                      
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Produtos
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <h6 class="dropdown-header">Certificado</h6>
+                        <a class="dropdown-item" href="https://goblockchain.herokuapp.com/">Consultar</a>
+                        <a class="dropdown-item" href="https://goblockchain.herokuapp.com/issuer">Emitir</a>
+                        <a class="dropdown-item" href="https://goblockchain.herokuapp.com/admin">Gerenciador</a>
+                        <div class="dropdown-divider"></div>
+                    </div>
+                </li>
             </ul>
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item">
                     <label id="statusConnection" class="alert alert-primary">...</label>
-                </li>                                                 
+                </li>
             </ul>
         </div>
-    </nav>  
+    </nav>
     <div class="container">
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">Autorizadores</h1>
-                <p class="lead">Funcionalidade responsável em adicionar e remover colaboradores responsáveis em autorizar as transações do fundo de reserva.</p>
-                <p class="lead">O responsável em adicionar os colaboradores é a conta: <span id="lblOwner" class="text-danger"> </span> , <mark>isso pode ser alterado mediante a votação no Aragon.</mark></p>                
+                <p class="lead">Funcionalidade responsável em adicionar e remover colaboradores responsáveis em autorizar as transações do
+                    fundo de reserva.</p>
+                <p class="lead">O responsável em adicionar os colaboradores é a conta:
+                    <span id="lblOwner" class="text-danger"> </span> ,
+                    <mark>isso pode ser alterado mediante a votação no Aragon.</mark>
+                </p>
             </div>
         </div>
         <br>
-      <!-- Modal -->
+        <!-- Modal -->
         <div class="modal fade" id="transactionModal" tabindex="-1" role="dialog" aria-labelledby="transactionModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -107,7 +118,9 @@
                     </div>
                     <div class="modal-body">
                         <p>Transação executada, aguarde a validação da rede...</p>
-                        <p>Transação: <mark id="lblTransaction" class="small"></mark></p>
+                        <p>Transação:
+                            <mark id="lblTransaction" class="small"></mark>
+                        </p>
                     </div>
                     <div class="modal-footer">
                         <a id="transactionDetails" class="btn btn-primary" role="button" target="_blank">Ver detalhes</a>
@@ -115,37 +128,44 @@
                     </div>
                 </div>
             </div>
-        </div>  
-  
+        </div>
+
         <!-- Modal -->
         <div class="modal fade" id="authorizerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Consultar</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Conta: <strong id="labelConta"></strong></p>
-                    <p>Data: <strong id="labelData"></strong></p>
-                    <p>Status: <strong id="labelStatus"
-                        
-                        ></strong></p>
-                    <p>Tipo: <strong id="labelTipo"></strong></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Consultar</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Conta:
+                            <strong id="labelConta"></strong>
+                        </p>
+                        <p>Data:
+                            <strong id="labelData"></strong>
+                        </p>
+                        <p>Status:
+                            <strong id="labelStatus"></strong>
+                        </p>
+                        <p>Tipo:
+                            <strong id="labelTipo"></strong>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
-        </div>                               
+        </div>
         <form id="frmColabs">
-            <h4>Colaboradores</h4>            
+            <h4>Colaboradores</h4>
             <div class="form-group">
                 <label for="txtConta">Conta</label>
-                <input type="text" class="form-control" id="txtConta"  name="txtConta" aria-describedby="textContaHelp" placeholder="0x90c99175" required>
+                <input type="text" class="form-control" id="txtConta" name="txtConta" aria-describedby="textContaHelp" placeholder="0x90c99175"
+                    required>
                 <small id="textContaHelp" class="form-text text-muted">Utiliza a chave pública do colaborador.</small>
             </div>
             <div class="form-group">
@@ -153,28 +173,29 @@
                 <select class="form-control" id="cmbProfile">
                     <option value="0">COLAB</option>
                     <option value="1">ADVISER</option>
-                </select>                
+                </select>
             </div>
             <button type="button" id="btnAddAuthorizer" name="btnAddAuthorizer" class="btn btn-primary">Adicionar</button>
-            <button type="button" id="btnAuthorizers" name="btnAuthorizers" class="btn btn-info">Consultar</button>       
-            <button type="button" id="btnRemoveAuthorizer" name="btnRemoveAuthorizer" class="btn btn-danger">Remover</button>                 
+            <button type="button" id="btnAuthorizers" name="btnAuthorizers" class="btn btn-info">Consultar</button>
+            <button type="button" id="btnRemoveAuthorizer" name="btnRemoveAuthorizer" class="btn btn-danger">Remover</button>
             <hr size="10">
-        </form>   
-    
+        </form>
+
         <form id="frmTransfer">
             <hr size="10">
-            <h4>Transferir <mark>proprietário</mark> do contrato</h4>
+            <h4>Transferir
+                <mark>proprietário</mark> do contrato</h4>
             <div class="form-group">
 
                 <label for="txtContaNova">Novo proprietário</label>
                 <input type="text" class="form-control" id="txtContaNova" aria-describedby="txtContaNovaHelp" placeholder="0x90c99175" required>
 
                 <small id="txtContaNovaHelp" class="form-text text-muted">Utilize a chave do novo responsável do contrato.</small>
-            </div>    
-            <button type="button" id="btnTransferOwnership" name="btnTransferOwnership" class="btn btn-danger">Transferir</button>  
-        </form>                       
+            </div>
+            <button type="button" id="btnTransferOwnership" name="btnTransferOwnership" class="btn btn-danger">Transferir</button>
+        </form>
     </div>
-    <br> 
+    <br>
     <!-- Footer -->
     <footer class="py-5 bg-dark">
         <div class="container">
@@ -188,7 +209,7 @@
     <script src="../../scripts/main.js"></script>
     <script src="../../scripts/accounAuthorizer.js"></script>
     <script src="../../vendor/font-awesome/fontawesome-all.min.js"></script>
-    <script src="../../vendor/jquery-validation/jquery.validate.min.js"></script>    
+    <script src="../../vendor/jquery-validation/jquery.validate.min.js"></script>
 </body>
 
 </html>
