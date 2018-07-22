@@ -95,19 +95,22 @@
     <div class="container">
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <h1 class="display-4">Enviar tokens</h1>
-                <p class="lead">Essa funcionalidade é responsável pelo envio de tokens para os colaboradores.</p>
-                <p class="lead">Após uma atividade analisada e aceita o colaborador responsável recebe os tokens referente a atividade.
+                <h1 class="display-4">GBC Token</h1>
+                <p class="lead">É com o Token GBC que os colaboradores ganham mais governança na GO como por exemplo reputação para realizar consultoria, projetos, aulas, participar do conselho, etc.</p>
+                <p class="lead">Com o Token o colaborador também pode vender, transferir, participar de cursos e utilizar de produtos da GoBlockchain.
                     <span id="lblOwner" class="text-danger"> </span>
-                    <mark>Conheça a atividades que você pode colaborar no trello da GO,
-                        <a target="_blank" href="https://trello.com/b/mnVqJvV8/goblockchain-colaboradores">aqui</a>.</mark>
+                    <mark>Leia mais sobre o token
+                        <a target="_blank" href="https://github.com/goblockchain/smart-contract-token-gbc">aqui</a>.</mark>
                 </p>
             </div>
         </div>
         <div class="alert alert-dark" role="alert">
-            Somente especialistas podem realizar transferências! Conheça as reputações da GO
+            Conheça as reputações da GO
             <a href="reputacoes.html">aqui</a>
         </div>
+        <p class="h4">Name: <strong id="name"></strong></p>        
+        <p class="h4">Symbol: <strong id="symbol"></strong></p>
+        <p class="h5">Total Supply: <strong id="totalSupply"></strong></p>      
         <br>
         <!-- DEPOSITO -->
         <form id="formTransfer">
@@ -199,7 +202,7 @@
     <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../vendor/web3/web3.js"></script>
     <script src="../../scripts/main.js"></script>
-    <script src="../../scripts/collaborators.js"></script>
+    <script src="../../scripts/token.js"></script>
 </body>
 
 </html>
