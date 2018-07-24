@@ -119,7 +119,7 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="txtDepositAmount">Chave pública</label>
-                        <input type="number" class="form-control" id="txtDepositAmount" name="txtDepositAmount" aria-describedby="textDepositHelp"
+                        <input class="form-control" id="txtDepositAddress" name="txtDepositAddress" aria-describedby="textDepositHelp"
                             placeholder="0xAc5.." required>
                         <small id="textDepositHelp" class="form-text text-muted">Informa a chave pública do colaborador.</small>
                     </div>
@@ -139,13 +139,13 @@
 
         <hr size="10">
 
-        <form id="formTransfer">
+        <form onsubmit="transferFrom()" id="formTransferFrom">
             <div class="card">
                 <h4 class="card-header">Transferir meus tokens</h4>
                 <div class="card-body">
                     <div class="form-group">
                         <label for="txtTransferAccount">Chave pública</label>
-                        <input type="number" class="form-control" id="txtTransferAccount" name="txtTransferAccount" aria-describedby="txtTransferAccountHelp"
+                        <input class="form-control" id="txtTransferAccount" name="txtTransferAccount" aria-describedby="txtTransferAccountHelp"
                             placeholder="0xAc5.." required>
                         <small id="txtTransferAccountHelp" class="form-text text-muted">Informa a chave pública da pessoa para tranferência dos seus tokens.</small>
                     </div>
@@ -155,7 +155,7 @@
                             placeholder="GBC" required>
                         <small id="txtQuantityTransferHelp" class="form-text text-muted">Quantidade de Token GBC a ser transferidos.</small>
                     </div>
-                    <button type="button" id="btnApprove" name="btnApprove" class="btn btn-primary">
+                    <button type="submit" id="btnApprove" name="btnApprove" class="btn btn-primary">
                         Transferir
                         <i class="fas fa-arrow-circle-down"></i>
                     </button>

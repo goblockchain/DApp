@@ -6,56 +6,98 @@ let contractAddressToken = "0x02B2c8357Ee5FcAD3691376f9F25B50a0B71f9a9";
 let instanceToken = getInstanceContract(abiToken, contractAddressToken);
 
 $(document).ready(() => {
-    getToken();
+  $("#formTransfer").validate({
+    rules: {
+      "txtDepositAddress": {
+        required: true
+      },
+      "txtDepositAmount": {
+        required: true
+      }
+    },
+    messages: {
+      "txtDepositAddress": {
+        required: "Informe o endereço de recebimento"
+      },
+      "txtDepositAmount": {
+        required: "Informe a quantidade a ser enviada"
+      }
+    }
+  });
+
+  getToken();
 });
 
-function getToken(){
-    instanceToken.name((err, result) => {
-        if (!err) {
-            $("#name").text(result);
-        } else {
-          console.error(error);
-        }
-      });
-      instanceToken.decimals((err, result) => {
-        if (!err) {
-            // $("#lblOwner").text(result);
-            console.info(result);
-        } else {
-          console.error(error);
-        }
-      });  
-      instanceToken.symbol((err, result) => {
-        if (!err) {
-            $("#symbol").text(result);
-            console.info(result);
-        } else {
-          console.error(error);
-        }
-      });  
-      instanceToken.version((err, result) => {
-        if (!err) {
-            // $("#lblOwner").text(result);
-            console.info(result);
-        } else {
-          console.error(error);
-        }
-      });  
-      instanceToken.totalSupply((err, result) => {
-        if (!err) {
-            $("#totalSupply").text(result);
-            console.info(result);
-        } else {
-          console.error(error);
-        }
-      });                             
+function getToken() {
+  instanceToken.name((err, result) => {
+    if (!err) {
+      $("#name").text(result);
+    } else {
+      console.error(error);
+    }
+  });
+  instanceToken.decimals((err, result) => {
+    if (!err) {
+      // $("#lblOwner").text(result);
+      console.info(result);
+    } else {
+      console.error(error);
+    }
+  });
+  instanceToken.symbol((err, result) => {
+    if (!err) {
+      $("#symbol").text(result);
+      console.info(result);
+    } else {
+      console.error(error);
+    }
+  });
+  instanceToken.version((err, result) => {
+    if (!err) {
+      // $("#lblOwner").text(result);
+      console.info(result);
+    } else {
+      console.error(error);
+    }
+  });
+  instanceToken.totalSupply((err, result) => {
+    if (!err) {
+      $("#totalSupply").text(result);
+      console.info(result);
+    } else {
+      console.error(error);
+    }
+  });
 };
 
 
 //geandre
-function transfer() {
+$("#btnDeposit").click(() => {
+  let _to = $("#txtDepositAddress").val();
+  let _quantity = $("#txtDepositAmount").val();
 
-}
+  if (!web3.isAddress(_to)) {
+    alert('Chave pública inválida!');
+    _to.innerHTML = null;
+    return;
+  }
+
+  if (_quantity < 0) {
+    alert('Quantidade inválida!');
+    _quantity.innerHTML = null;
+    return;
+  }
+
+  instanceToken.transfer(_to, web3.toWei(_quantity, 'ether'), (err, res) => {
+    if (!err) {
+      console.log(res);
+      setModal(res);
+    } else {
+      console.log(res);
+    }
+  })
+});
+
 //file
 function approve() {
 
@@ -64,7 +106,15 @@ function approve() {
 //gui
 function transferFrom() {
 
+  instanceToken.transferFrom(from, to, quantity, (err, res) => {
+    if (!err) {
+      console.log(res);
+    } else {
+      console.log(res);
+    }
+  })
 }
+
 //function totalSupply() public view returns (uint256);
 //function balanceOf(address who) public view returns (uint256);
 
