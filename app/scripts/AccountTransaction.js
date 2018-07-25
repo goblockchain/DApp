@@ -5,7 +5,7 @@
 
 $("#pendingTransactions").text(_pendingTransactions);
 
-$( "#btnRemoveAuthorizer" ).click((function() {
+$( "#btnRemoveAuthorizer" ).click(function() {
     let instance = getInstanceContract();
     let _authorized = $("#txtConta").val();
 
@@ -27,7 +27,7 @@ $( "#btnRemoveAuthorizer" ).click((function() {
  
         }
     });     
-});
+})
 
 
 //event.stopWatching();
