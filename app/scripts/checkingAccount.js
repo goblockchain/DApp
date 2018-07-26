@@ -20,8 +20,7 @@ $(document).ready(() => {
   $("#formDeposit").validate({
     rules: {
       "txtDepositAmount": {
-        required: true,
-        validWei: true
+        required: true
       }
     },
     messages: {
@@ -54,9 +53,6 @@ $(document).ready(() => {
   });
 });
 
-$.validator.addMethod("validWei", (value, element) => {
-  return this.optional(element) || value >= 0.000000000000000001;
-}, "Informe um valor maior ou igual a 1 wei (0.000000000000000001 ETH).");
 
 // function() public payable {}
 

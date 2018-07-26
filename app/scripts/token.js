@@ -73,15 +73,15 @@ function getToken() {
 
 
 //geandre
-$("#btnDeposit").click(() => {
+$("#btnTransfer").click(() => {
   if ($("#formTransfer").valid()) {
     let _to = $("#txtDepositAddress").val();
     let _quantity = $("#txtDepositAmount").val();
 
-    instanceToken.transfer(_to, web3.toWei(_quantity, 'ether'), (err, res) => {
+    instanceToken.transfer(_to, _quantity, (err, res) => {
       if (!err) {
         console.log(res);
-        setModal(res);
+        setModal(res, 'TRANSFER');
       } else {
         console.log(res);
       }
@@ -106,6 +106,25 @@ function transferFrom() {
       console.log(res);
     }
   })
+}
+
+function setModal(txn, action) {
+  switch (action) {
+    case 'TRANSFER':
+      $('#transactionModalLabel').text('Transferência Realizada');
+      $('.modal-body').html(
+        '<p>Transação executada, aguarde a validação da rede...</p>' +
+        '<p>Transação: <mark id="lblTransaction" class="small"></mark></p>'
+      );
+      break;
+    
+    default:
+      break;
+  }
+  $('#lblTransaction').text(txn);
+  $('#transactionDetails').attr('href', 'https://rinkeby.etherscan.io/tx/'.concat(txn));
+  $('#transactionModal').modal('show');
+  $('#formTransfer')[0].reset();
 }
 
 //function totalSupply() public view returns (uint256);
