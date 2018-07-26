@@ -20,7 +20,8 @@ $(document).ready(() => {
         required: "Informe o endereço de recebimento"
       },
       "txtDepositAmount": {
-        required: "Informe a quantidade a ser enviada"
+        required: "Informe a quantidade de ETH do depósito",
+        number: "Este campo só aceita números. Exemplo: 1.437"
       }
     }
   });
@@ -73,29 +74,21 @@ function getToken() {
 
 //geandre
 $("#btnDeposit").click(() => {
-  let _to = $("#txtDepositAddress").val();
-  let _quantity = $("#txtDepositAmount").val();
+  if ($("#formTransfer").valid()) {
+    let _to = $("#txtDepositAddress").val();
+    let _quantity = $("#txtDepositAmount").val();
 
-  if (!web3.isAddress(_to)) {
-    alert('Chave pública inválida!');
-    _to.innerHTML = null;
-    return;
+    instanceToken.transfer(_to, web3.toWei(_quantity, 'ether'), (err, res) => {
+      if (!err) {
+        console.log(res);
+        setModal(res);
+      } else {
+        console.log(res);
+      }
+    })
+  } else {
+    return false;
   }
-
-  if (_quantity < 0) {
-    alert('Quantidade inválida!');
-    _quantity.innerHTML = null;
-    return;
-  }
-
-  instanceToken.transfer(_to, web3.toWei(_quantity, 'ether'), (err, res) => {
-    if (!err) {
-      console.log(res);
-      setModal(res);
-    } else {
-      console.log(res);
-    }
-  })
 });
 
 //file
