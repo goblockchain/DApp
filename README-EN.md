@@ -1,8 +1,9 @@
 # GoBlockchain DApp
-## Decentralized application to use in GO classes.
 
 ## Translations
 [Português](https://github.com/goblockchain/DApp/blob/master/README.md) - [English](https://github.com/goblockchain/DApp/blob/master/README-EN.md)
+
+## Decentralized application to use in GO classes.
 
 Project composed by DApps that are being created in a collaborative way by the Brazilian Community.
 
