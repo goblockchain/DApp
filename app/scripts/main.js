@@ -67,3 +67,7 @@ function getWalletBalance (f) {
     }
   })
 }
+
+function shrinkAddress (address) {
+  return address.substring(0, 8).concat('...').concat(address.substring(37, 42))
+}
