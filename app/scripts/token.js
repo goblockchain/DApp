@@ -6,56 +6,91 @@ let contractAddressToken = "0x02B2c8357Ee5FcAD3691376f9F25B50a0B71f9a9";
 let instanceToken = getInstanceContract(abiToken, contractAddressToken);
 
 $(document).ready(() => {
-    getToken();
+  $("#formTransfer").validate({
+    rules: {
+      "txtDepositAddress": {
+        required: true
+      },
+      "txtDepositAmount": {
+        required: true
+      }
+    },
+    messages: {
+      "txtDepositAddress": {
+        required: "Informe o endereço de recebimento"
+      },
+      "txtDepositAmount": {
+        required: "Informe a quantidade de ETH do depósito",
+        number: "Este campo só aceita números. Exemplo: 1.437"
+      }
+    }
+  });
+
+  getToken();
 });
 
-function getToken(){
-    instanceToken.name((err, result) => {
-        if (!err) {
-            $("#name").text(result);
-        } else {
-          console.error(error);
-        }
-      });
-      instanceToken.decimals((err, result) => {
-        if (!err) {
-            // $("#lblOwner").text(result);
-            console.info(result);
-        } else {
-          console.error(error);
-        }
-      });  
-      instanceToken.symbol((err, result) => {
-        if (!err) {
-            $("#symbol").text(result);
-            console.info(result);
-        } else {
-          console.error(error);
-        }
-      });  
-      instanceToken.version((err, result) => {
-        if (!err) {
-            // $("#lblOwner").text(result);
-            console.info(result);
-        } else {
-          console.error(error);
-        }
-      });  
-      instanceToken.totalSupply((err, result) => {
-        if (!err) {
-            $("#totalSupply").text(result);
-            console.info(result);
-        } else {
-          console.error(error);
-        }
-      });                             
+function getToken() {
+  instanceToken.name((err, result) => {
+    if (!err) {
+      $("#name").text(result);
+    } else {
+      console.error(error);
+    }
+  });
+  instanceToken.decimals((err, result) => {
+    if (!err) {
+      // $("#lblOwner").text(result);
+      console.info(result);
+    } else {
+      console.error(error);
+    }
+  });
+  instanceToken.symbol((err, result) => {
+    if (!err) {
+      $("#symbol").text(result);
+      console.info(result);
+    } else {
+      console.error(error);
+    }
+  });
+  instanceToken.version((err, result) => {
+    if (!err) {
+      // $("#lblOwner").text(result);
+      console.info(result);
+    } else {
+      console.error(error);
+    }
+  });
+  instanceToken.totalSupply((err, result) => {
+    if (!err) {
+      $("#totalSupply").text(result);
+      console.info(result);
+    } else {
+      console.error(error);
+    }
+  });
 };
 
 
 //geandre
-function transfer() {
+$("#btnTransfer").click(() => {
+  if ($("#formTransfer").valid()) {
+    let _to = $("#txtDepositAddress").val();
+    let _quantity = $("#txtDepositAmount").val();
 
-}
+    instanceToken.transfer(_to, _quantity, (err, res) => {
+      if (!err) {
+        console.log(res);
+        setModal(res, 'TRANSFER');
+      } else {
+        console.log(res);
+      }
+    })
+  } else {
+    return false;
+  }
+});
+
 //file
 function approve() {
 
@@ -64,7 +99,34 @@ function approve() {
 //gui
 function transferFrom() {
 
+  instanceToken.transferFrom(from, to, quantity, (err, res) => {
+    if (!err) {
+      console.log(res);
+    } else {
+      console.log(res);
+    }
+  })
 }
+
+function setModal(txn, action) {
+  switch (action) {
+    case 'TRANSFER':
+      $('#transactionModalLabel').text('Transferência Realizada');
+      $('.modal-body').html(
+        '<p>Transação executada, aguarde a validação da rede...</p>' +
+        '<p>Transação: <mark id="lblTransaction" class="small"></mark></p>'
+      );
+      break;
+    
+    default:
+      break;
+  }
+  $('#lblTransaction').text(txn);
+  $('#transactionDetails').attr('href', 'https://rinkeby.etherscan.io/tx/'.concat(txn));
+  $('#transactionModal').modal('show');
+  $('#formTransfer')[0].reset();
+}
+
 //function totalSupply() public view returns (uint256);
 //function balanceOf(address who) public view returns (uint256);
 

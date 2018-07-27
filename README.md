@@ -1,7 +1,8 @@
 # GoBlockchain DApp
 
-
-
+## Translations
+[Português](https://github.com/goblockchain/DApp/blob/master/README.md) - [English](https://github.com/goblockchain/DApp/blob/master/README-EN.md)
+=======
 
 ## Aplicação descentralizada para utilização nas aulas da GO.
 
