@@ -6,28 +6,29 @@
 
     <!-- Bootstrap -->
     <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../../styles/style.css" rel="stylesheet" media="screen">
 </head>
 
 <body>
     <!-- Transaction Modal -->
     <div class="modal fade" id="transactionModal" tabindex="-1" role="dialog" aria-labelledby="transactionModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-              <div class="modal-content">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="transactionModalLabel"></h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                    <h5 class="modal-title" id="transactionModalLabel"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                 </div>
                 <div class="modal-footer">
-                  <a id="transactionDetails" class="btn btn-primary" role="button" target="_blank">Ver detalhes</a>
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <a id="transactionDetails" class="btn btn-primary" role="button" target="_blank">Ver detalhes</a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
+    </div>
     <!-- Just an image -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
@@ -114,8 +115,10 @@
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">GBC Token</h1>
-                <p class="lead">É com o Token GBC que os colaboradores ganham mais governança na GO como por exemplo reputação para realizar consultoria, projetos, aulas, participar do conselho, etc.</p>
-                <p class="lead">Com o Token o colaborador também pode vender, transferir, participar de cursos e utilizar de produtos da GoBlockchain.
+                <p class="lead">É com o Token GBC que os colaboradores ganham mais governança na GO como por exemplo reputação para realizar
+                    consultoria, projetos, aulas, participar do conselho, etc.</p>
+                <p class="lead">Com o Token o colaborador também pode vender, transferir, participar de cursos e utilizar de produtos da
+                    GoBlockchain.
                     <span id="lblOwner" class="text-danger"> </span>
                     <mark>Leia mais sobre o token
                         <a target="_blank" href="https://github.com/goblockchain/smart-contract-token-gbc">aqui</a>.</mark>
@@ -126,19 +129,28 @@
             Conheça as reputações da GO
             <a href="reputacoes.html">aqui</a>
         </div>
-        <p class="h4">Name: <strong id="name"></strong></p>        
-        <p class="h4">Symbol: <strong id="symbol"></strong></p>
-        <p class="h5">Total Supply: <strong id="totalSupply"></strong></p>      
+        <p class="h4">Name:
+            <strong id="name"></strong>
+        </p>
+        <p class="h4">Symbol:
+            <strong id="symbol"></strong>
+        </p>
+        <p class="h5">Total Supply:
+            <strong id="totalSupply"></strong>
+        </p>
+        <p class="h5">Meus GBC:
+            <strong id="myBalanceOf"></strong>
+        </p>
         <br>
         <!-- DEPOSITO -->
         <form id="formTransfer">
             <div class="card">
-                <h4 class="card-header">Transferência</h4>
+                <h4 class="card-header">Transferir meus tokens</h4>
                 <div class="card-body">
                     <div class="form-group">
                         <label for="txtDepositAddress">Chave pública</label>
-                        <input class="form-control" id="txtDepositAddress" name="txtDepositAddress" aria-describedby="textDepositHelp"
-                            placeholder="0xAc5.." required>
+                        <input class="form-control" id="txtDepositAddress" name="txtDepositAddress" aria-describedby="textDepositHelp" placeholder="0xAc5.."
+                            required>
                         <small id="textDepositHelp" class="form-text text-muted">Informa a chave pública do colaborador.</small>
                     </div>
                     <div class="form-group">
@@ -157,30 +169,6 @@
 
         <hr size="10">
 
-        <form onsubmit="transferFrom()" id="formTransferFrom">
-            <div class="card">
-                <h4 class="card-header">Transferir meus tokens</h4>
-                <div class="card-body">
-                    <div class="form-group">
-                        <label for="txtTransferAccount">Chave pública</label>
-                        <input class="form-control" id="txtTransferAccount" name="txtTransferAccount" aria-describedby="txtTransferAccountHelp"
-                            placeholder="0xAc5.." required>
-                        <small id="txtTransferAccountHelp" class="form-text text-muted">Informa a chave pública da pessoa para tranferência dos seus tokens.</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="txtQuantityTransfer">Quantidade</label>
-                        <input type="number" class="form-control" id="txtQuantityTransfer" name="txtQuantityTransfer" aria-describedby="txtQuantityTransferHelp"
-                            placeholder="GBC" required>
-                        <small id="txtQuantityTransferHelp" class="form-text text-muted">Quantidade de Token GBC a ser transferidos.</small>
-                    </div>
-                    <button type="submit" id="btnApprove" name="btnApprove" class="btn btn-primary">
-                        Transferir
-                        <i class="fas fa-arrow-circle-down"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
-        <hr size="10">
         <!-- Aprovar -->
         <form id="frmApprove">
             <div class="card">
@@ -207,6 +195,30 @@
         </form>
 
         <hr size="10">
+        <form onsubmit="transferFrom()" id="formTransferFrom">
+            <div class="card">
+                <h4 class="card-header">Transferência</h4>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="txtTransferAccount">Chave pública</label>
+                        <input class="form-control" id="txtTransferAccount" name="txtTransferAccount" aria-describedby="txtTransferAccountHelp" placeholder="0xAc5.."
+                            required>
+                        <small id="txtTransferAccountHelp" class="form-text text-muted">Informa a chave pública da pessoa para tranferência dos seus tokens.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtQuantityTransfer">Quantidade</label>
+                        <input type="number" class="form-control" id="txtQuantityTransfer" name="txtQuantityTransfer" aria-describedby="txtQuantityTransferHelp"
+                            placeholder="GBC" required>
+                        <small id="txtQuantityTransferHelp" class="form-text text-muted">Quantidade de Token GBC a ser transferidos.</small>
+                    </div>
+                    <button type="submit" id="btnApprove" name="btnApprove" class="btn btn-primary">
+                        Transferir
+                        <i class="fas fa-arrow-circle-down"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+        <hr size="10">
     </div>
     <br>
     <!-- Footer -->
@@ -219,8 +231,8 @@
     <script src="../../vendor/jquery/jquery.min.js"></script>
     <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../vendor/web3/web3.js"></script>
-  <script src="../../vendor/jquery-validation/jquery.validate.min.js"></script>
-  <script src="../../scripts/main.js"></script>
+    <script src="../../vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="../../scripts/main.js"></script>
     <script src="../../scripts/token.js"></script>
 </body>
 

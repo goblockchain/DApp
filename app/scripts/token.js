@@ -69,6 +69,15 @@ function getToken() {
       console.error(error);
     }
   });
+  instanceToken.balanceOf(account, (err, result) => {
+    if (!err) {
+      $("#myBalanceOf").text(result);
+      console.info(result);
+    } else {
+      console.error(error);
+    }
+  });
+  
 };
 
 
@@ -81,6 +90,7 @@ $("#btnTransfer").click(() => {
     instanceToken.transfer(_to, _quantity, (err, res) => {
       if (!err) {
         console.log(res);
+        eventTransfer();
         setModal(res, 'TRANSFER');
       } else {
         console.log(res);
@@ -125,6 +135,20 @@ function setModal(txn, action) {
   $('#transactionDetails').attr('href', 'https://rinkeby.etherscan.io/tx/'.concat(txn));
   $('#transactionModal').modal('show');
   $('#formTransfer')[0].reset();
+}
+
+function eventTransfer() {
+  var event = instanceToken.Transfer();
+  event.watch(function(error, result){
+      if (!error)
+      {
+          getToken()         
+          console.info("evento tranfer " + result.args.from);
+          event.stopWatching();
+      } else {
+          console.log(error);
+      }
+  });    
 }
 
 //function totalSupply() public view returns (uint256);
