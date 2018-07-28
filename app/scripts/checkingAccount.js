@@ -20,8 +20,7 @@ $(document).ready(() => {
   $("#formDeposit").validate({
     rules: {
       "txtDepositAmount": {
-        required: true,
-        validWei: true
+        required: true
       }
     },
     messages: {
