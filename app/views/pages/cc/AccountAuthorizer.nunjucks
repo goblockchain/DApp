@@ -1,0 +1,108 @@
+﻿{% extends "layouts/layout.nunjucks" %} 
+ 
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Autorizadores</h1>
+        <p class="lead">Funcionalidade responsável em adicionar e remover colaboradores responsáveis em autorizar as transações do
+            fundo de reserva.</p>
+        <p class="lead">O responsável em adicionar os colaboradores é a conta:
+            <span id="lblOwner" class="text-danger"> </span> ,
+            <mark>isso pode ser alterado mediante a votação no Aragon.</mark>
+        </p>
+    </div>
+</div>
+<br>
+<!-- Modal -->
+<div class="modal fade" id="transactionModal" tabindex="-1" role="dialog" aria-labelledby="transactionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="transactionModalLabel">Transação</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Transação executada, aguarde a validação da rede...</p>
+                <p>Transação:
+                    <mark id="lblTransaction" class="small"></mark>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a id="transactionDetails" class="btn btn-primary" role="button" target="_blank">Ver detalhes</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="authorizerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Consultar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Conta:
+                    <strong id="labelConta"></strong>
+                </p>
+                <p>Data:
+                    <strong id="labelData"></strong>
+                </p>
+                <p>Status:
+                    <strong id="labelStatus"></strong>
+                </p>
+                <p>Tipo:
+                    <strong id="labelTipo"></strong>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<form id="frmColabs">
+    <h4>Colaboradores</h4>
+    <div class="form-group">
+        <label for="txtConta">Conta</label>
+        <input type="text" class="form-control" id="txtConta" name="txtConta" aria-describedby="textContaHelp" placeholder="0x90c99175"
+            required>
+        <small id="textContaHelp" class="form-text text-muted">Utiliza a chave pública do colaborador.</small>
+    </div>
+    <div class="form-group">
+        <label for="cmbProfile">Perfil</label>
+        <select class="form-control" id="cmbProfile">
+            <option value="0">COLAB</option>
+            <option value="1">ADVISER</option>
+        </select>
+    </div>
+    <button type="button" id="btnAddAuthorizer" name="btnAddAuthorizer" class="btn btn-primary">Adicionar</button>
+    <button type="button" id="btnAuthorizers" name="btnAuthorizers" class="btn btn-info">Consultar</button>
+    <button type="button" id="btnRemoveAuthorizer" name="btnRemoveAuthorizer" class="btn btn-danger">Remover</button>
+    <hr size="10">
+</form>
+
+<form id="frmTransfer">
+    <hr size="10">
+    <h4>Transferir
+        <mark>proprietário</mark> do contrato</h4>
+    <div class="form-group">
+
+        <label for="txtContaNova">Novo proprietário</label>
+        <input type="text" class="form-control" id="txtContaNova" aria-describedby="txtContaNovaHelp" placeholder="0x90c99175" required>
+
+        <small id="txtContaNovaHelp" class="form-text text-muted">Utilize a chave do novo responsável do contrato.</small>
+    </div>
+    <button type="button" id="btnTransferOwnership" name="btnTransferOwnership" class="btn btn-danger">Transferir</button>
+</form>
+{% endblock %}
+
+{% block scripts %} 
+<script src="/scripts/accounAuthorizer.js"></script>
+{% endblock %}

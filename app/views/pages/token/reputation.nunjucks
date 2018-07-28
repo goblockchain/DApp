@@ -1,0 +1,95 @@
+{% extends "layouts/layout.nunjucks" %} 
+ 
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Reputação</h1>
+        <p class="lead">Essa funcionalidade permite que você conheça as reputações dos colaboradores da GO e os nívels de quantidade
+            de tokens para cada perfil.</p>
+        <p class="lead">A quantidade de token por perfil pode ser avaliada mediante a votação no Aragon.</p>
+    </div>
+</div>
+<br>
+<form id="frmApprove">
+    <!-- Aprovar -->
+    <form id="formDeposit">
+        <div class="card">
+            <h4 class="card-header">Reputação</h4>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="txtApproveAccount">Chave pública</label>
+                    <input type="number" class="form-control" id="txtApproveAccount" name="txtApproveAccount" aria-describedby="txtApproveAccountHelp"
+                        placeholder="0xAc5.." required>
+                    <small id="txtApproveAccountHelp" class="form-text text-muted">Informa a chave pública da pessoa que gostaria de consultar.</small>
+                </div>
+                <button type="button" id="btnApprove" name="btnApprove" class="btn btn-primary">
+                    Consultar
+                    <i class="fas fa-arrow-circle-down"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+    <hr size="10">
+</form>
+<!-- bg-primary -->
+<form id="frmColabs">
+    <h4>Perfil</h4>
+    <div class="card-deck">
+        <div class="card mb-3">
+            <div class="card-header text-center">
+                Colaborador
+            </div>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                <p class="card-text">Esse perfil pode contribuir com conteúdo e votações</p>
+            </div>
+            <div class="card-footer text-muted text-center">
+                10 - 50 GBC
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="card-header text-center">
+                Embaixador
+            </div>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                <p class="card-text">Esse perfil é pode contribuir com a organização de meetups, direito a uma camisa da GO, realizar
+                    palestras e ser membro do Linkedin.</p>
+            </div>
+            <div class="card-footer text-muted text-center">
+                50 - 100 GBC
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="card-header text-center">
+                Especialistas
+            </div>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                <p class="card-text">Esse perfil tem acesso em realizar aulas utilizando as DApps da GO, participar de projetos de consultoria,
+                    projetos de desenvolvimento de produtos e criação das DApps.</p>
+            </div>
+            <div class="card-footer text-muted text-center">
+                100 - 200 GBC
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="card-header text-center">
+                Conselho
+            </div>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                <p class="card-text">Os participantes do conselho participam da definição das estratégia da GO para serem levadas a votação
+                    pelos colaboradores.</p>
+            </div>
+            <div class="card-footer text-muted text-center">
+                Acima de 200 GBC
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}
+
+{% block scripts %} 
+<script src="/scripts/collaborators.js"></script>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "layouts/layout.nunjucks" %} 
+ 
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Compras</h1>
+        <p class="lead">Essa funcionalidade permite a compra de tokens GBC para realização de cursos, doações e investimento.</p>
+    </div>
+</div>
+<br>
+<form id="frmApprove">
+    <!-- Aprovar -->
+    <form id="formDeposit">
+        <div class="card">
+            <h4 class="card-header">Compra de GBC</h4>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="txtQuantityApprove">Meio de pagamento</label>
+                    <div class="custom-control custom-radio">
+                        <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
+                        <label class="custom-control-label" for="credit">Mercado Pago</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                        <label class="custom-control-label" for="debit">Ether</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="txtQuantityApprove">Quantidade</label>
+                    <input type="number" class="form-control" id="txtQuantityApprove" name="txtQuantityApprove" aria-describedby="txtQuantityApproveHelp"
+                        placeholder="GBC" required>
+                    <small id="txtQuantityApproveHelp" class="form-text text-muted">Quantidade de Token GBC a ser aprovado para uso.</small>
+                </div>
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout
+                    <i class="fas fa-arrow-circle-up"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <hr size="10">
+
+</form>
+{% endblock %}
+
+{% block scripts %} 
+<script src="/scripts/collaborators.js"></script>
+{% endblock %}
