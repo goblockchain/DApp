@@ -1,200 +1,199 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>DApp GoBlockchain</title>
-
-  <!-- Bootstrap -->
-  <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-  <link href="../../styles/style.css" rel="stylesheet" media="screen">
-</head>
-
-<body>
-  <!-- Just an image -->
+<!DOCTYPE html> 
+<html> 
+ 
+<head> 
+  <title>DApp GoBlockchain</title> 
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/styles/style.css" rel="stylesheet" media="screen">
+   
+  
+</head> 
+ 
+<body> 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">
-      <img src="../../images/logo.png" width="63" height="50" alt="">
+        <img src="/images/logo.png" width="63" height="50" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">GoBlockchain
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Identidade
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="../identity/registryPerson.html">Quero participar</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="../identity/validatePerson.html">Validar</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Conta Corrente
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="AccountAuthorizer.html">Autorizadores</a>
-            <a class="dropdown-item" href="AccountTransaction.html">Transações</a>
-            <a class="dropdown-item" href="CheckingAccount.html">Saldo</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Colaboradores
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="../token/reputation.html">Reputação</a>
-            <a class="dropdown-item" href="../token/collaborators.html">Colaboradores</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Token
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="../token/GBCToken.html">GBC</a>
-            <a class="dropdown-item" href="../token/requestToken.html">Solicitar tokens</a>
-            <a class="dropdown-item" href="../token/approveRequest.html">Aprovar solicitações</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="../token/buyGBC.html">Comprar GBC</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            Produtos
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <h6 class="dropdown-header">Certificado</h6>
-            <a class="dropdown-item" href="https://goblockchain.herokuapp.com/">Consultar</a>
-            <a class="dropdown-item" href="https://goblockchain.herokuapp.com/issuer">Emitir</a>
-            <a class="dropdown-item" href="https://goblockchain.herokuapp.com/admin">Gerenciador</a>
-            <div class="dropdown-divider"></div>
-          </div>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav ml-auto">
-        <li class="nav-item">
-          <label id="statusConnection" class="alert alert-primary">...</label>
-        </li>
-      </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">GoBlockchain
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Identidade
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/pages/identity/registryPerson.html">Quero participar</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/pages/identity/validatePerson.html">Validar</a>
+                </div>
+            </li>                
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Conta Corrente
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">                      
+                    <a class="dropdown-item" href="/pages/cc/AccountAuthorizer.html">Autorizadores</a>
+                    <a class="dropdown-item" href="/pages/cc/AccountTransaction.html">Transações</a>
+                    <a class="dropdown-item" href="/pages/cc/CheckingAccount.html">Saldo</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Colaboradores
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/pages/token/reputation.html">Reputação</a>
+                    <a class="dropdown-item" href="/pages/token/collaborators.html">Colaboradores</a>                                            
+                </div>
+            </li> 
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Token
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/pages/token/GBCToken.html">GBC</a>                        
+                    <a class="dropdown-item" href="/pages/token/requestToken.html">Solicitar tokens</a>
+                    <a class="dropdown-item" href="/pages/token/approveRequest.html">Aprovar solicitações</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/pages/token/buyGBC.html">Comprar GBC</a>                        
+                </div>
+            </li> 
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Produtos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <h6 class="dropdown-header">Certificado</h6> 
+                    <a class="dropdown-item" href="https://goblockchain.herokuapp.com/">Consultar</a>
+                    <a class="dropdown-item" href="https://goblockchain.herokuapp.com/issuer">Emitir</a>
+                    <a class="dropdown-item" href="https://goblockchain.herokuapp.com/admin">Gerenciador</a>
+                    <div class="dropdown-divider"></div>
+                </div>
+            </li>                               
+        </ul>
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+                <label id="statusConnection" class="alert alert-primary">...</label>
+            </li>
+        </ul>
     </div>
-  </nav>
+</nav> 
   <div class="container">
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">Saldo</h1>
-        <p class="lead">Funcionalidade responsável por gerenciar o saldo do contrato</p>
-      </div>
-    </div>
-
-    <!-- Transaction Modal -->
-    <div class="modal fade" id="transactionModal" tabindex="-1" role="dialog" aria-labelledby="transactionModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="transactionModalLabel"></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-          </div>
-          <div class="modal-footer">
-            <a id="transactionDetails" class="btn btn-primary" role="button" target="_blank">Ver detalhes</a>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <hr />
-    <div class="alert alert-info">
-      <b>Saldo no Contrato:</b>
-      <i class="fab fa-ethereum"></i>
-      <span id="balance"></span>
-    </div>
-    <hr />
-
-    <!-- DEPOSITO -->
-    <form id="formDeposit">
-      <div class="card">
-        <h4 class="card-header">Depósito</h4>
-        <div class="card-body">
-          <div class="form-group">
-            <label for="txtDepositAmount">Quantidade</label>
-            <input type="number" class="form-control" id="txtDepositAmount" name="txtDepositAmount" aria-describedby="textDepositHelp"
-              placeholder="ETH" required>
-            <small id="textDepositHelp" class="form-text text-muted">Quantidade de ETH a ser depositado no contrato.</small>
-          </div>
-          <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-primary">
-            Depositar
-            <i class="fas fa-arrow-circle-down"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-
-    <hr size="10">
-
-    <!-- SAQUE -->
-    <section id="withdraw">
-      <form id="formWithdraw">
-        <div class="card">
-          <h4 class="card-header">Saque</h4>
-          <div class="card-body">
-            <div class="form-group">
-              <label for="txtWithdrawAmount">Quantidade</label>
-              <input type="number" class="form-control" id="txtWithdrawAmount" name="txtWithdrawAmount" aria-describedby="textWithdrawHelp"
-                placeholder="ETH" required>
-              <small id="textWithdrawHelp" class="form-text text-muted">Quantidade de ETH a ser sacado do contrato.</small>
-            </div>
-            <div class="form-group">
-              <label for="txtWithdrawDescription">Descrição</label>
-              <input type="text" class="form-control" id="txtWithdrawDescription" name="txtWithdrawDescription" aria-describedby="textDescriptionHelp"
-                placeholder="Descrição" required>
-              <small id="textDescriptionHelp" class="form-text text-muted">Descrição do saque.</small>
-            </div>
-            <button type="button" id="btnWithdraw" name="btnWithdraw" class="btn btn-primary">
-              Sacar
-              <i class="fas fa-arrow-circle-up"></i>
-            </button>
-          </div>
-        </div>
-      </form>
-
-      <hr size="10">
-    </section>
+  <br />
+  
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Saldo</h1>
+    <p class="lead">Funcionalidade responsável por gerenciar o saldo do contrato</p>
   </div>
+</div>
 
-  <br>
+<!-- Transaction Modal -->
+<div class="modal fade" id="transactionModal" tabindex="-1" role="dialog" aria-labelledby="transactionModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="transactionModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <a id="transactionDetails" class="btn btn-primary" role="button" target="_blank">Ver detalhes</a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <!-- Footer -->
+<hr />
+<div class="alert alert-info">
+  <b>Saldo no Contrato:</b>
+  <i class="fab fa-ethereum"></i>
+  <span id="balance"></span>
+</div>
+<hr />
+
+<!-- DEPOSITO -->
+<form id="formDeposit">
+  <div class="card">
+    <h4 class="card-header">Depósito</h4>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="txtDepositAmount">Quantidade</label>
+        <input type="number" class="form-control" id="txtDepositAmount" name="txtDepositAmount" aria-describedby="textDepositHelp"
+          placeholder="ETH" required>
+        <small id="textDepositHelp" class="form-text text-muted">Quantidade de ETH a ser depositado no contrato.</small>
+      </div>
+      <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-primary">
+        Depositar
+        <i class="fas fa-arrow-circle-down"></i>
+      </button>
+    </div>
+  </div>
+</form>
+
+<hr size="10">
+
+<!-- SAQUE -->
+<section id="withdraw">
+  <form id="formWithdraw">
+    <div class="card">
+      <h4 class="card-header">Saque</h4>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="txtWithdrawAmount">Quantidade</label>
+          <input type="number" class="form-control" id="txtWithdrawAmount" name="txtWithdrawAmount" aria-describedby="textWithdrawHelp"
+            placeholder="ETH" required>
+          <small id="textWithdrawHelp" class="form-text text-muted">Quantidade de ETH a ser sacado do contrato.</small>
+        </div>
+        <div class="form-group">
+          <label for="txtWithdrawDescription">Descrição</label>
+          <input type="text" class="form-control" id="txtWithdrawDescription" name="txtWithdrawDescription" aria-describedby="textDescriptionHelp"
+            placeholder="Descrição" required>
+          <small id="textDescriptionHelp" class="form-text text-muted">Descrição do saque.</small>
+        </div>
+        <button type="button" id="btnWithdraw" name="btnWithdraw" class="btn btn-primary">
+          Sacar
+          <i class="fas fa-arrow-circle-up"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <hr size="10">
+</section>
+ 
+  </div> 
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; GoBlockchain 2018</p>
+        <p class="m-0 text-center text-white">Copyright &copy; GoBlockchain 2018</p>
     </div>
-    <!-- /.container -->
-  </footer>
-  <script src="../../vendor/jquery/jquery.min.js"></script>
-  <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
-  <script src="../../vendor/web3/web3.js"></script>
-  <script src="../../vendor/font-awesome/fontawesome-all.min.js"></script>
-  <script src="../../vendor/jquery-validation/jquery.validate.min.js"></script>
-  <script src="../../scripts/main.js"></script>
-  <script src="../../scripts/checkingAccount.js"></script>
-</body>
-
+</footer> 
+  <script src="/vendor/jquery/jquery.min.js"></script> 
+  <script src="/vendor/bootstrap/js/bootstrap.min.js"></script> 
+  <script src="/vendor/font-awesome/fontawesome-all.min.js"></script> 
+  <script src="/vendor/web3/web3.js"></script> 
+  <script src="/vendor/jquery-validation/jquery.validate.min.js"></script> 
+  <script src="/scripts/main.js"></script> 
+   
+<script src="/scripts/checkingAccount.js"></script>
+ 
+</body> 
+ 
 </html>
