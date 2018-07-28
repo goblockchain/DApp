@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html> 
+ 
+<head> 
+  <title>DApp GoBlockchain</title> 
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/styles/style.css" rel="stylesheet" media="screen">
+  {% block head %} 
+  {% endblock %}
+</head> 
+ 
+<body> 
+  {% include "partials/navigation.nunjucks" %} 
+  <div class="container">
+  <br />
+  {% block content %} {% endblock %} 
+  </div> 
+  {% include "partials/footer.nunjucks" %} 
+  <script src="/vendor/jquery/jquery.min.js"></script> 
+  <script src="/vendor/bootstrap/js/bootstrap.min.js"></script> 
+  <script src="/vendor/font-awesome/fontawesome-all.min.js"></script> 
+  <script src="/vendor/web3/web3.js"></script> 
+  <script src="/vendor/jquery-validation/jquery.validate.min.js"></script> 
+  <script src="/scripts/main.js"></script> 
+  {% block scripts %} 
+  {% endblock %} 
+</body> 
+ 
+</html>

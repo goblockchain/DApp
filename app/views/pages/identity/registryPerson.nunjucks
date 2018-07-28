@@ -1,0 +1,79 @@
+{% extends "layouts/layout.nunjucks" %} 
+ 
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Registro de Colaborador</h1>
+        <p class="lead">Essa funcionalidade permite que pessoas possam se registrar na GO, após o envio das informações os colaboradores
+            da GO devem aprovar o registro.</p>
+    </div>
+</div>
+<br>
+<!-- Registro -->
+<form id="formDeposit">
+    <div class="card">
+        <h4 class="card-header">Registro</h4>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="txtApproveAccount">Email</label>
+                <input type="number" class="form-control" id="txtApproveAccount" name="txtApproveAccount" aria-describedby="txtApproveAccountHelp"
+                    placeholder="eu@terra.com.br" required>
+                <small id="txtApproveAccountHelp" class="form-text text-muted">Informa um email válido.</small>
+            </div>
+            <div class="form-group">
+                <label for="txtQuantityApprove">Github</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="">https://github.com/</span>
+                    </div>
+                    <input type="text" class="form-control">
+                </div>
+                <small id="txtQuantityApproveHelp" class="form-text text-muted">Informe o endereço do seu github</small>
+            </div>
+            <div class="form-group">
+                <label for="txtQuantityApprove">Linkedin</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="">https://www.linkedin.com/</span>
+                    </div>
+                    <input type="text" class="form-control">
+                </div>
+                <small id="txtQuantityApproveHelp" class="form-text text-muted">Informe seu linkedin.</small>
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr size="10">
+<!-- Aprovar -->
+<form id="formDeposit">
+    <br>
+    <h4>Leia com atenção a Governaças da DAO</h4>
+    <div class="card">
+        <h4 class="card-header">Documento</h4>
+        <div class="card-body">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-primary" type="button">Consultar Hash</button>
+                </div>
+                <input type="text" class="form-control" placeholder="XXX" aria-label="" aria-describedby="basic-addon1">
+            </div>
+            <small id="txtQuantityApproveHelp" class="form-text text-muted">Consulte o hash do documento para provar que ele não foi alterado.</small>
+        </div>
+    </div>
+    <object data="https://docs.google.com/document/d/e/2PACX-1vTnDYrfhgpyNmugZnmSy0F60hvi33sgdonI4Rbn0iUSSOX3qXXC8qkOeSKnAeRwTm678MFpM2HGzctC/pub"
+        type="application/doc">
+        <iframe style="border:1px solid rgb(0, 0, 0)" src="https://docs.google.com/document/d/e/2PACX-1vTnDYrfhgpyNmugZnmSy0F60hvi33sgdonI4Rbn0iUSSOX3qXXC8qkOeSKnAeRwTm678MFpM2HGzctC/pub"
+            frameborder="1" scrolling="auto" height="1100" width="100%"></iframe>
+    </object>
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="customCheck1">
+        <label class="custom-control-label" for="customCheck1">Li e concordo</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar registro</button>
+</form>
+{% endblock %}
+
+{% block scripts %} 
+<script src="/scripts/collaborators.js"></script>
+{% endblock %}
