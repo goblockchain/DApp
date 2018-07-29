@@ -88,5 +88,5 @@
 {% endblock %}
 
 {% block scripts %} 
-<script src="/scripts/checkingAccount.js"></script>
+<script src="{{ baseURL }}/scripts/checkingAccount.js"></script>
 {% endblock %}

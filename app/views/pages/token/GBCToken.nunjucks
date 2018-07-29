@@ -130,5 +130,5 @@
 {% endblock %}
 
 {% block scripts %} 
-<script src="/scripts/token.js"></script>
+<script src="{{ baseURL }}/scripts/token.js"></script>
 {% endblock %}

@@ -105,5 +105,5 @@
 {% endblock %}
 
 {% block scripts %} 
-<script src="/scripts/collaborators.js"></script>
+<script src="{{ baseURL }}/scripts/collaborators.js"></script>
 {% endblock %}

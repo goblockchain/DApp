@@ -104,5 +104,5 @@
 {% endblock %}
 
 {% block scripts %} 
-<script src="/scripts/accounAuthorizer.js"></script>
+<script src="{{ baseURL }}/scripts/accounAuthorizer.js"></script>
 {% endblock %}
