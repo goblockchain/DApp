@@ -78,5 +78,5 @@
 {% endblock %}
 
 {% block scripts %} 
-<script src="/scripts/accountTransaction.js"></script>
+<script src="{{ baseURL }}/scripts/accountTransaction.js"></script>
 {% endblock %}

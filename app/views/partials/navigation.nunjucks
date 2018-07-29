@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">
-        <img src="/images/logo.png" width="63" height="50" alt="">
+        <img src="{{ baseURL }}/images/logo.png" width="63" height="50" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -19,9 +19,9 @@
                     Identidade
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/pages/identity/registryPerson.html">Quero participar</a>
+                    <a class="dropdown-item" href="{{ baseURL }}/pages/identity/registryPerson.html">Quero participar</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/pages/identity/validatePerson.html">Validar</a>
+                    <a class="dropdown-item" href="{{ baseURL }}/pages/identity/validatePerson.html">Validar</a>
                 </div>
             </li>                
             <li class="nav-item dropdown">
@@ -30,9 +30,9 @@
                     Conta Corrente
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">                      
-                    <a class="dropdown-item" href="/pages/cc/AccountAuthorizer.html">Autorizadores</a>
-                    <a class="dropdown-item" href="/pages/cc/AccountTransaction.html">Transações</a>
-                    <a class="dropdown-item" href="/pages/cc/CheckingAccount.html">Saldo</a>
+                    <a class="dropdown-item" href="{{ baseURL }}/pages/cc/AccountAuthorizer.html">Autorizadores</a>
+                    <a class="dropdown-item" href="{{ baseURL }}/pages/cc/AccountTransaction.html">Transações</a>
+                    <a class="dropdown-item" href="{{ baseURL }}/pages/cc/CheckingAccount.html">Saldo</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -41,8 +41,8 @@
                     Colaboradores
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/pages/token/reputation.html">Reputação</a>
-                    <a class="dropdown-item" href="/pages/token/collaborators.html">Colaboradores</a>                                            
+                    <a class="dropdown-item" href="{{ baseURL }}/pages/token/reputation.html">Reputação</a>
+                    <a class="dropdown-item" href="{{ baseURL }}/pages/token/collaborators.html">Colaboradores</a>                                            
                 </div>
             </li> 
             <li class="nav-item dropdown">
@@ -51,11 +51,11 @@
                     Token
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/pages/token/GBCToken.html">GBC</a>                        
-                    <a class="dropdown-item" href="/pages/token/requestToken.html">Solicitar tokens</a>
-                    <a class="dropdown-item" href="/pages/token/approveRequest.html">Aprovar solicitações</a>
+                    <a class="dropdown-item" href="{{ baseURL }}/pages/token/GBCToken.html">GBC</a>                        
+                    <a class="dropdown-item" href="{{ baseURL }}/pages/token/requestToken.html">Solicitar tokens</a>
+                    <a class="dropdown-item" href="{{ baseURL }}/pages/token/approveRequest.html">Aprovar solicitações</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/pages/token/buyGBC.html">Comprar GBC</a>                        
+                    <a class="dropdown-item" href="{{ baseURL }}/pages/token/buyGBC.html">Comprar GBC</a>                        
                 </div>
             </li> 
             <li class="nav-item dropdown">

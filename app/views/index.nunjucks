@@ -2,7 +2,6 @@
 {% extends "layouts/layout.nunjucks" %} 
  
 {% block content %}
-<br>
 <div class="jumbotron">
     <h1 class="display-4">Ensinando e construindo juntos!</h1>
     <p class="lead">Nós da GoBlockchain acreditamos que a educação é a base de uma sociedade transparente e justa, por isso estamos
