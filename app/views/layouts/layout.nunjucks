@@ -1,0 +1,31 @@
+{% set baseURL = "/DApp/app" %}
+
+<!DOCTYPE html> 
+<html>
+
+<head> 
+  <title>DApp GoBlockchain</title> 
+  <link href="{{ baseURL }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="{{ baseURL }}/styles/style.css" rel="stylesheet" media="screen">
+  {% block head %} 
+  {% endblock %}
+</head> 
+ 
+<body> 
+  {% include "partials/navigation.nunjucks" %} 
+  <div class="container">
+  <br />
+  {% block content %} {% endblock %} 
+  </div> 
+  {% include "partials/footer.nunjucks" %} 
+  <script src="{{ baseURL }}/vendor/jquery/jquery.min.js"></script> 
+  <script src="{{ baseURL }}/vendor/bootstrap/js/bootstrap.min.js"></script> 
+  <script src="{{ baseURL }}/vendor/font-awesome/fontawesome-all.min.js"></script> 
+  <script src="{{ baseURL }}/vendor/web3/web3.js"></script> 
+  <script src="{{ baseURL }}/vendor/jquery-validation/jquery.validate.min.js"></script> 
+  <script src="{{ baseURL }}/scripts/main.js"></script> 
+  {% block scripts %} 
+  {% endblock %} 
+</body> 
+ 
+</html>
