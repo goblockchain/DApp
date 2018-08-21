@@ -1,12 +1,12 @@
-
+<!---->
 
 <!DOCTYPE html> 
 <html>
 
 <head> 
   <title>DApp GoBlockchain</title> 
-  <link href="/DApp/app/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-  <link href="/DApp/app/styles/style.css" rel="stylesheet" media="screen">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/styles/style.css" rel="stylesheet" media="screen">
    
   
 </head> 
@@ -14,7 +14,7 @@
 <body> 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">
-        <img src="/DApp/app/images/logo.png" width="63" height="50" alt="">
+        <img src="/images/logo.png" width="63" height="50" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -33,9 +33,9 @@
                     Identidade
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/DApp/app/pages/identity/registryPerson.html">Quero participar</a>
+                    <a class="dropdown-item" href="/pages/identity/registryPerson.html">Quero participar</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/DApp/app/pages/identity/validatePerson.html">Validar</a>
+                    <a class="dropdown-item" href="/pages/identity/validatePerson.html">Validar</a>
                 </div>
             </li>                
             <li class="nav-item dropdown">
@@ -44,9 +44,9 @@
                     Conta Corrente
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">                      
-                    <a class="dropdown-item" href="/DApp/app/pages/cc/AccountAuthorizer.html">Autorizadores</a>
-                    <a class="dropdown-item" href="/DApp/app/pages/cc/AccountTransaction.html">Transações</a>
-                    <a class="dropdown-item" href="/DApp/app/pages/cc/CheckingAccount.html">Saldo</a>
+                    <a class="dropdown-item" href="/pages/cc/AccountAuthorizer.html">Autorizadores</a>
+                    <a class="dropdown-item" href="/pages/cc/AccountTransaction.html">Transações</a>
+                    <a class="dropdown-item" href="/pages/cc/CheckingAccount.html">Saldo</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -55,8 +55,8 @@
                     Colaboradores
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/DApp/app/pages/token/reputation.html">Reputação</a>
-                    <a class="dropdown-item" href="/DApp/app/pages/token/collaborators.html">Colaboradores</a>                                            
+                    <a class="dropdown-item" href="/pages/token/reputation.html">Reputação</a>
+                    <a class="dropdown-item" href="/pages/token/collaborators.html">Colaboradores</a>                                            
                 </div>
             </li> 
             <li class="nav-item dropdown">
@@ -65,11 +65,11 @@
                     Token
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/DApp/app/pages/token/GBCToken.html">GBC</a>                        
-                    <a class="dropdown-item" href="/DApp/app/pages/token/requestToken.html">Solicitar tokens</a>
-                    <a class="dropdown-item" href="/DApp/app/pages/token/approveRequest.html">Aprovar solicitações</a>
+                    <a class="dropdown-item" href="/pages/token/GBCToken.html">GBC</a>                        
+                    <a class="dropdown-item" href="/pages/token/requestToken.html">Solicitar tokens</a>
+                    <a class="dropdown-item" href="/pages/token/approveRequest.html">Aprovar solicitações</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/DApp/app/pages/token/buyGBC.html">Comprar GBC</a>                        
+                    <a class="dropdown-item" href="/pages/token/buyGBC.html">Comprar GBC</a>                        
                 </div>
             </li> 
             <li class="nav-item dropdown">
@@ -110,6 +110,13 @@
         <h4 class="card-header">Registro</h4>
         <div class="card-body">
             <div class="form-group">
+                <!-- Button -->
+                <div id="ORIGINALMY_MODAL"></div>
+                <div id="OMAUTHID"></div>
+                <button id="ORIGINALMY_BTN"></button>
+            </div>
+            <!-- /Button -->
+            <div class="form-group">
                 <label for="txtApproveAccount">Email</label>
                 <input type="number" class="form-control" id="txtApproveAccount" name="txtApproveAccount" aria-describedby="txtApproveAccountHelp"
                     placeholder="eu@terra.com.br" required>
@@ -143,7 +150,7 @@
 <!-- Aprovar -->
 <form id="formDeposit">
     <br>
-    <h4>Leia com atenção a Governaças da DAO</h4>
+    <h4>Leia com atenção a Governanças da DAO</h4>
     <div class="card">
         <h4 class="card-header">Documento</h4>
         <div class="card-body">
@@ -175,14 +182,15 @@
         <p class="m-0 text-center text-white">Copyright &copy; GoBlockchain 2018</p>
     </div>
 </footer> 
-  <script src="/DApp/app/vendor/jquery/jquery.min.js"></script> 
-  <script src="/DApp/app/vendor/bootstrap/js/bootstrap.min.js"></script> 
-  <script src="/DApp/app/vendor/font-awesome/fontawesome-all.min.js"></script> 
-  <script src="/DApp/app/vendor/web3/web3.js"></script> 
-  <script src="/DApp/app/vendor/jquery-validation/jquery.validate.min.js"></script> 
-  <script src="/DApp/app/scripts/main.js"></script> 
+  <script src="/vendor/jquery/jquery.min.js"></script> 
+  <script src="/vendor/bootstrap/js/bootstrap.min.js"></script> 
+  <script src="/vendor/font-awesome/fontawesome-all.min.js"></script> 
+  <script src="/vendor/web3/web3.js"></script> 
+  <script src="/vendor/jquery-validation/jquery.validate.min.js"></script> 
+  <script src="/scripts/main.js"></script> 
    
-<script src="/DApp/app/scripts/collaborators.js"></script>
+<script type="text/javascript" src="https://api1.testnet.originalmy.com/scripts/om-id/om-id.js"></script>
+<script src="/scripts/collaborators.js"></script>
  
 </body> 
  

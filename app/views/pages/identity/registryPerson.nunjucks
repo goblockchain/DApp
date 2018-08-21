@@ -15,6 +15,13 @@
         <h4 class="card-header">Registro</h4>
         <div class="card-body">
             <div class="form-group">
+                <!-- Button -->
+                <div id="ORIGINALMY_MODAL"></div>
+                <div id="OMAUTHID"></div>
+                <button id="ORIGINALMY_BTN"></button>
+            </div>
+            <!-- /Button -->
+            <div class="form-group">
                 <label for="txtApproveAccount">Email</label>
                 <input type="number" class="form-control" id="txtApproveAccount" name="txtApproveAccount" aria-describedby="txtApproveAccountHelp"
                     placeholder="eu@terra.com.br" required>
@@ -48,7 +55,7 @@
 <!-- Aprovar -->
 <form id="formDeposit">
     <br>
-    <h4>Leia com atenção a Governaças da DAO</h4>
+    <h4>Leia com atenção a Governanças da DAO</h4>
     <div class="card">
         <h4 class="card-header">Documento</h4>
         <div class="card-body">
@@ -75,5 +82,6 @@
 {% endblock %}
 
 {% block scripts %} 
+<script type="text/javascript" src="https://api1.testnet.originalmy.com/scripts/om-id/om-id.js"></script>
 <script src="{{ baseURL }}/scripts/collaborators.js"></script>
 {% endblock %}

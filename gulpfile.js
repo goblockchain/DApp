@@ -2,7 +2,7 @@ var gulp = require('gulp')
 var nunjucksRender = require('gulp-nunjucks-render')
 var del = require('del')
 var browserSync = require('browser-sync').create()
- 
+
 gulp.task('clean', () => {
   return del([
     'app/pages',
