@@ -9,9 +9,13 @@
             <mark>após 40% de aceite o colaborador é liberado</mark>.</p>
     </div>
 </div>
-<div class="alert alert-success" role="alert">
-    Olá! Seu perfil é de especialistas e você pode votar para aprovar ou recusar as solicitações abaixo.
+<div class="alert alert-success divRole" role="alert" id="divColabAdvisor">
+    Olá! Seu perfil é de advisor e você pode votar para aprovar ou recusar as solicitações abaixo.
 </div>
+<div class="alert alert-info divRole" role="alert" id="divColab">
+    Olá! Seu perfil é de colaborar e você pode não pode aprovar ou recusar as solicitações abaixo.
+</div>
+
 <br>
 <form id="frmApproveRequest">
     <div class="card">
@@ -101,5 +105,6 @@
 {% endblock %}
 
 {% block scripts %} 
+<script type="text/javascript" src="https://api1.testnet.originalmy.com/scripts/om-id/om-id.js"></script>
 <script src="{{ baseURL }}/scripts/collaborators.js"></script>
 {% endblock %}

@@ -4,6 +4,12 @@ var abiIdentity = [{"constant":true,"inputs":[{"name":"","type":"uint256"}],"nam
 let contractAddressIdentity = "0x07c92a756c20f53dc801f6efa51bdf2ccadec7fd";
 let instanceIdentity = getInstanceContract(abiIdentity, contractAddressIdentity);
 
+let ROLE_ADMIN = "admin";
+let ROLE_ADVISOR = "advisor";
+let ROLE_ESPECIALIST = "especialist";
+let ROLE_AMBASSADOR = "ambassador";
+let ROLE_COLLABORATOR = "collaborator";
+
 $(document).ready(() => {
     /**
      * Neste retorno você era receber um objeto contendo as seguintes informações
@@ -14,10 +20,91 @@ $(document).ready(() => {
             callAuth(result.nonce);
             console.info(result.nonce);
         }
-    });  
+    });
+
+    if ($("#lblColab") != undefined) {
+        $("#lblColab").text();
+    }
+    $(".divRole").hide();
+    isCollaborator();
+    isAdvisor();
+    getListPerson();
 });
 
-function callAuth(nonce){
+function isCollaborator() {    
+
+    checkRole(ROLE_COLLABORATOR, function (error, result) {
+       if (error) {
+            $(".divRole").hide();
+        } else {
+            if(result) {
+                $("#divColab").show();
+            } else {
+                $("#divColab").hide();
+            }
+        }         
+    });
+
+    // return (
+    //     hasRole(_addressUser, ROLE_ADMIN) ||
+    //     hasRole(_addressUser, ROLE_ADVISOR) ||
+    //     hasRole(_addressUser, ROLE_ESPECIALIST) ||
+    //     hasRole(_addressUser, ROLE_AMBASSADOR) || 
+    //     hasRole(_addressUser, ROLE_COLLABORATOR)            
+    // );
+}
+
+function isAdvisor() {
+
+    checkRole(ROLE_ADVISOR, function (error, result) {
+       if (error) {
+            console.error(error);
+        } else {
+            console.log(result);
+            if(result) {
+                $("#divColabAdvisor").show();
+            } else {
+                $("#divColabAdvisor").hide();
+            }
+        }       
+    });
+}
+
+function checkRole(role, e) {
+
+    instanceIdentity.hasRole(web3.eth.accounts[0], role, (error, result) => {
+        e(error, result);
+        if (error) {
+            console.error(error);
+        } else {
+            console.log(result);
+        }
+    });
+}
+
+function getListPerson() {
+    // var search = true;
+    // var count = 0;
+    // while(search) {
+    //     instanceIdentity.person(count++, function(error, result) {
+    //         if (error) {
+    //             console.error(error);
+    //         } else {
+    //             if (result[0].length == 0) {
+    //                 search = false;
+    //             }                
+    //             console.log(result);
+    //             console.log(result[0]);
+    //             console.log(result[1]);
+    //             console.log(result[2]);                
+    //             console.log(result[3]);                 
+    //         }  
+    //     });
+    // }
+}
+
+
+function callAuth(nonce) {
     $.ajax({
         url : "http://localhost:8181/demo/auth/" +nonce,
         success: callAuthSuccess,
