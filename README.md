@@ -1,8 +1,7 @@
 # GoBlockchain DApp
 
-## Translations
-[Português](https://github.com/goblockchain/DApp/blob/master/README.md) - [English](https://github.com/goblockchain/DApp/blob/master/README-EN.md)
-=======
+### Translations
+### [English](https://github.com/goblockchain/DApp/blob/master/README-EN.md)
 
 ## Aplicação descentralizada para utilização nas aulas da GO.
 
@@ -41,7 +40,7 @@ Para navegar no projeto em seu computador, execute dentro da pasta `DApp` os seg
 O lastro do Token será o saldo na wallet da GoBlockchain. O saldo da wallet será proveniente de % do valor cobrado em cursos, valores recebidos por projetos vendidos a clientes e também valores depositados por investidores a título de doação para patrocinar alguma atividade .
 1 ether = 1000 tokens
 
-###Utilidade
+### Utilidade
 
 O Token GBC inicialmente vai ser utilizado para
 troca por descontos em cursos da GoBlockchain que podem variar de 1% a 100%, 
@@ -78,7 +77,7 @@ Essa “Prova de Contribuição “ é recompensada em GBC de acordo com a tabel
 
 Embora o GBC represente a Participação na DAO ele não é uma representação direta das Share , essas são calculadas de acordo com a Quantidade Total de GBC “Mineirados negociados” e a quantidade na carteira do colaborador, conforme a seguinte equação:
 
-SharesColaborador = Saldo_GBC_Colaborador / GBC_Total_NegociadoDAO
+**SharesColaborador = Saldo_GBC_Colaborador / GBC_Total_NegociadoDAO**
 
 As Shares da DAO tem duas grandes importâncias em destaque uma é a governança aonde é necessário 51% dos votantes para Aprovar Alterações na DAO a outra é a Divisão de Lucros que ocorre de acordo com os Shares de cada colaborador.
 Proof-of-Work e Formação do Fundo de Reserva
@@ -104,16 +103,17 @@ Dividimos em 5 grande atividades, embora alguns profissionais individuais consig
 Vamos simular um Curso realizado pela DAO, utilizando a tabela de porcentagem descrita
 
 
-IN:
-Valor: 50 ETH por aluno
-Número de alunos : 10
-total 500 ETH
-OUT:
-Aluguel: 80 ETH
-Coffee Break: 20 ETH
+>IN:<br/>
+>Valor: 50 ETH por aluno<br/>
+>Número de alunos : 10<br/>
+>total 500 ETH<br/><br/>
+>OUT:<br/>
+>Aluguel: 80 ETH<br/>
+>Coffee Break: 20 ETH<br/>
 
-A primeira parte do processo e Pagar os custos no caso 100 ETH, depois o restante 400 ETH e distribuído por atividade, desses 20% serão direcionados para o fundo de reserva que nesse caso armazenaria 80 ETH e emitiria 8000 GBC divididos pelos colaboradores.
-Valorizando Novos Colaboradores 
-Como token garante participação periódica na divisão de lucros da DAO, conforme for crescendo o grupo de colaboradores e o número de GBC negociado aumentar corre-se o risco de  que novos colaboradores não tenham interesse em se juntar a DAO pois a receita de suas colaborações será dividida com um grande número de steakholder dos quais boa parte já não pode estar colaborando mais com a DAO e dessa forma gerando resultados.
-Para solucionar esse problema Toda vez que um período for fechado e realizada a divisão de lucro, automaticamente o SmartContract da DAO vai gerar uma inflação de XX% forçada sobre o valor do Token GBC, e vai reajustar a Tabela de Recompensa por Contribuição com o valor da Inflação gerada sobre o GBC de XX% .
+A primeira parte do processo é **pagar os custos** no caso 100 ETH, depois o restante 400 ETH e distribuído por atividade, desses 20% serão direcionados para o fundo de reserva que nesse caso armazenaria 80 ETH e emitiria 8000 GBC divididos pelos colaboradores.
+
+### Valorizando Novos Colaboradores 
+Como token garante participação periódica na divisão de lucros da DAO, conforme for crescendo o grupo de colaboradores e o número de GBC negociado aumentar corre-se o risco de  que novos colaboradores não tenham interesse em se juntar a DAO pois a receita de suas colaborações será dividida com um grande número de steakholder dos quais boa parte já não pode estar colaborando mais com a DAO e dessa forma gerando resultados. <br/>
+Para solucionar esse problema Toda vez que um período for fechado e realizada a divisão de lucro, automaticamente o SmartContract da DAO vai gerar uma inflação de XX% forçada sobre o valor do Token GBC, e vai reajustar a Tabela de Recompensa por Contribuição com o valor da Inflação gerada sobre o GBC de XX%.<br/>
 Assim vamos simular que ao fim de um período semestral o fundo de reserva da DAO continha 100 ETH e existiam 100.000 GBT, nesse momento 75% dos ETH serão distribuídos de acordo com as Shares e restaram 25 ETH restaram no fundo de reserva e será aplicada uma inflação de 50% o que implica que serão emitidos mais 50.000 GBT, esses GBT serão colocados à venda a mercado dentro do módulo de leilão All-Pay e os ETH arrecadados no leilão irão para o fundo de Reserva da DAO, e a tabela de remuneração também será reajustada de acordo com a inflação se estavam sendo pagos 1000 GBT por ETH , no semestre seguinte serão pagos 1500 GBT por ETH, e assim também a tabela de valores fixos também será reajustada na mesma proporção.
