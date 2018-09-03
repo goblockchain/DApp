@@ -117,15 +117,15 @@
             </div>
             <!-- /Button -->
             <div class="form-group">
-                <label for="txtApproveAccount">Email</label>
-                <input type="number" class="form-control" id="txtApproveAccount" name="txtApproveAccount" aria-describedby="txtApproveAccountHelp"
-                    placeholder="eu@terra.com.br" required>
-                <small id="txtApproveAccountHelp" class="form-text text-muted">Email carregado após autenticação com uPort.</small>
+                <label for="txtNome">Nome</label>
+                <input type="text" readonly class="form-control" id="txtNome" name="txtNome" aria-describedby="txtNomeHelp"
+                    placeholder="Nome carregado com uPort" required>
+                <small id="txtNomeHelp" class="form-text text-muted">Email carregado após autenticação com uPort.</small>
             </div>
             <div class="form-group">
                 <label for="txtIDuPort">ID uPort</label>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="txtIDuPort">
+                    <input type="text" readonly class="form-control" id="txtIDuPort">
                 </div>
                 <small id="txtIDuPortHelp" class="form-text text-muted">ID uPort carregado após autenticação</small>
             </div>
@@ -177,6 +177,7 @@
   <script src="/scripts/main.js"></script> 
    
 <script type="text/javascript" src="https://api1.testnet.originalmy.com/scripts/om-id/om-id.js"></script>
+<script src="https://unpkg.com/uport-connect/dist/uport-connect.js"></script>
 <script src="/scripts/collaborators.js"></script>
  
 </body> 

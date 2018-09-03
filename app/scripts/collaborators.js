@@ -142,3 +142,23 @@ $("#btnSendRequest").click(function() {
         }
       });
 });  
+
+
+var uportconnect = window.uportconnect
+const uport = new uportconnect.Connect('GoBlockchain dApp', {
+    clientId: '2ozaREEZXKfhCbRcdLuMYzo9Zy8nts83Ddf',
+    signer: uportconnect.SimpleSigner('549db5cdbab21a3543ea43e434eb9252c229922e3cd2e00a965e55a7acc0d9f3'),
+    network: 'rinkeby'
+})
+
+// Request credentials to login
+uport.requestCredentials({
+    requested: ['name', 'country'],
+    notifications: true // We want this if we want to recieve credentials
+}).then((credentials) => {
+    // Do something
+    console.info(credentials);
+    $("#txtIDuPort").val(credentials.address);
+    $("#txtNome").val(credentials.name);
+    console.info(credentials.country)
+})
