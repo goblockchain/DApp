@@ -1,5 +1,4 @@
 {% set baseURL = "/DApp/app" %}
-<!--{% set baseURL = "" %}-->
 <!DOCTYPE html> 
 <html>
 
