@@ -48,6 +48,19 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
+                    Projetos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ baseURL }}/pages/projects/list.html">Consultar</a>  
+                    <div class="dropdown-divider"></div>    
+                    <a class="dropdown-item" href="{{ baseURL }}/pages/projects/ico.html">ICO</a>
+                    <a class="dropdown-item" href="{{ baseURL }}/pages/projects/internal.html">Interno</a>    
+                    <a class="dropdown-item" href="{{ baseURL }}/pages/projects/external.html">Externo</a>                               
+                </div>
+            </li> 
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
                     Token
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -66,9 +79,9 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <h6 class="dropdown-header">Certificado</h6> 
                     <a class="dropdown-item" href="https://goblockchain.herokuapp.com/">Consultar</a>
+                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="https://goblockchain.herokuapp.com/issuer">Emitir</a>
                     <a class="dropdown-item" href="https://goblockchain.herokuapp.com/admin">Gerenciador</a>
-                    <div class="dropdown-divider"></div>
                 </div>
             </li>                               
         </ul>
