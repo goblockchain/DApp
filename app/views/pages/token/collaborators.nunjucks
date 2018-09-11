@@ -16,111 +16,11 @@
 <br>
 <form id="frmColabs">
     <h4>Colaboradores</h4>
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Jorge Mudeame</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Conselho</h6>
-                    <p class="card-text">xxxxxx.</p>
-                    <h5>300 GBC</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Wellington</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Conselho</h6>
-                    <p class="card-text">xxxxxx.</p>
-                    <h5>300 GBC</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Arthur</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Especialistas</h6>
-                    <p class="card-text">xxxxxx.</p>
-                    <h5>200 GBC</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Fábio</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Especialistas</h6>
-                    <p class="card-text">xxxxxx.</p>
-                    <h5>200 GBC</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Daniella</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Embaixador</h6>
-                    <p class="card-text">xxxxxx.</p>
-                    <h5>80 GBC</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Anderson</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Colaborador</h6>
-                    <p class="card-text">xxxxxx.</p>
-                    <h5>50 GBC</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Márcio</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Embaixador</h6>
-                    <p class="card-text">xxxxxx.</p>
-                    <h5>100 GBC</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Renan</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Conselho</h6>
-                    <p class="card-text">xxxxxx.</p>
-                    <h5>300 GBC</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Glaucia</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Conselho</h6>
-                    <p class="card-text">xxxxxx.</p>
-                    <h5>300 GBC</h5>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Henrique Leite</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Conselho</h6>
-                    <p class="card-text">xxxxxx.</p>
-                    <h5>300 GBC</h5>
-                </div>
-            </div>
-        </div>
+    <div class="row" id="divColabs">
     </div>
 </form>
 {% endblock %}
 
 {% block scripts %} 
-<script src="{{ baseURL }}/scripts/collaborators.js"></script>
+<script src="{{ baseURL }}/scripts/listCollaborators.js"></script>
 {% endblock %}

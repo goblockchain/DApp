@@ -14,12 +14,6 @@
     <div class="card">
         <h4 class="card-header">Registro</h4>
         <div class="card-body">
-            <div class="form-group">
-                <!-- Button -->
-                <div id="ORIGINALMY_MODAL"></div>
-                <div id="OMAUTHID"></div>
-                <button id="ORIGINALMY_BTN"></button>
-            </div>
             <!-- /Button -->
             <div class="form-group">
                 <label for="txtNome">Nome</label>
@@ -69,7 +63,6 @@
 {% endblock %}
 
 {% block scripts %} 
-<script type="text/javascript" src="https://api1.testnet.originalmy.com/scripts/om-id/om-id.js"></script>
 <script src="https://unpkg.com/uport-connect/dist/uport-connect.js"></script>
 <script src="{{ baseURL }}/scripts/collaborators.js"></script>
 {% endblock %}

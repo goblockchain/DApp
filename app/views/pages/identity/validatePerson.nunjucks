@@ -13,7 +13,7 @@
     Olá! Seu perfil é de advisor e você pode votar para aprovar ou recusar as solicitações abaixo.
 </div>
 <div class="alert alert-info divRole" role="alert" id="divColab">
-    Olá! Seu perfil é de colaborar e você pode não pode aprovar ou recusar as solicitações abaixo.
+    Olá! Seu perfil é de colaborador e você pode não pode aprovar ou recusar as solicitações abaixo.
 </div>
 
 <br>
@@ -27,10 +27,6 @@
                     placeholder="0xAc5.." required>
                 <small id="textDepositHelp" class="form-text text-muted">Informe o ID da solicitação ao Token.</small>
             </div>
-            <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Consultar
-                <i class="fas fa-search"></i>
-            </button>
             <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-success">
                 Aprovar
                 <i class="fas fa-arrow-alt-circle-up"></i>
@@ -75,28 +71,14 @@
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th scope="col">ID</th>
+            <th scope="col">uPort</th>
+            <th scope="col">Endereço</th>
             <th scope="col">Data</th>
-            <th scope="col">Linkedin</th>
-            <th scope="col">Github</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <th scope="row">1</th>
-            <td>12/12/2018</td>
-            <td>xxxxx</td>
-            <td>xxxxx</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>12/12/2018</td>
-            <td>xxxxx</td>
-            <td>xxxxx</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>12/12/2018</td>
+            <th scope="row">xxx</th>
             <td>xxxxx</td>
             <td>xxxxx</td>
         </tr>
@@ -105,6 +87,5 @@
 {% endblock %}
 
 {% block scripts %} 
-<script type="text/javascript" src="https://api1.testnet.originalmy.com/scripts/om-id/om-id.js"></script>
 <script src="{{ baseURL }}/scripts/collaborators.js"></script>
 {% endblock %}
