@@ -110,35 +110,62 @@
   
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <h1 class="display-4">Solicitar tokens</h1>
-        <p class="lead">Essa funcionalidade permite que os Colaboradores solicitem tokens pelas suas colaborações.</p>
-        <p class="lead">É necessário fornecer a quantidade de tokens e informar a atividade correspondente no trello.</mark>
-        </p>
+        <h1 class="display-4">Registro de projeto externo</h1>
+        <p class="lead">Essa funcionalidade permite que colaboradores possam registrar projetos externos contrados por clientes da GoBlockchain.</p>
     </div>
 </div>
 <br>
-<form id="frmRequest">
+<form id="formDeposit">
     <div class="card">
-        <h4 class="card-header">Solicitar</h4>
+        <h4 class="card-header">Cadastrar projeto externo</h4>
         <div class="card-body">
             <div class="form-group">
-                <label for="lblQuantidade">Quantidade</label>
-                <input type="number" class="form-control" id="txtQuantidade" name="txtTransferAccount" aria-describedby="txtQuantidadeHelp"
-                    placeholder="15GBC" required>
-                <small id="txtQuantidadeHelp" class="form-text text-muted">Quantidade tokens solicitados pela atividade.</small>
+                <label for="txtNome">Nome</label>
+                <input type="text" class="form-control" id="txtNome" name="txtNome" aria-describedby="txtNomeHelp"
+                    placeholder="Nome do Projeto" required>
+                <small id="txtNomeHelp" class="form-text text-muted">Informe um nome para o projeto.</small>
             </div>
             <div class="form-group">
-                <label for="lblAtividade">Atividade</label>
-                <input type="text" class="form-control" id="txtAtividade" name="txtAtividade" aria-describedby="txtAtividadeHelp" placeholder="https://trello.com..."
-                    required>
-                <small id="txtAtividadeHelp" class="form-text text-muted">Informar o link da respectiva atividade no trello.</small>
+                <label for="txtDescription">Descrição</label>
+                <textarea type="text" class="form-control" id="txtDescription" name="txtDescription" aria-describedby="txtDescriptionHelp"
+                    placeholder="Descrição do Projeto" rows="3" required> </textarea>
+                <small id="txtDescriptionHelp" class="form-text text-muted">Informe uma descrição para o projeto.</small>
             </div>
-            <button type="button" id="btnSolicitar" name="btnSolicitar" class="btn btn-primary">
-                Solicitar
-            </button>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="txtCustomer">Cliente</label>
+                    <input type="text" class="form-control" id="txtCustomer" name="txtCustomer" aria-describedby="txtCustomerHelp"
+                        placeholder="Nome do Cliente">
+                    <small id="txtCustomerHelp" class="form-text text-muted">Informe o nome do cliente contratante.</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtValue">Valor do Projeto</label>
+                    <input type="number" class="form-control" id="txtValue" name="txtValue" aria-describedby="txtValueHelp"
+                        placeholder="100,00">
+                    <small id="txtValueHelp" class="form-text text-muted">Informe o valor do projeto (Opcional).</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="txtBeginDate">Data de Início</label>
+                    <input type="date" class="form-control" id="txtBeginDate" name="txtBeginDate" aria-describedby="txtBeginDateHelp">
+                    <small id="txtBeginDateHelp" class="form-text text-muted">Informe a data de início do projeto
+                        (Opcional).</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtEndDate">Data de Término</label>
+                    <input type="date" class="form-control" id="txtEndDate" name="txtEndDate" aria-describedby="txtEndDateHelp">
+                    <small id="txtEndDateHelp" class="form-text text-muted">Informe a data de término do projeto
+                        (Opcional).</small>
+                </div>
+            </div>
         </div>
+        <button type="button" id="btnCadastrar" name="btnCadastrar" class="btn btn-primary">
+            Cadastrar
+        </button>
     </div>
 </form>
+<hr size="10">
  
   </div> 
   <br />
@@ -154,8 +181,7 @@
   <script src="/DApp/app/vendor/jquery-validation/jquery.validate.min.js"></script> 
   <script src="/DApp/app/scripts/main.js"></script> 
    
-<script src="/DApp/app/scripts/collaborators.js"></script>
- 
+   
 </body> 
  
 </html>
