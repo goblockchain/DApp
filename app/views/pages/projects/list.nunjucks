@@ -1,0 +1,69 @@
+{% extends "layouts/layout.nunjucks" %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Consulta de Projetos</h1>
+        <p class="lead">Essa funcionalidade permite que colaboradores possam verificar os projetos já cadastrados na GoBlockchain.</p>
+    </div>
+</div>
+<br>
+<form id="frmSearchProject">
+    <div class="card">
+        <h4 class="card-header">Pesquisar</h4>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="txtDepositAmount">ID do projeto</label>
+                <input type="number" class="form-control" id="txtDepositAmount" name="txtDepositAmount" aria-describedby="textDepositHelp"
+                    placeholder="1" required>
+                <small id="textDepositHelp" class="form-text text-muted">Informe o ID do projeto.</small>
+            </div>
+            <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Consultar
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+</form>
+<br>
+<h5>Projeto cadastrados</h5>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Início</th>
+            <th scope="col">Término</th>
+            <th scope="col">Tipo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>ICO GoBlockchain</td>
+            <td>20.000,00</td>
+            <td>25/10/2018</td>
+            <td>31/12/2018</td>
+            <td>ICO</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Desenvolvimento dApp</td>
+            <td>2.000,00</td>
+            <td>10/05/2018</td>
+            <td>20/06/2018</td>
+            <td>Interno</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Projeto Supply Chain</td>
+            <td>100.000,00</td>
+            <td>15/09/2018</td>
+            <td>01/03/2019</td>
+            <td>Externo</td>
+        </tr>
+    </tbody>
+</table>
+<hr size="10">
+{% endblock %}
