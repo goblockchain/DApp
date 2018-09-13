@@ -22,8 +22,8 @@ Projeto composto por DApps que estão sendo criadas de forma colaborativa pela c
 
 Para navegar no projeto em seu computador, execute dentro da pasta `DApp` os seguintes comandos.
 
-> Requisitos
->> Necessário a instalação do node.js em seu computador, [baixe aqui](https://nodejs.org/en/download/).
+**Requisitos**
+> Necessário a instalação do node.js em seu computador, [baixe aqui](https://nodejs.org/en/download/).
 
 
 ```
