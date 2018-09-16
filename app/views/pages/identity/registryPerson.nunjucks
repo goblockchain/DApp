@@ -1,43 +1,42 @@
-{% extends "layouts/layout.nunjucks" %} 
- 
+{% extends "layouts/layout.nunjucks" %}
+
 {% block content %}
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-4">Registro de Colaborador</h1>
-        <p class="lead">Essa funcionalidade permite que pessoas possam se registrar na GO, após o envio das informações os colaboradores
+        <p class="lead">Essa funcionalidade permite que pessoas possam se registrar na GO, após o envio das informações
+            os colaboradores
             da GO devem aprovar o registro.</p>
     </div>
 </div>
 <br>
 <!-- Registro -->
-<form id="formDeposit">
+<form id="formRegistry">
     <div class="card">
         <h4 class="card-header">Registro</h4>
         <div class="card-body">
             <!-- /Button -->
             <div class="form-group">
                 <label for="txtNome">Nome</label>
-                <input type="text" readonly class="form-control" id="txtNome" name="txtNome" aria-describedby="txtNomeHelp"
+                <input type="text" class="form-control" id="txtNome" name="txtNome" aria-describedby="txtNomeHelp"
                     placeholder="Nome carregado com uPort" required>
                 <small id="txtNomeHelp" class="form-text text-muted">Email carregado após autenticação com uPort.</small>
             </div>
             <div class="form-group">
                 <label for="txtIDuPort">ID uPort</label>
                 <div class="input-group">
-                    <input type="text" readonly class="form-control" id="txtIDuPort">
+                    <input type="text" class="form-control" id="txtIDuPort">
                 </div>
                 <small id="txtIDuPortHelp" class="form-text text-muted">ID uPort carregado após autenticação</small>
             </div>
         </div>
-    </div>
-</form>
+    </div> <br>
+<!--
+    <hr size="10">
 
-<hr size="10">
-<!-- Aprovar -->
-<form id="formDeposit">
     <br>
-    <h4>Leia com atenção a Governanças da DAO</h4>
-    <div class="card">
+    <h4>Leia com atenção a Governanças da GO</h4>
+     <div class="card">
         <h4 class="card-header">Documento</h4>
         <div class="card-body">
             <div class="input-group mb-3">
@@ -48,21 +47,21 @@
             </div>
             <small id="txtQuantityApproveHelp" class="form-text text-muted">Consulte o hash do documento para provar que ele não foi alterado.</small>
         </div>
-    </div>
-    <object data="https://docs.google.com/document/d/e/2PACX-1vTnDYrfhgpyNmugZnmSy0F60hvi33sgdonI4Rbn0iUSSOX3qXXC8qkOeSKnAeRwTm678MFpM2HGzctC/pub"
+    </div> -->
+    <!-- <object data="https://docs.google.com/document/d/e/2PACX-1vTnDYrfhgpyNmugZnmSy0F60hvi33sgdonI4Rbn0iUSSOX3qXXC8qkOeSKnAeRwTm678MFpM2HGzctC/pub"
         type="application/doc">
         <iframe style="border:1px solid rgb(0, 0, 0)" src="https://docs.google.com/document/d/e/2PACX-1vTnDYrfhgpyNmugZnmSy0F60hvi33sgdonI4Rbn0iUSSOX3qXXC8qkOeSKnAeRwTm678MFpM2HGzctC/pub"
             frameborder="1" scrolling="auto" height="1100" width="100%"></iframe>
-    </object>
-    <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="customCheck1">
+    </object> -->
+    <!-- <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="customCheck1" required="true">
         <label class="custom-control-label" for="customCheck1">Li e concordo</label>
-    </div>
-    <button type="button" id="btnSendRequest" class="btn btn-primary">Enviar registro</button>
+    </div> -->
+    <button type="button" id="btnSendRequest" class="btn btn-primary">Quero participar</button>
 </form>
 {% endblock %}
 
-{% block scripts %} 
+{% block scripts %}
 <script src="https://unpkg.com/uport-connect/dist/uport-connect.js"></script>
 <script src="{{ baseURL }}/scripts/collaborators.js"></script>
 {% endblock %}

@@ -4,8 +4,8 @@
 
 <head> 
   <title>DApp GoBlockchain</title> 
-  <link href="/DApp/app/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-  <link href="/DApp/app/styles/style.css" rel="stylesheet" media="screen">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/styles/style.css" rel="stylesheet" media="screen">
    
   
 </head> 
@@ -13,7 +13,7 @@
 <body> 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">
-        <img src="/DApp/app/images/logo.png" width="63" height="50" alt="">
+        <img src="/images/logo.png" width="63" height="50" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -32,9 +32,9 @@
                     Identidade
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/DApp/app/pages/identity/registryPerson.html">Quero participar</a>
+                    <a class="dropdown-item" href="/pages/identity/registryPerson.html">Quero participar</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/DApp/app/pages/identity/validatePerson.html">Validar</a>
+                    <a class="dropdown-item" href="/pages/identity/validatePerson.html">Validar</a>
                 </div>
             </li>                
             <li class="nav-item dropdown">
@@ -43,9 +43,9 @@
                     Conta Corrente
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">                      
-                    <a class="dropdown-item" href="/DApp/app/pages/cc/AccountAuthorizer.html">Autorizadores</a>
-                    <a class="dropdown-item" href="/DApp/app/pages/cc/AccountTransaction.html">Transações</a>
-                    <a class="dropdown-item" href="/DApp/app/pages/cc/CheckingAccount.html">Saldo</a>
+                    <a class="dropdown-item" href="/pages/cc/AccountAuthorizer.html">Autorizadores</a>
+                    <a class="dropdown-item" href="/pages/cc/AccountTransaction.html">Transações</a>
+                    <a class="dropdown-item" href="/pages/cc/CheckingAccount.html">Saldo</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -54,8 +54,8 @@
                     Colaboradores
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/DApp/app/pages/token/reputation.html">Reputação</a>
-                    <a class="dropdown-item" href="/DApp/app/pages/token/collaborators.html">Colaboradores</a>                                            
+                    <a class="dropdown-item" href="/pages/token/reputation.html">Reputação</a>
+                    <a class="dropdown-item" href="/pages/token/collaborators.html">Colaboradores</a>                                            
                 </div>
             </li> 
             <li class="nav-item dropdown">
@@ -64,11 +64,11 @@
                     Projetos
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/DApp/app/pages/projects/list.html">Consultar</a>  
+                    <a class="dropdown-item" href="/pages/projects/list.html">Consultar</a>  
                     <div class="dropdown-divider"></div>    
-                    <a class="dropdown-item" href="/DApp/app/pages/projects/ico.html">ICO</a>
-                    <a class="dropdown-item" href="/DApp/app/pages/projects/internal.html">Interno</a>    
-                    <a class="dropdown-item" href="/DApp/app/pages/projects/external.html">Externo</a>                               
+                    <a class="dropdown-item" href="/pages/projects/ico.html">ICO</a>
+                    <a class="dropdown-item" href="/pages/projects/internal.html">Interno</a>    
+                    <a class="dropdown-item" href="/pages/projects/external.html">Externo</a>                               
                 </div>
             </li> 
             <li class="nav-item dropdown">
@@ -77,11 +77,11 @@
                     Token
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/DApp/app/pages/token/GBCToken.html">GBC</a>                        
-                    <a class="dropdown-item" href="/DApp/app/pages/token/requestToken.html">Solicitar tokens</a>
-                    <a class="dropdown-item" href="/DApp/app/pages/token/approveRequest.html">Aprovar solicitações</a>
+                    <a class="dropdown-item" href="/pages/token/GBCToken.html">GBC</a>                        
+                    <a class="dropdown-item" href="/pages/token/requestToken.html">Solicitar tokens</a>
+                    <a class="dropdown-item" href="/pages/token/approveRequest.html">Aprovar solicitações</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/DApp/app/pages/token/buyGBC.html">Comprar GBC</a>                        
+                    <a class="dropdown-item" href="/pages/token/buyGBC.html">Comprar GBC</a>                        
                 </div>
             </li> 
             <li class="nav-item dropdown">
@@ -129,16 +129,16 @@
         <h4 class="card-header">Aprovação</h4>
         <div class="card-body">
             <div class="form-group">
-                <label for="txtDepositAmount">ID da solicitação</label>
-                <input type="number" class="form-control" id="txtDepositAmount" name="txtDepositAmount" aria-describedby="textDepositHelp"
+                <label for="txtIDuPort">ID uPort</label>
+                <input type="text" class="form-control" id="txtIDuPort" name="txtIDuPort" aria-describedby="txtIDuPortHelp"
                     placeholder="0xAc5.." required>
-                <small id="textDepositHelp" class="form-text text-muted">Informe o ID da solicitação ao Token.</small>
+                <small id="txtIDuPortHelp" class="form-text text-muted">Informe o uPort do colaborador.</small>
             </div>
-            <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-success">
+            <button type="button" id="btnApprove" name="btnApprove" class="btn btn-success">
                 Aprovar
                 <i class="fas fa-arrow-alt-circle-up"></i>
             </button>
-            <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-danger">
+            <button type="button" id="btnReject" name="btnReject" class="btn btn-danger">
                 Reprovar
                 <i class="fas fa-arrow-alt-circle-down"></i>
             </button>
@@ -183,12 +183,8 @@
             <th scope="col">Data</th>
         </tr>
     </thead>
-    <tbody>
-        <tr>
-            <th scope="row">xxx</th>
-            <td>xxxxx</td>
-            <td>xxxxx</td>
-        </tr>
+    <tbody id="tbodyRequests">
+
     </tbody>
 </table>
  
@@ -199,14 +195,14 @@
         <p class="m-0 text-center text-white">Copyright &copy; GoBlockchain 2018</p>
     </div>
 </footer> 
-  <script src="/DApp/app/vendor/jquery/jquery.min.js"></script> 
-  <script src="/DApp/app/vendor/bootstrap/js/bootstrap.min.js"></script> 
-  <script src="/DApp/app/vendor/font-awesome/fontawesome-all.min.js"></script> 
-  <script src="/DApp/app/vendor/web3/web3.js"></script> 
-  <script src="/DApp/app/vendor/jquery-validation/jquery.validate.min.js"></script> 
-  <script src="/DApp/app/scripts/main.js"></script> 
+  <script src="/vendor/jquery/jquery.min.js"></script> 
+  <script src="/vendor/bootstrap/js/bootstrap.min.js"></script> 
+  <script src="/vendor/font-awesome/fontawesome-all.min.js"></script> 
+  <script src="/vendor/web3/web3.js"></script> 
+  <script src="/vendor/jquery-validation/jquery.validate.min.js"></script> 
+  <script src="/scripts/main.js"></script> 
    
-<script src="/DApp/app/scripts/collaborators.js"></script>
+<script src="/scripts/collaborators.js"></script>
  
 </body> 
  
