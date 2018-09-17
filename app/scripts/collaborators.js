@@ -32,14 +32,6 @@ function isCollaborator() {
             }
         }         
     });
-
-    // return (
-    //     hasRole(_addressUser, ROLE_ADMIN) ||
-    //     hasRole(_addressUser, ROLE_ADVISOR) ||
-    //     hasRole(_addressUser, ROLE_ESPECIALIST) ||
-    //     hasRole(_addressUser, ROLE_AMBASSADOR) || 
-    //     hasRole(_addressUser, ROLE_COLLABORATOR)            
-    // );
 }
 
 function isAdvisor() {
@@ -76,24 +68,25 @@ function getListPerson() {
             if (error) {
                 alert(error);
             } else {
-                alert(result);
                 for (var i = 0; i < result.toNumber(); i++) {
                     instanceIdentity.person(i, function(error, result) {
                         if (error) {
                             console.error(error);
                         } else {
                             var status = result[2];
-                            var address = result[0];
-                            var uport = result[1];
-                            var dateCreated = result[3];
-                            $('#tbodyRequests').append(
-                                '<tr>'+
-                                    '<th scope="row">'+uport+'</th>'+
-                                    '<td>'+address+'</td>'+
-                                    '<td>'+dateCreated+'</td>'+
-                                '</tr>'
-                            );
-                            console.log(status.toNumber());
+                            if (status == 0) {
+                                var address = result[0];
+                                var uport = result[1];
+                                var dateCreated = result[3];
+                                $('#tbodyRequests').append(
+                                    '<tr>'+
+                                        '<th scope="row">'+uport+'</th>'+
+                                        '<td>'+address+'</td>'+
+                                        '<td>'+dateCreated+'</td>'+
+                                    '</tr>'
+                                );
+                                console.log(status.toNumber());
+                            }
                         }
                     });  
                 }              
@@ -102,31 +95,6 @@ function getListPerson() {
         });
 
     }
-    // address sender;
-    // string hashUport;
-    // Status status;
-    // string hashTerms;
-    // uint256 dateCreated;
-    // uint256 lastUpdated;    
-    
-    // var search = true;
-    // var count = 0;
-    // while(search) {
-    //     instanceIdentity.person(count++, function(error, result) {
-    //         if (error) {
-    //             console.error(error);
-    //         } else {
-    //             if (result[0].length == 0) {
-    //                 search = false;
-    //             }                
-    //             console.log(result);
-    //             console.log(result[0]);
-    //             console.log(result[1]);
-    //             console.log(result[2]);                
-    //             console.log(result[3]);                 
-    //         }  
-    //     });
-    // }
 }
 
 function callAuthSuccess(result)
@@ -147,6 +115,36 @@ $("#btnApprove").click(function() {
     let txtIDuPort = $("#txtIDuPort").val();
     let _accepted = true;
 
+    instanceIdentity.validate(txtIDuPort, _accepted, (err, result) => {
+        if (err) {
+            console.error(err);
+        } else {
+            console.log(result);
+            alert(result);
+        }
+      });
+});  
+
+$("#btnReject").click(function() {
+
+    let txtIDuPort = $("#txtIDuPort").val();
+    let _accepted = false;
+
+    instanceIdentity.validate(txtIDuPort, _accepted, (err, result) => {
+        if (err) {
+            console.error(err);
+        } else {
+            console.log(result);
+            alert(result);
+        }
+      });
+}); 
+
+$("#btnSendRequest").click(function() {
+
+    let txtIDuPort = $("#txtIDuPort").val();
+    let _accepted = true;
+
     instanceIdentity.requestApprove(txtIDuPort, _accepted, (err, result) => {
         if (err) {
             console.error(err);
@@ -155,7 +153,7 @@ $("#btnApprove").click(function() {
             alert(err);
         }
       });
-});  
+}); 
 
 if (! $( "#tbodyRequests" ).length ) {
     var uportconnect = window.uportconnect

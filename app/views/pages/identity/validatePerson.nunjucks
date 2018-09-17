@@ -22,16 +22,16 @@
         <h4 class="card-header">Aprovação</h4>
         <div class="card-body">
             <div class="form-group">
-                <label for="txtDepositAmount">ID da solicitação</label>
-                <input type="number" class="form-control" id="txtDepositAmount" name="txtDepositAmount" aria-describedby="textDepositHelp"
+                <label for="txtDepositAmount">ID do uPort</label>
+                <input type="text" class="form-control" id="txtIDuPort" name="txtIDuPort" aria-describedby="txtIDuPortHelp"
                     placeholder="0xAc5.." required>
-                <small id="textDepositHelp" class="form-text text-muted">Informe o ID da solicitação ao Token.</small>
+                <small id="txtIDuPortHelp" class="form-text text-muted">Informe o ID do uPort.</small>
             </div>
-            <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-success">
+            <button type="button" id="btnApprove" name="btnApprove" class="btn btn-success">
                 Aprovar
                 <i class="fas fa-arrow-alt-circle-up"></i>
             </button>
-            <button type="button" id="btnDeposit" name="btnDeposit" class="btn btn-danger">
+            <button type="button" id="btnReject" name="btnReject" class="btn btn-danger">
                 Reprovar
                 <i class="fas fa-arrow-alt-circle-down"></i>
             </button>
@@ -76,12 +76,7 @@
             <th scope="col">Data</th>
         </tr>
     </thead>
-    <tbody>
-        <tr>
-            <th scope="row">xxx</th>
-            <td>xxxxx</td>
-            <td>xxxxx</td>
-        </tr>
+    <tbody id="tbodyRequests">
     </tbody>
 </table>
 {% endblock %}
