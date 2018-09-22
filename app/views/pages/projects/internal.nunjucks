@@ -13,11 +13,20 @@
     <div class="card">
         <h4 class="card-header">Cadastrar projeto externo</h4>
         <div class="card-body">
-            <div class="form-group">
-                <label for="txtNome">Nome</label>
-                <input type="text" class="form-control" id="txtNome" name="txtNome" aria-describedby="txtNomeHelp"
-                    placeholder="Nome do Projeto" required>
-                <small id="txtNomeHelp" class="form-text text-muted">Informe um nome para o projeto.</small>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="txtNome">Nome</label>
+                    <input type="text" class="form-control" id="txtNome" name="txtNome" aria-describedby="txtNomeHelp"
+                        placeholder="Nome do Projeto" required>
+                    <small id="txtNomeHelp" class="form-text text-muted">Informe um nome para o projeto.</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtReputation">Reputação Necessária</label>
+                    <input type="number" class="form-control" id="txtReputation" name="txtReputation" aria-describedby="txtReputationHelp"
+                        placeholder="50" required>
+                    <small id="txtReputationHelp" class="form-text text-muted">Informe a quantida de reputação
+                        necessária para participar do projeto.</small>
+                </div>
             </div>
             <div class="form-group">
                 <label for="txtDescription">Descrição</label>
@@ -34,10 +43,10 @@
                         projeto.</small>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="txtValue">Valor do Projeto</label>
+                    <label for="txtValue">Quantidade de Pontos</label>
                     <input type="number" class="form-control" id="txtValue" name="txtValue" aria-describedby="txtValueHelp"
-                        placeholder="100,00">
-                    <small id="txtValueHelp" class="form-text text-muted">Informe o valor do projeto (Opcional).</small>
+                        placeholder="100">
+                    <small id="txtValueHelp" class="form-text text-muted">Informe o a quantide de pontos do projeto.</small>
                 </div>
             </div>
             <div class="row">
@@ -59,7 +68,7 @@
                 <label class="form-check-label" for="defaultCheck1">
                     Projeto procurando investidor
                 </label>
-              </div>              
+            </div>              
         </div>
         <button type="button" id="btnCadastrar" name="btnCadastrar" class="btn btn-primary">
             Cadastrar

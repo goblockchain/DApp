@@ -8,6 +8,7 @@
     </div>
 </div>
 <br>
+
 <form id="frmSearchProject">
     <div class="card">
         <h4 class="card-header">Pesquisar</h4>
@@ -26,16 +27,27 @@
     </div>
 </form>
 <br>
-<h5>Projeto cadastrados</h5>
+
+<div class="form-group col-md-4">
+    <label for="selectProjectType">Filtro: Tipo de Projeto</label>
+    <select class="form-control" id="selectProjectType">
+      <option>Interno</option>
+      <option>Externo</option>
+      <option>ICO</option>
+    </select>
+</div>
+
+<h5>Projetos cadastrados</h5>
 <table class="table table-bordered">
     <thead>
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
-            <th scope="col">Valor</th>
+            <th scope="col">Valor / Pontos</th>
             <th scope="col">Início</th>
             <th scope="col">Término</th>
             <th scope="col">Tipo</th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
@@ -46,14 +58,24 @@
             <td>25/10/2018</td>
             <td>31/12/2018</td>
             <td>ICO</td>
+            <td>
+                <button type="button" id="btnJoin" name="btnJoin" class="btn btn-danger">
+                    Participar! <i class="far fa-thumbs-up"></i>
+                </button>
+            </td>
         </tr>
         <tr>
             <th scope="row">2</th>
             <td>Desenvolvimento dApp</td>
-            <td>2.000,00</td>
+            <td>100</td>
             <td>10/05/2018</td>
             <td>20/06/2018</td>
             <td>Interno</td>
+            <td>
+                <button type="button" id="btnJoin" name="btnJoin" class="btn btn-danger">
+                    Parrticipar! <i class="far fa-thumbs-up"></i>
+                </button>
+            </td>
         </tr>
         <tr>
             <th scope="row">3</th>
@@ -62,6 +84,11 @@
             <td>15/09/2018</td>
             <td>01/03/2019</td>
             <td>Externo</td>
+            <td>
+                <button type="button" id="btnJoin" name="btnJoin" class="btn btn-danger">
+                    Parrticipar! <i class="far fa-thumbs-up"></i>
+                </button>
+            </td>
         </tr>
     </tbody>
 </table>
