@@ -9,6 +9,12 @@ gulp.task('clean', () => {
     'app/index.html'
   ])
 })
+
+gulp.task('cleanVendor', () => {
+  return del([
+    'app/vendor'
+  ])
+})
  
 gulp.task('nunjucks', ['clean'], () => {
   // Gets .html and .nunjucks files in pages
@@ -26,26 +32,28 @@ gulp.task('nunjucks', ['clean'], () => {
 })
 
 // Copy third party libraries from /node_modules into /vendor
-gulp.task('vendor', () => {
-  // Bootstrap
+gulp.task('vendor', ['cleanVendor'], () => {
+  // Bootstrap CSS
   gulp.src([
-    './bower_components/bootstrap/dist/**/*',
-    '!./bower_components/bootstrap/dist/css/bootstrap-grid*',
-    '!./bower_components/bootstrap/dist/css/bootstrap-reboot*'
+    './bower_components/bootstrap/dist/css/bootstrap.min.css',
   ])
-    .pipe(gulp.dest('app/vendor/bootstrap'))
+    .pipe(gulp.dest('app/vendor/bootstrap/css'))
+
+    // Bootstrap JS
+    gulp.src([
+      './bower_components/bootstrap/dist/js/bootstrap.bundle.min.js'
+    ])
+      .pipe(gulp.dest('app/vendor/bootstrap/js'))
  
   // jQuery
   gulp.src([
-    './bower_components/jquery/dist/*',
-    '!./bower_components/jquery/dist/core.js'
+    './bower_components/jquery/dist/jquery.min.js'
   ])
     .pipe(gulp.dest('app/vendor/jquery'))
  
   // Web3
   gulp.src([
-    './bower_components/web3/dist/*',
-    '!./bower_components/web3/dist/web3.min.js'
+    './bower_components/web3/dist/web3.min.js'
   ])
     .pipe(gulp.dest('app/vendor/web3'))
  
@@ -60,6 +68,18 @@ gulp.task('vendor', () => {
     './bower_components/Font-Awesome/svg-with-js/js/fontawesome-all.min.js'
   ])
     .pipe(gulp.dest('app/vendor/font-awesome'))
+
+  // Moment
+  gulp.src([
+    './bower_components/moment/min/moment-with-locales.min.js'
+  ])
+    .pipe(gulp.dest('app/vendor/moment'))
+
+  // Clipboard
+  gulp.src([
+    './bower_components/clipboard/dist/clipboard.min.js'
+  ])
+    .pipe(gulp.dest('app/vendor/clipboard/'))
 })
 
 // Default task

@@ -18,10 +18,12 @@
   </div> 
   {% include "partials/footer.nunjucks" %} 
   <script src="{{ baseURL }}/vendor/jquery/jquery.min.js"></script> 
-  <script src="{{ baseURL }}/vendor/bootstrap/js/bootstrap.min.js"></script> 
+  <script src="{{ baseURL }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> 
   <script src="{{ baseURL }}/vendor/font-awesome/fontawesome-all.min.js"></script> 
-  <script src="{{ baseURL }}/vendor/web3/web3.js"></script> 
-  <script src="{{ baseURL }}/vendor/jquery-validation/jquery.validate.min.js"></script> 
+  <script src="{{ baseURL }}/vendor/web3/web3.min.js"></script> 
+  <script src="{{ baseURL }}/vendor/jquery-validation/jquery.validate.min.js"></script>
+  <script src="{{ baseURL }}/vendor/moment/moment-with-locales.min.js"></script>
+  <script src="{{ baseURL }}/vendor/clipboard/clipboard.min.js"></script>
   <script src="{{ baseURL }}/scripts/main.js"></script> 
   {% block scripts %} 
   {% endblock %} 
