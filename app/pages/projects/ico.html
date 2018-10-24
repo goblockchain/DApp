@@ -6,105 +6,123 @@
   <title>DApp GoBlockchain</title> 
   <link href="/DApp/app/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
   <link href="/DApp/app/styles/style.css" rel="stylesheet" media="screen">
+
+      <link rel="stylesheet" href="/DApp/app/vendor/bootstrap/css/bootstrap410.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/DApp/app/styles/style_menu.css">
+    <script src="/DApp/app/vendor/jquery/jquery-3.3.1_without_ajax.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="/DApp/app/vendor/bootstrap/js/bootstrap410.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+
    
   
 </head> 
  
 <body> 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-        <img src="/DApp/app/images/logo.png" width="63" height="50" alt="">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">GoBlockchain
-                    <span class="sr-only">(current)</span>
+      <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenuIdent" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Identidade</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuIdent">
+                        <li>
+                            <a href="/DApp/app/pages/identity/registryPerson.html">Quero participar</a>
+                        </li>
+                        <li>
+                            <a href="/DApp/app/pages/identity/validatePerson.html">Validar</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenuCC" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Conta
+                        Corrente</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuCC">
+                        <li>
+                            <a href="/DApp/app/pages/cc/AccountAuthorizer.html">Autorizadores</a>
+                        </li>
+                        <li>
+                            <a href="/DApp/app/pages/cc/AccountTransaction.html">Transações</a>
+                        </li>
+                        <li>
+                            <a href="/DApp/app/pages/cc/CheckingAccount.html">Saldo</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenuCOLB" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Colaboradores
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuCOLB">
+                        <li>
+                            <a href="/DApp/app/pages/token/reputation.html">Reputação</a>
+                        </li>
+                        <li>
+                            <a href="/DApp/app/pages/token/collaborators.html">Colaboradores</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenuPROJ" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Projetos
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuPROJ">
+                        <li><a href="/DApp/app/pages/projects/list.html">Consultar</a></li>
+                        <div class="dropdown-divider"></div>
+                        <li><a href="/DApp/app/pages/projects/ico.html">ICO</a></li>
+                        <li><a href="/DApp/app/pages/projects/internal.html">Interno</a></li>
+                        <li><a href="/DApp/app/pages/projects/external.html">Externo</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenuTOKEN" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Token
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuTOKEN">
+                        <li><a href="/DApp/app/pages/token/GBCToken.html">GBC</a>
+                        <li><a href="/DApp/app/pages/token/requestToken.html">Solicitar tokens</a>
+                        <li><a href="/DApp/app/pages/token/approveRequest.html">Aprovar solicitações</a>
+                            <div class="dropdown-divider"></div>
+                        <li><a href="/DApp/app/pages/token/buyGBC.html">Comprar GBC</a>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenuPROD" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Produtos
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuPROD">
+                        <h6 class="dropdown-header">Certificado</h6>
+                        <li><a href="https://goblockchain.herokuapp.com/">Consultar</a>
+                            <div class="dropdown-divider"></div>
+                        <li><a href="https://goblockchain.herokuapp.com/issuer">Emitir</a>
+                        <li><a href="https://goblockchain.herokuapp.com/admin">Gerenciador</a>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- Page Content Holder -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    <img src="/DApp/app/images/logo.png" width="63" height="50" alt="">
                 </a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    Identidade
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/DApp/app/pages/identity/registryPerson.html">Quero participar</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/DApp/app/pages/identity/validatePerson.html">Validar</a>
+
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
                 </div>
-            </li>                
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    Conta Corrente
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">                      
-                    <a class="dropdown-item" href="/DApp/app/pages/cc/AccountAuthorizer.html">Autorizadores</a>
-                    <a class="dropdown-item" href="/DApp/app/pages/cc/AccountTransaction.html">Transações</a>
-                    <a class="dropdown-item" href="/DApp/app/pages/cc/CheckingAccount.html">Saldo</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    Colaboradores
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/DApp/app/pages/token/reputation.html">Reputação</a>
-                    <a class="dropdown-item" href="/DApp/app/pages/token/collaborators.html">Colaboradores</a>                                            
-                </div>
-            </li> 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    Projetos
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/DApp/app/pages/projects/list.html">Consultar</a>  
-                    <div class="dropdown-divider"></div>    
-                    <a class="dropdown-item" href="/DApp/app/pages/projects/ico.html">ICO</a>
-                    <a class="dropdown-item" href="/DApp/app/pages/projects/internal.html">Interno</a>    
-                    <a class="dropdown-item" href="/DApp/app/pages/projects/external.html">Externo</a>                               
-                </div>
-            </li> 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    Token
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/DApp/app/pages/token/GBCToken.html">GBC</a>                        
-                    <a class="dropdown-item" href="/DApp/app/pages/token/requestToken.html">Solicitar tokens</a>
-                    <a class="dropdown-item" href="/DApp/app/pages/token/approveRequest.html">Aprovar solicitações</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/DApp/app/pages/token/buyGBC.html">Comprar GBC</a>                        
-                </div>
-            </li> 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    Produtos
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <h6 class="dropdown-header">Certificado</h6> 
-                    <a class="dropdown-item" href="https://goblockchain.herokuapp.com/">Consultar</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="https://goblockchain.herokuapp.com/issuer">Emitir</a>
-                    <a class="dropdown-item" href="https://goblockchain.herokuapp.com/admin">Gerenciador</a>
-                </div>
-            </li>                               
-        </ul>
-        <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item">
                 <label id="statusConnection" class="alert alert-primary">...</label>
-            </li>
-        </ul>
-    </div>
-</nav> 
+            </nav>
+ 
   <div class="container">
   <br />
   
@@ -203,7 +221,7 @@
     </div>
 </footer> 
   <script src="/DApp/app/vendor/jquery/jquery.min.js"></script> 
-  <script src="/DApp/app/vendor/bootstrap/js/bootstrap.min.js"></script> 
+<!--  <script src="/DApp/app/vendor/bootstrap/js/bootstrap.min.js"></script>  -->
   <script src="/DApp/app/vendor/font-awesome/fontawesome-all.min.js"></script> 
   <script src="/DApp/app/vendor/web3/web3.js"></script> 
   <script src="/DApp/app/vendor/jquery-validation/jquery.validate.min.js"></script> 
