@@ -331,10 +331,11 @@ $(document).ready(async () => {
   setInterval(() => {
 
     if (web3.eth.accounts[0] !== this.account && count > 2) {
-      debugger
-      account = web3.eth.accounts[0]
-      //location.reload()      
+//      debugger;
+      account = web3.eth.accounts[0];
+      location.reload();
     }
+    checkWeb3();
 
   }, 5000)
 })
