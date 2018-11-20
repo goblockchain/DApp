@@ -1,0 +1,94 @@
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenuIdent" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Identidade</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuIdent">
+                        <li>
+                            <a href="{{ baseURL }}/pages/identity/registryPerson.html">Quero participar</a>
+                        </li>
+                        <li>
+                            <a href="{{ baseURL }}/pages/identity/validatePerson.html">Validar</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenuCC" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Conta
+                        Corrente</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuCC">
+                        <li>
+                            <a href="{{ baseURL }}/pages/cc/AccountAuthorizer.html">Autorizadores</a>
+                        </li>
+                        <li>
+                            <a href="{{ baseURL }}/pages/cc/AccountTransaction.html">Transações</a>
+                        </li>
+                        <li>
+                            <a href="{{ baseURL }}/pages/cc/CheckingAccount.html">Saldo</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenuCOLB" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Colaboradores
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuCOLB">
+                        <li>
+                            <a href="{{ baseURL }}/pages/token/reputation.html">Reputação</a>
+                        </li>
+                        <li>
+                            <a href="{{ baseURL }}/pages/token/collaborators.html">Colaboradores</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenuPROJ" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Projetos
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuPROJ">
+                        <li><a href="{{ baseURL }}/pages/projects/list.html">Consultar</a></li>
+                        <div class="dropdown-divider"></div>
+                        <li><a href="{{ baseURL }}/pages/projects/ico.html">ICO</a></li>
+                        <li><a href="{{ baseURL }}/pages/projects/internal.html">Interno</a></li>
+                        <li><a href="{{ baseURL }}/pages/projects/external.html">Externo</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenuTOKEN" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Token
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuTOKEN">
+                        <li><a href="{{ baseURL }}/pages/token/GBCToken.html">GBC</a>
+                        <li><a href="{{ baseURL }}/pages/token/requestToken.html">Solicitar tokens</a>
+                        <li><a href="{{ baseURL }}/pages/token/approveRequest.html">Aprovar solicitações</a>
+                            <div class="dropdown-divider"></div>
+                        <li><a href="{{ baseURL }}/pages/token/buyGBC.html">Comprar GBC</a>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenuPROD" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Produtos
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuPROD">
+                        <h6 class="dropdown-header">Certificado</h6>
+                        <li><a href="https://goblockchain.herokuapp.com/">Consultar</a>
+                            <div class="dropdown-divider"></div>
+                        <li><a href="https://goblockchain.herokuapp.com/issuer">Emitir</a>
+                        <li><a href="https://goblockchain.herokuapp.com/admin">Gerenciador</a>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- Page Content Holder -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    <img src="{{ baseURL }}/images/logo.png" width="63" height="50" alt="">
+                </a>
+
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                </div>
+                <label id="statusConnection" class="alert alert-primary">...</label>
+            </nav>

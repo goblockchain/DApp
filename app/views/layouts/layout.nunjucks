@@ -1,0 +1,48 @@
+{% set baseURL = "/DApp/app" %}
+<!DOCTYPE html> 
+<html>
+
+<head> 
+  <title>DApp GoBlockchain</title> 
+  <link href="{{ baseURL }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="{{ baseURL }}/styles/style.css" rel="stylesheet" media="screen">
+
+      <link rel="stylesheet" href="{{ baseURL }}/vendor/bootstrap/css/bootstrap410.min.css" 
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ baseURL }}/styles/style_menu.css">
+    <script src="{{ baseURL }}/vendor/jquery/jquery-3.3.1_without_ajax.slim.min.js" 
+        crossorigin="anonymous"></script>
+    <script src="{{ baseURL }}/vendor/bootstrap/js/bootstrap410.min.js" 
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+
+  {% block head %} 
+  {% endblock %}
+</head> 
+ 
+<body> 
+  {% include "partials/navigation.nunjucks" %} 
+  <div class="container">
+  <br />
+  {% block content %} {% endblock %} 
+  </div> 
+  {% include "partials/footer.nunjucks" %} 
+  <script src="{{ baseURL }}/vendor/jquery/jquery.min.js"></script> 
+<!--  <script src="{{ baseURL }}/vendor/bootstrap/js/bootstrap.min.js"></script>  -->
+  <script src="{{ baseURL }}/vendor/font-awesome/fontawesome-all.min.js"></script> 
+  <script src="{{ baseURL }}/vendor/web3/web3.js"></script> 
+  <script src="{{ baseURL }}/vendor/jquery-validation/jquery.validate.min.js"></script> 
+  <script src="{{ baseURL }}/scripts/main.js"></script>
+  <script src="https://trello.com/1/client.js?key=d25c1cb09fa2ee032c93a7c4128baaee"></script>
+  {% block scripts %} 
+  {% endblock %} 
+</body> 
+ 
+</html>

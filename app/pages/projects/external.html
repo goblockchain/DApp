@@ -1,0 +1,215 @@
+
+<!DOCTYPE html> 
+<html>
+
+<head> 
+  <title>DApp GoBlockchain</title> 
+  <link href="/DApp/app/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/DApp/app/styles/style.css" rel="stylesheet" media="screen">
+
+      <link rel="stylesheet" href="/DApp/app/vendor/bootstrap/css/bootstrap410.min.css" 
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/DApp/app/styles/style_menu.css">
+    <script src="/DApp/app/vendor/jquery/jquery-3.3.1_without_ajax.slim.min.js" 
+        crossorigin="anonymous"></script>
+    <script src="/DApp/app/vendor/bootstrap/js/bootstrap410.min.js" 
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+
+   
+  
+</head> 
+ 
+<body> 
+      <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenuIdent" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Identidade</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuIdent">
+                        <li>
+                            <a href="/DApp/app/pages/identity/registryPerson.html">Quero participar</a>
+                        </li>
+                        <li>
+                            <a href="/DApp/app/pages/identity/validatePerson.html">Validar</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenuCC" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Conta
+                        Corrente</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuCC">
+                        <li>
+                            <a href="/DApp/app/pages/cc/AccountAuthorizer.html">Autorizadores</a>
+                        </li>
+                        <li>
+                            <a href="/DApp/app/pages/cc/AccountTransaction.html">Transações</a>
+                        </li>
+                        <li>
+                            <a href="/DApp/app/pages/cc/CheckingAccount.html">Saldo</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenuCOLB" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Colaboradores
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuCOLB">
+                        <li>
+                            <a href="/DApp/app/pages/token/reputation.html">Reputação</a>
+                        </li>
+                        <li>
+                            <a href="/DApp/app/pages/token/collaborators.html">Colaboradores</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenuPROJ" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Projetos
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuPROJ">
+                        <li><a href="/DApp/app/pages/projects/list.html">Consultar</a></li>
+                        <div class="dropdown-divider"></div>
+                        <li><a href="/DApp/app/pages/projects/ico.html">ICO</a></li>
+                        <li><a href="/DApp/app/pages/projects/internal.html">Interno</a></li>
+                        <li><a href="/DApp/app/pages/projects/external.html">Externo</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenuTOKEN" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Token
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuTOKEN">
+                        <li><a href="/DApp/app/pages/token/GBCToken.html">GBC</a>
+                        <li><a href="/DApp/app/pages/token/requestToken.html">Solicitar tokens</a>
+                        <li><a href="/DApp/app/pages/token/approveRequest.html">Aprovar solicitações</a>
+                            <div class="dropdown-divider"></div>
+                        <li><a href="/DApp/app/pages/token/buyGBC.html">Comprar GBC</a>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenuPROD" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Produtos
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenuPROD">
+                        <h6 class="dropdown-header">Certificado</h6>
+                        <li><a href="https://goblockchain.herokuapp.com/">Consultar</a>
+                            <div class="dropdown-divider"></div>
+                        <li><a href="https://goblockchain.herokuapp.com/issuer">Emitir</a>
+                        <li><a href="https://goblockchain.herokuapp.com/admin">Gerenciador</a>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- Page Content Holder -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    <img src="/DApp/app/images/logo.png" width="63" height="50" alt="">
+                </a>
+
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                </div>
+                <label id="statusConnection" class="alert alert-primary">...</label>
+            </nav>
+ 
+  <div class="container">
+  <br />
+  
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Registro de projeto externo</h1>
+        <p class="lead">Essa funcionalidade permite que colaboradores possam registrar projetos externos contrados por clientes da GoBlockchain.</p>
+    </div>
+</div>
+<br>
+<form id="formDeposit">
+    <div class="card">
+        <h4 class="card-header">Cadastrar projeto externo</h4>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="txtNome">Nome</label>
+                    <input type="text" class="form-control" id="txtNome" name="txtNome" aria-describedby="txtNomeHelp"
+                        placeholder="Nome do Projeto" required>
+                    <small id="txtNomeHelp" class="form-text text-muted">Informe um nome para o projeto.</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtReputation">Reputação Necessária</label>
+                    <input type="number" class="form-control" id="txtReputation" name="txtReputation" aria-describedby="txtReputationHelp"
+                        placeholder="50" required>
+                    <small id="txtReputationHelp" class="form-text text-muted">Informe a quantida de reputação
+                        necessária para participar do projeto.</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="txtDescription">Descrição</label>
+                <textarea type="text" class="form-control" id="txtDescription" name="txtDescription" aria-describedby="txtDescriptionHelp"
+                    placeholder="Descrição do Projeto" rows="3" required> </textarea>
+                <small id="txtDescriptionHelp" class="form-text text-muted">Informe uma descrição para o projeto.</small>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="txtCustomer">Cliente</label>
+                    <input type="text" class="form-control" id="txtCustomer" name="txtCustomer" aria-describedby="txtCustomerHelp"
+                        placeholder="Nome do Cliente">
+                    <small id="txtCustomerHelp" class="form-text text-muted">Informe o nome do cliente contratante.</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtValue">Valor do Projeto</label>
+                    <input type="number" class="form-control" id="txtValue" name="txtValue" aria-describedby="txtValueHelp"
+                        placeholder="100,00">
+                    <small id="txtValueHelp" class="form-text text-muted">Informe o valor do projeto (Opcional).</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="txtBeginDate">Data de Início</label>
+                    <input type="date" class="form-control" id="txtBeginDate" name="txtBeginDate" aria-describedby="txtBeginDateHelp">
+                    <small id="txtBeginDateHelp" class="form-text text-muted">Informe a data de início do projeto
+                        (Opcional).</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="txtEndDate">Data de Término</label>
+                    <input type="date" class="form-control" id="txtEndDate" name="txtEndDate" aria-describedby="txtEndDateHelp">
+                    <small id="txtEndDateHelp" class="form-text text-muted">Informe a data de término do projeto
+                        (Opcional).</small>
+                </div>
+            </div>
+        </div>
+        <button type="button" id="btnCadastrar" name="btnCadastrar" class="btn btn-primary">
+            Cadastrar
+        </button>
+    </div>
+</form>
+<hr size="10">
+ 
+  </div> 
+  <br />
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; GoBlockchain 2018</p>
+    </div>
+</footer> 
+  <script src="/DApp/app/vendor/jquery/jquery.min.js"></script> 
+<!--  <script src="/DApp/app/vendor/bootstrap/js/bootstrap.min.js"></script>  -->
+  <script src="/DApp/app/vendor/font-awesome/fontawesome-all.min.js"></script> 
+  <script src="/DApp/app/vendor/web3/web3.js"></script> 
+  <script src="/DApp/app/vendor/jquery-validation/jquery.validate.min.js"></script> 
+  <script src="/DApp/app/scripts/main.js"></script>
+  <script src="https://trello.com/1/client.js?key=d25c1cb09fa2ee032c93a7c4128baaee"></script>
+   
+   
+</body> 
+ 
+</html>

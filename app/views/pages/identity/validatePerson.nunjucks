@@ -1,0 +1,86 @@
+{% extends "layouts/layout.nunjucks" %} 
+ 
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Solicitações de participação</h1>
+        <p class="lead">Essa funcionalidade é responsável em aprovar ou recusar as solicitações de novos colaboradores.</p>
+        <p class="lead">Somente os perfis especialista tem permissão para votar em aprovar ou recusar uma solicitação,
+            <mark>após 40% de aceite o colaborador é liberado</mark>.</p>
+    </div>
+</div>
+<div class="alert alert-success divRole" role="alert" id="divColabAdvisor">
+    Olá! Seu perfil é de advisor e você pode votar para aprovar ou recusar as solicitações abaixo.
+</div>
+<div class="alert alert-info divRole" role="alert" id="divColab">
+    Olá! Seu perfil é de colaborador e você pode não pode aprovar ou recusar as solicitações abaixo.
+</div>
+
+<br>
+<form id="frmApproveRequest">
+    <div class="card">
+        <h4 class="card-header">Aprovação</h4>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="txtDepositAmount">ID do uPort</label>
+                <input type="text" class="form-control" id="txtIDuPort" name="txtIDuPort" aria-describedby="txtIDuPortHelp"
+                    placeholder="0xAc5.." required>
+                <small id="txtIDuPortHelp" class="form-text text-muted">Informe o ID do uPort.</small>
+            </div>
+            <button type="button" id="btnApprove" name="btnApprove" class="btn btn-success">
+                Aprovar
+                <i class="fas fa-arrow-alt-circle-up"></i>
+            </button>
+            <button type="button" id="btnReject" name="btnReject" class="btn btn-danger">
+                Reprovar
+                <i class="fas fa-arrow-alt-circle-down"></i>
+            </button>
+        </div>
+    </div>
+</form>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Consulta solicitação</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-success" role="alert">
+                    5 Votos para aprovar
+                </div>
+                <div class="alert alert-danger" role="alert">
+                    3 Votos para reprovar
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30%</div>
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20%</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<h5>Solicitações de participação</h5>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">uPort</th>
+            <th scope="col">Endereço</th>
+            <th scope="col">Data</th>
+        </tr>
+    </thead>
+    <tbody id="tbodyRequests">
+    </tbody>
+</table>
+{% endblock %}
+
+{% block scripts %} 
+<script src="{{ baseURL }}/scripts/collaborators.js"></script>
+{% endblock %}
