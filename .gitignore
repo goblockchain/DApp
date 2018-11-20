@@ -1,6 +1,7 @@
 # Created by https://www.gitignore.io/api/node,bower
 
 ### Bower ###
+/bower_components
 bower_components
 .bower-cache
 .bower-registry
