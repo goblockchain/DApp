@@ -128,7 +128,7 @@ Assim vamos simular que ao fim de um período semestral o fundo de reserva da DA
 - cd DApp
 - npm install
 - Em desenvolvimento é necessário alterar o arquivo layout.nunjucks e remover a que definimos o root do projeto:
-- De `{% set baseURL = "/DApp/app" % }` para `{% set baseURL = "" %}`
+- De baseURL = "/DApp/app" para baseURL = ""
 - execute gulp dev
 
 `` Altere os arquivos nunjucks da pasta /views, através do gulp as páginas .html vão ser geradas.``
