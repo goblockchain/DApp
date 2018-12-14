@@ -127,7 +127,8 @@ Assim vamos simular que ao fim de um período semestral o fundo de reserva da DA
 - git clone https://github.com/seurepo/DApp.git
 - cd DApp
 - npm install
-- Em desenvolvimento é necessário alterar o arquivo layout.nunjucks e remover a que definimos o root do projeto `{% set baseURL = "/DApp/app" % ) `, deve ficar assim: `{% set baseURL = "" %}`
+- Em desenvolvimento é necessário alterar o arquivo layout.nunjucks e remover a que definimos o root do projeto:
+- De `{% set baseURL = "/DApp/app" % }` para `{% set baseURL = "" %}`
 - execute gulp dev
 
 `` Altere os arquivos nunjucks da pasta /views, através do gulp as páginas .html vão ser geradas.``
