@@ -79,7 +79,7 @@
         <div id="content">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">
-                    <img src="{{ baseURL }}/images/logo.png" width="63" height="50" alt="">
+                    <img src="{{ baseURL }}/images/logo.png" width="100" height="70" alt="">
                 </a>
 
                 <div class="container-fluid">

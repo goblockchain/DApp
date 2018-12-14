@@ -4,6 +4,7 @@
 
 <head> 
   <title>DApp GoBlockchain</title> 
+  <link rel="shortcut icon" href="{{ baseURL }}/images/icone.png">
   <link href="{{ baseURL }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
   <link href="{{ baseURL }}/styles/style.css" rel="stylesheet" media="screen">
 
@@ -35,7 +36,7 @@
   </div> 
   {% include "partials/footer.nunjucks" %} 
   <script src="{{ baseURL }}/vendor/jquery/jquery.min.js"></script> 
-<!--  <script src="{{ baseURL }}/vendor/bootstrap/js/bootstrap.min.js"></script>  -->
+  <script src="{{ baseURL }}/vendor/bootstrap/js/bootstrap.min.js"></script> 
   <script src="{{ baseURL }}/vendor/font-awesome/fontawesome-all.min.js"></script> 
   <script src="{{ baseURL }}/vendor/web3/web3.js"></script> 
   <script src="{{ baseURL }}/vendor/jquery-validation/jquery.validate.min.js"></script> 

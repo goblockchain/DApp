@@ -117,3 +117,19 @@ A primeira parte do processo é **pagar os custos** no caso 100 ETH, depois o re
 Como token garante participação periódica na divisão de lucros da DAO, conforme for crescendo o grupo de colaboradores e o número de GBC negociado aumentar corre-se o risco de  que novos colaboradores não tenham interesse em se juntar a DAO pois a receita de suas colaborações será dividida com um grande número de steakholder dos quais boa parte já não pode estar colaborando mais com a DAO e dessa forma gerando resultados. <br/>
 Para solucionar esse problema Toda vez que um período for fechado e realizada a divisão de lucro, automaticamente o SmartContract da DAO vai gerar uma inflação de XX% forçada sobre o valor do Token GBC, e vai reajustar a Tabela de Recompensa por Contribuição com o valor da Inflação gerada sobre o GBC de XX%.<br/>
 Assim vamos simular que ao fim de um período semestral o fundo de reserva da DAO continha 100 ETH e existiam 100.000 GBT, nesse momento 75% dos ETH serão distribuídos de acordo com as Shares e restaram 25 ETH restaram no fundo de reserva e será aplicada uma inflação de 50% o que implica que serão emitidos mais 50.000 GBT, esses GBT serão colocados à venda a mercado dentro do módulo de leilão All-Pay e os ETH arrecadados no leilão irão para o fundo de Reserva da DAO, e a tabela de remuneração também será reajustada de acordo com a inflação se estavam sendo pagos 1000 GBT por ETH , no semestre seguinte serão pagos 1500 GBT por ETH, e assim também a tabela de valores fixos também será reajustada na mesma proporção.
+
+# Instalação
+
+## Requisitos
+**NODE = v8.9.1**
+
+- Faça um fork do projeto
+- git clone https://github.com/seurepo/DApp.git
+- cd DApp
+- npm install
+- Em desenvolvimento é necessário alterar o arquivo layout.nunjucks e remover a que definimos o root do projeto `{% set baseURL = "/DApp/app" % ) `, deve ficar assim: `{% set baseURL = "" %}``
+- execute gulp dev
+
+`` Altere os arquivos nunjucks da pasta /views, através do gulp as páginas .html vão ser geradas.``
+
+

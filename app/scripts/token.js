@@ -1,9 +1,14 @@
 
-let abiToken = [{ "constant": true, "inputs": [], "name": "name", "outputs": [{ "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_spender", "type": "address" }, { "name": "_value", "type": "uint256" }], "name": "approve", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "totalSupply", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_from", "type": "address" }, { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" }], "name": "transferFrom", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "decimals", "outputs": [{ "name": "", "type": "uint8" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" }], "name": "mint", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "version", "outputs": [{ "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_owner", "type": "address" }], "name": "balanceOf", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "owner", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "symbol", "outputs": [{ "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_from", "type": "address" }, { "name": "_value", "type": "uint256" }], "name": "destroy", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" }], "name": "transfer", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "name": "_owner", "type": "address" }, { "name": "_spender", "type": "address" }], "name": "allowance", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "to", "type": "address" }, { "indexed": false, "name": "value", "type": "uint256" }], "name": "MintEvent", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "from", "type": "address" }, { "indexed": false, "name": "value", "type": "uint256" }], "name": "DestroyEvent", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "previousOwner", "type": "address" }, { "indexed": true, "name": "newOwner", "type": "address" }], "name": "OwnershipTransferred", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "from", "type": "address" }, { "indexed": true, "name": "to", "type": "address" }, { "indexed": false, "name": "value", "type": "uint256" }], "name": "Transfer", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "owner", "type": "address" }, { "indexed": true, "name": "spender", "type": "address" }, { "indexed": false, "name": "value", "type": "uint256" }], "name": "Approval", "type": "event" }];
+let abiToken = [{ "constant": true, "inputs": [], "name": "name", "outputs": [{ "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "spender", "type": "address" }, { "name": "value", "type": "uint256" }], "name": "approve", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "totalSupply", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "from", "type": "address" }, { "name": "to", "type": "address" }, { "name": "value", "type": "uint256" }], "name": "transferFrom", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "decimals", "outputs": [{ "name": "", "type": "uint8" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "spender", "type": "address" }, { "name": "addedValue", "type": "uint256" }], "name": "increaseAllowance", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "to", "type": "address" }, { "name": "value", "type": "uint256" }], "name": "mint", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "name": "owner", "type": "address" }], "name": "balanceOf", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "symbol", "outputs": [{ "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "account", "type": "address" }], "name": "addMinter", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [], "name": "renounceMinter", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "spender", "type": "address" }, { "name": "subtractedValue", "type": "uint256" }], "name": "decreaseAllowance", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "name": "to", "type": "address" }, { "name": "value", "type": "uint256" }], "name": "transfer", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "name": "account", "type": "address" }], "name": "isMinter", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "owner", "type": "address" }, { "name": "spender", "type": "address" }], "name": "allowance", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "account", "type": "address" }], "name": "MinterAdded", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "account", "type": "address" }], "name": "MinterRemoved", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "from", "type": "address" }, { "indexed": true, "name": "to", "type": "address" }, { "indexed": false, "name": "value", "type": "uint256" }], "name": "Transfer", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "owner", "type": "address" }, { "indexed": true, "name": "spender", "type": "address" }, { "indexed": false, "name": "value", "type": "uint256" }], "name": "Approval", "type": "event" }];
 
 //rinkeby
-let contractAddressToken = "0x02B2c8357Ee5FcAD3691376f9F25B50a0B71f9a9";
+// let contractAddressToken = "0x2bEB31cD02c8f85568ddbE3e5b492A912b5f0109";
+
+//mainnet
+let contractAddressToken = "0x48fd2b9e019f137730db101552d04d471fbac9d1";
 let instanceToken = getInstanceContract(abiToken, contractAddressToken);
+
+
 
 $(document).ready(() => {
   $("#formTransfer").validate({
@@ -34,7 +39,7 @@ function getToken() {
     if (!err) {
       $("#name").text(result);
     } else {
-      console.error(error);
+      console.error(err);
     }
   });
   instanceToken.decimals((err, result) => {
@@ -42,7 +47,7 @@ function getToken() {
       // $("#lblOwner").text(result);
       console.info(result);
     } else {
-      console.error(error);
+      console.error(err);
     }
   });
   instanceToken.symbol((err, result) => {
@@ -50,44 +55,40 @@ function getToken() {
       $("#symbol").text(result);
       console.info(result);
     } else {
-      console.error(error);
+      console.error(err);
     }
   });
-  instanceToken.version((err, result) => {
-    if (!err) {
-      // $("#lblOwner").text(result);
-      console.info(result);
-    } else {
-      console.error(error);
-    }
-  });
+
   instanceToken.totalSupply((err, result) => {
     if (!err) {
       $("#totalSupply").text(result);
       console.info(result);
     } else {
-      console.error(error);
+      console.error(err);
     }
   });
-  instanceToken.balanceOf(account, (err, result) => {
-    if (!err) {
-      $("#myBalanceOf").text(result);
-      console.info(result);
-    } else {
-      console.error(error);
-    }
-  });
-  
-};
+
+  web3.eth.getAccounts((_err, accounts) => {
+    instanceToken.balanceOf(accounts[0], (err, result) => {
+      if (!err) {
+        $("#myBalanceOf").text(result);
+        console.info(result);
+      } else {
+        console.error(err);
+      }
+    });
+  })
+}
 
 
-//geandre
-$("#btnTransfer").click(() => {
-  if ($("#formTransfer").valid()) {
-    let _to = $("#txtDepositAddress").val();
-    let _quantity = $("#txtDepositAmount").val();
+$("#btnTransferMint").click(() => {
+    let _to = $("#txtDepositAddressMint").val();
+    let _quantity = $("#txtDepositAmountMint").val();
 
-    instanceToken.transfer(_to, _quantity, (err, res) => {
+    console.info("===to==="+ _to);
+    console.info("===_quantity==="+ _quantity);    
+
+    instanceToken.mint(_to, _quantity, (err, res) => {
       if (!err) {
         console.log(res);
         eventTransfer();
@@ -96,9 +97,6 @@ $("#btnTransfer").click(() => {
         console.log(res);
       }
     })
-  } else {
-    return false;
-  }
 });
 
 //file
@@ -127,7 +125,7 @@ function setModal(txn, action) {
         '<p>Transação: <mark id="lblTransaction" class="small"></mark></p>'
       );
       break;
-    
+
     default:
       break;
   }
@@ -139,17 +137,20 @@ function setModal(txn, action) {
 
 function eventTransfer() {
   var event = instanceToken.Transfer();
-  event.watch(function(error, result){
-      if (!error)
-      {
-          getToken()         
-          console.info("evento tranfer " + result.args.from);
-          event.stopWatching();
-      } else {
-          console.log(error);
-      }
-  });    
+  event.watch(function (error, result) {
+    if (!error) {
+      getToken()
+      console.info("evento tranfer " + result.args.from);
+      event.stopWatching();
+    } else {
+      console.log(error);
+    }
+  });
 }
+
+$("#btnAdicionarMinter").click(() => {
+  console.info("btnAdicionarMinter");
+})
 
 //function totalSupply() public view returns (uint256);
 //function balanceOf(address who) public view returns (uint256);

@@ -24,7 +24,7 @@
     <div class="container">
         <h1 class="display-4">GBC Token</h1>
         <p class="lead">É com o Token GBC que os colaboradores ganham mais governança na GO como por exemplo reputação para realizar
-            consultoria, projetos, aulas, participar do conselho, etc.</p>
+            consultoria, projetos, aulas, etc.</p>
         <p class="lead">Com o Token o colaborador também pode vender, transferir, participar de cursos e utilizar de produtos da
             GoBlockchain.
             <span id="lblOwner" class="text-danger"> </span>
@@ -32,10 +32,6 @@
                 <a target="_blank" href="https://github.com/goblockchain/smart-contract-token-gbc">aqui</a>.</mark>
         </p>
     </div>
-</div>
-<div class="alert alert-dark" role="alert">
-    Conheça as reputações da GO
-    <a href="reputacoes.html">aqui</a>
 </div>
 <p class="h4">Name:
     <strong id="name"></strong>
@@ -50,9 +46,51 @@
     <strong id="myBalanceOf"></strong>
 </p>
 <br>
+<!-- Minter -->
+<form id="formMinter">
+    <div class="card mb-5">
+        <h4 class="card-header">Adicionar Minter<!-- DEPOSITO --></h4>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="txtDepositAddressMinter">Chave pública</label>
+                <input class="form-control" id="txtDepositAddressMinter" name="txtDepositAddressMinter" aria-describedby="textDepositHelp" placeholder="0xAc5.."
+                    required>
+                <small id="textDepositHelp" class="form-text text-muted">Informa a chave pública do colaborador.</small>
+            </div>
+            <button type="button" id="btnAdicionarMinter" name="btnAdicionarMinter" class="btn btn-warning">
+                Adicionar
+                <i class="fas fa-arrow-circle-up"></i>
+            </button>
+        </div>
+    </div>  
+</form>      
+<form id="FormTransferMint">
+    <div class="card mb-5">
+        <h4 class="card-header">Transferir</h4>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="txtDepositAddressMint">Chave pública</label>
+                <input class="form-control" id="txtDepositAddressMint" name="txtDepositAddressMint" aria-describedby="textDepositHelp" placeholder="0xAc5.."
+                    required>
+                <small id="textDepositHelp" class="form-text text-muted">Informa a chave pública do colaborador.</small>
+            </div>
+            <div class="form-group">
+                <label for="txtDepositAmountMint">Quantidade</label>
+                <input type="number" class="form-control" id="txtDepositAmountMint" name="txtDepositAmountMint" aria-describedby="textDepositHelp"
+                    placeholder="GBC" required>
+                <small id="textDepositHelp" class="form-text text-muted">Quantidade de Token GBC a ser depositado no contrato.</small>
+            </div>
+            <button type="button" id="btnTransferMint" name="btnTransferMint" class="btn btn-primary">
+                Transferir
+                <i class="fas fa-arrow-circle-down"></i>
+            </button>
+        </div>
+    </div>
+</form>
+
 <!-- DEPOSITO -->
 <form id="formTransfer">
-    <div class="card">
+    <div class="card mb-5">
         <h4 class="card-header">Transferir meus tokens</h4>
         <div class="card-body">
             <div class="form-group">
@@ -75,11 +113,9 @@
     </div>
 </form>
 
-<hr size="10">
-
 <!-- Aprovar -->
 <form id="frmApprove">
-    <div class="card">
+    <div class="card mb-5">
         <h4 class="card-header">Aprovar</h4>
         <div class="card-body">
             <div class="form-group">
@@ -102,9 +138,8 @@
     </div>
 </form>
 
-<hr size="10">
 <form onsubmit="transferFrom()" id="formTransferFrom">
-    <div class="card">
+    <div class="card mb-5">
         <h4 class="card-header">Transferência</h4>
         <div class="card-body">
             <div class="form-group">
