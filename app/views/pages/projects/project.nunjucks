@@ -1,0 +1,31 @@
+{% extends "layouts/layout.nunjucks" %} 
+ 
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Colaboradores</h1>
+        <p class="lead">Funcionalidade responsável em listar os colaboradores da organização e seus pontos. 
+        Os pontos são adquiridos mediante o trabalho realizado e aprovado pelos membros da organização.
+                 <p><mark>Conheça a atividades que você pode colaborar no trello da GO,
+                <a target="_blank" href="https://trello.com/b/mnVqJvV8/goblockchain-colaboradores">aqui</a>.</mark></p>
+        </p>
+    </div>
+</div>
+<br>
+<form id="frmColabs">
+
+    <h3>Informações do projeto</h3>
+    
+    <p class="text-primary">Nome do projeto:&nbsp;<label class="text-light bg-dark" id="nameProject"></label></p>
+    <p class="text-primary">Total de cards:&nbsp;<label class="text-light bg-dark" id="cardsTotal"></strong></p>
+    <p class="text-primary">Total de pontos:&nbsp;<label class="text-light bg-dark" id="pointsTotal"></label></p>
+
+    <h4>Colaboradores</h4>
+    <div class="row mt-5" id="divColabs">
+    </div>
+</form>
+{% endblock %}
+
+{% block scripts %} 
+<script src="{{ baseURL }}/scripts/listProjects.js"></script>
+{% endblock %}

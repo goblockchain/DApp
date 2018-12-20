@@ -36,6 +36,7 @@ async function getListPerson() {
         if (membro.member.id == "59d62addf010ebb1ba42fae9") {
             return;
         }
+        
         listCards = await Trello.get('/members/'+membro.member.id+'/cards?customFieldItems=true&key=d25c1cb09fa2ee032c93a7c4128baaee&token=a22cafe4437a7376c50de0f0ddb5e0b77f7f9048df04f88a6403ba14cc78b365');
         peso = 0;
 

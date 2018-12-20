@@ -32,9 +32,9 @@
                     <a href="#homeSubmenuCOLB" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Colaboradores
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenuCOLB">
-                        <li>
+                        <!-- <li>
                             <a href="{{ baseURL }}/pages/token/reputation.html">Reputação</a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="{{ baseURL }}/pages/token/collaborators.html">Colaboradores</a>
                         </li>
@@ -44,6 +44,8 @@
                     <a href="#homeSubmenuPROJ" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Projetos
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenuPROJ">
+                        <li><a href="{{ baseURL }}/pages/projects/project.html">GOSolutions</a></li> 
+                        <div class="dropdown-divider"></div>                           
                         <li><a href="{{ baseURL }}/pages/projects/list.html">Consultar</a></li>
                         <div class="dropdown-divider"></div>
                         <li><a href="{{ baseURL }}/pages/projects/ico.html">ICO</a></li>
@@ -56,8 +58,8 @@
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenuTOKEN">
                         <li><a href="{{ baseURL }}/pages/token/GBCToken.html">GBC</a>
-                        <li><a href="{{ baseURL }}/pages/token/requestToken.html">Solicitar tokens</a>
-                        <li><a href="{{ baseURL }}/pages/token/approveRequest.html">Aprovar solicitações</a>
+                        <!--<li><a href="{{ baseURL }}/pages/token/requestToken.html">Solicitar tokens</a>
+                        <li><a href="{{ baseURL }}/pages/token/approveRequest.html">Aprovar solicitações</a>-->
                             <div class="dropdown-divider"></div>
                         <li><a href="{{ baseURL }}/pages/token/buyGBC.html">Comprar GBC</a>
                     </ul>
