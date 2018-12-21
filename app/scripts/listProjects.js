@@ -61,30 +61,32 @@ async function getListPerson() {
                     totalCards++;     
                 }
             }
-        });     
-        pointsTotal += peso;
-        cardsTotal += totalCards; 
-        // listCards.forEach(function(cards) {
-        //     console.info(cards.length);
-        // });
-        var gbc = "-";
-        var description ="-";
-        var reputation = "-";
-        // var address = result[0];
-        // var uport = result[1];
-        $('#divColabs').append(
-            '<div class="col-sm-4">'+
-            '<div class="card mb-3">'+
-                '<div class="card-body">'+
-                    '<h5 class="card-title text-center"> <a href="'+ urlMember + '" target="_blank">'+  membro.member.fullName+' </a></h5>'+
-                    '<h6 class="card-subtitle mb-2 text-muted">'+membro.member.id+'</h6>'+
-                    '<p class="card-text"> Envolvido no total de ' + totalCards + ' cards </p>'+
-                    // '<p class="card-text"> Total de pontos acumulados ' + peso + ' </p>'+
-                    '<h5>Total de pontos acumulados ' + peso + '</h5>'+
+        });
+        if (peso > 0) {
+            pointsTotal += peso;
+            cardsTotal += totalCards; 
+            // listCards.forEach(function(cards) {
+            //     console.info(cards.length);
+            // });
+            var gbc = "-";
+            var description ="-";
+            var reputation = "-";
+            // var address = result[0];
+            // var uport = result[1];
+            $('#divColabs').append(
+                '<div class="col-sm-4">'+
+                '<div class="card mb-3">'+
+                    '<div class="card-body">'+
+                        '<h5 class="card-title text-center"> <a href="'+ urlMember + '" target="_blank">'+  membro.member.fullName+' </a></h5>'+
+                        '<h6 class="card-subtitle mb-2 text-muted">'+membro.member.id+'</h6>'+
+                        '<p class="card-text"> Envolvido no total de ' + totalCards + ' cards </p>'+
+                        // '<p class="card-text"> Total de pontos acumulados ' + peso + ' </p>'+
+                        '<h5>Total de pontos acumulados ' + peso + '</h5>'+
+                    '</div>'+
                 '</div>'+
-            '</div>'+
-            '</div>'
-        );        
+                '</div>'
+            ); 
+        }       
     });
 
     console.info(cardsTotal);
